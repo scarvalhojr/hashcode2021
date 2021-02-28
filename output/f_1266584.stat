@@ -1,0 +1,29 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 1992
+Intersections: 1662
+Streets      : 10000
+Cars         : 1000
+Bonus points : 500
+
+Traffic scheduler (log 2)
+-------------------------
+Intersection 176: 1 min traffic, 44 max traffic, 43 delta
+Intersection 1515: 140 min traffic, 238 max traffic, 98 delta
+Intersection 471: 1 min traffic, 107 max traffic, 106 delta
+Intersection 267: 1 min traffic, 387 max traffic, 386 delta
+Intersection 1372: 1 min traffic, 437 max traffic, 436 delta
+Intersection 930: 2 min traffic, 517 max traffic, 515 delta
+Intersection 705: 2 min traffic, 540 max traffic, 538 delta
+
+Schedule
+--------
+Intersections   : 1632
+Street lights   : 5333
+Arrived cars    : 762
+Earliest arrival: 5
+Latest arrival  : 1987
+Crossed streets : 4323
+Schedule score  : 1266584

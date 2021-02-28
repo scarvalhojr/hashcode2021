@@ -1,6 +1,7 @@
 use clap::{crate_description, App, Arg};
-use hashcode2021::naive::Naive;
+use hashcode2021::naive::NaiveScheduler;
 use hashcode2021::sched::{Schedule, Scheduler};
+use hashcode2021::traffic::TrafficScheduler;
 use hashcode2021::Simulation;
 use std::fs::{read_to_string, write};
 use std::process::exit;
@@ -13,6 +14,13 @@ fn main() {
                 .help("File path to puzzle input")
                 .required(true)
                 .index(1),
+        )
+        .arg(
+            Arg::with_name("algorithm")
+                .help("Scheduler algorithm")
+                .required(true)
+                .possible_values(&["naive", "traffic"])
+                .index(2),
         )
         .arg(
             Arg::with_name("output")
@@ -42,7 +50,12 @@ fn main() {
         simulation
     );
 
-    let schedule = Naive::default().schedule(&simulation);
+    let schedule = match args.value_of("algorithm").unwrap() {
+        "naive" => NaiveScheduler::default().schedule(&simulation),
+        "traffic" => TrafficScheduler::default().schedule(&simulation),
+        _ => unreachable!(),
+    };
+
     let sched_stats = match schedule.stats() {
         Ok(score) => score,
         Err(err) => {

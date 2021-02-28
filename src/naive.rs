@@ -3,9 +3,9 @@ use crate::sched::{Schedule, Scheduler};
 use std::collections::HashSet;
 
 #[derive(Default)]
-pub struct Naive {}
+pub struct NaiveScheduler {}
 
-impl Scheduler for Naive {
+impl Scheduler for NaiveScheduler {
     fn schedule<'a>(&self, simulation: &'a Simulation) -> Schedule<'a> {
         let mut schedule = Schedule::new(simulation);
 

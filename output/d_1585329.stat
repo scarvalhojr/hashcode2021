@@ -1,0 +1,30 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 8071
+Intersections: 8000
+Streets      : 95928
+Cars         : 1000
+Bonus points : 1000
+
+Traffic scheduler (log 10)
+--------------------------
+Intersection 5530: 1 min traffic, 3 max traffic, 2 delta
+Intersection 1293: 1 min traffic, 4 max traffic, 3 delta
+Intersection 639: 1 min traffic, 6 max traffic, 5 delta
+Intersection 2880: 1 min traffic, 7 max traffic, 6 delta
+Intersection 2303: 1 min traffic, 8 max traffic, 7 delta
+Intersection 2068: 1 min traffic, 9 max traffic, 8 delta
+Intersection 88: 1 min traffic, 10 max traffic, 9 delta
+Intersection 578: 1 min traffic, 12 max traffic, 11 delta
+
+Schedule
+--------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 957
+Earliest arrival: 6417
+Latest arrival  : 8068
+Crossed streets : 83844
+Schedule score  : 1585329

@@ -6,6 +6,7 @@ use std::str::FromStr;
 
 pub mod naive;
 pub mod sched;
+pub mod traffic;
 
 type Time = u32;
 type CarId = usize;
