@@ -18,6 +18,7 @@ impl Scheduler for NaiveScheduler {
         for car_path in simulation.car_paths.iter() {
             let travel_time: Time = car_path
                 .iter()
+                .skip(1)
                 .map(|&street_id| simulation.streets[street_id].travel_time)
                 .sum();
             if travel_time > simulation.duration {
