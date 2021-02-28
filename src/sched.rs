@@ -19,6 +19,7 @@ pub struct Intersection {
 
 pub struct ScheduleStats {
     pub num_intersections: usize,
+    pub num_streets: usize,
     pub num_arrived_cars: usize,
     pub earliest_arrival: Time,
     pub latest_arrival: Time,
@@ -27,9 +28,17 @@ pub struct ScheduleStats {
 }
 
 impl ScheduleStats {
-    fn new(num_intersections: usize) -> Self {
+    fn new(schedule: &Schedule) -> Self {
+        let num_intersections = schedule.intersections.len();
+        let num_streets = schedule
+            .intersections
+            .values()
+            .map(|intersection| intersection.turns.len())
+            .sum();
+
         Self {
             num_intersections,
+            num_streets,
             num_arrived_cars: 0,
             earliest_arrival: 0,
             latest_arrival: 0,
@@ -85,10 +94,6 @@ impl<'a> Schedule<'a> {
             .or_insert_with(|| Intersection::new(street_id, time));
     }
 
-    pub fn num_intersections(&self) -> usize {
-        self.intersections.len()
-    }
-
     pub fn is_green(
         &self,
         inter_id: IntersectionId,
@@ -102,7 +107,7 @@ impl<'a> Schedule<'a> {
     }
 
     pub fn stats(&self) -> Result<ScheduleStats, String> {
-        let mut stats = ScheduleStats::new(self.intersections.len());
+        let mut stats = ScheduleStats::new(self);
 
         // All cars that haven't reached their end yet
         let mut moving_cars: HashMap<CarId, Car> = self
@@ -255,16 +260,18 @@ impl Display for Schedule<'_> {
 
 impl Display for ScheduleStats {
     fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
-        writeln!(
+        write!(
             f,
             "\
             Intersections   : {}\n\
+            Street lights   : {}\n\
             Arrived cars    : {}\n\
             Earliest arrival: {}\n\
             Latest arrival  : {}\n\
             Crossed streets : {}\n\
             Schedule score  : {}",
             self.num_intersections,
+            self.num_streets,
             self.num_arrived_cars,
             self.earliest_arrival,
             self.latest_arrival,

@@ -121,7 +121,7 @@ impl FromStr for Street {
 
 impl Display for Simulation {
     fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
-        writeln!(
+        write!(
             f,
             "\
             Duration     : {}\n\
