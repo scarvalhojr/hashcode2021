@@ -125,7 +125,7 @@ impl<'a> Schedule<'a> {
                 .or_insert_with(|| vec![car_id].into_iter().collect());
         }
 
-        for time in 0..self.simulation.duration {
+        for time in 0..=self.simulation.duration {
             // Let cars move if possible
             for (&car_id, car) in moving_cars.iter_mut() {
                 if car.state == CarState::Ready {
