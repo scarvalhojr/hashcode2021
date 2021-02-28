@@ -1,0 +1,20 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 8071
+Intersections: 8000
+Streets      : 95928
+Cars         : 1000
+Bonus points : 1000
+
+
+Schedule
+--------
+Intersections   : 8000
+Arrived cars    : 948
+Earliest arrival: 6306
+Latest arrival  : 8069
+Crossed streets : 83847
+Schedule score  : 1568483
+

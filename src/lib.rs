@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 use std::convert::TryInto;
+use std::fmt::{Display, Formatter};
 use std::num::ParseIntError;
 use std::str::FromStr;
 
@@ -115,5 +116,24 @@ impl FromStr for Street {
             end_intersection,
             travel_time,
         })
+    }
+}
+
+impl Display for Simulation {
+    fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
+        writeln!(
+            f,
+            "\
+            Duration     : {}\n\
+            Intersections: {}\n\
+            Streets      : {}\n\
+            Cars         : {}\n\
+            Bonus points : {}",
+            self.duration,
+            self.num_intersections,
+            self.streets.len(),
+            self.car_paths.len(),
+            self.bonus,
+        )
     }
 }

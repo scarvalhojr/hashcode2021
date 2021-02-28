@@ -36,22 +36,14 @@ fn main() {
 
     println!(
         "\n\
-        Input\n\
-        -----\n\
-        Duration     : {}\n\
-        Intersections: {}\n\
-        Streets      : {}\n\
-        Cars         : {}\n\
-        Bonus        : {}",
-        simulation.duration,
-        simulation.num_intersections,
-        simulation.streets.len(),
-        simulation.car_paths.len(),
-        simulation.bonus,
+        Simulation\n\
+        ----------\n\
+        {}",
+        simulation
     );
 
     let schedule = Naive::default().schedule(&simulation);
-    let score = match schedule.score() {
+    let sched_stats = match schedule.stats() {
         Ok(score) => score,
         Err(err) => {
             println!("\nError: {}", err);
@@ -61,12 +53,10 @@ fn main() {
 
     println!(
         "\n\
-        Output\n\
-        ------\n\
-        Schedules    : {}\n\
-        Score        : {}",
-        schedule.num_intersections(),
-        score,
+        Schedule\n\
+        --------\n\
+        {}",
+        sched_stats,
     );
 
     if let Some(filename) = args.value_of("output") {
