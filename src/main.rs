@@ -1,4 +1,5 @@
-use clap::{crate_description, App, Arg};
+use clap::{crate_description, value_t, App, Arg};
+use hashcode2021::incr::IncrementalScheduler;
 use hashcode2021::naive::NaiveScheduler;
 use hashcode2021::sched::{Schedule, Scheduler};
 use hashcode2021::traffic::TrafficScheduler;
@@ -19,7 +20,7 @@ fn main() {
             Arg::with_name("algorithm")
                 .help("Scheduler algorithm")
                 .required(true)
-                .possible_values(&["naive", "traffic"])
+                .possible_values(&["incremental", "naive", "traffic"])
                 .index(2),
         )
         .arg(
@@ -30,7 +31,52 @@ fn main() {
                 .long("output")
                 .takes_value(true),
         )
+        .arg(
+            Arg::with_name("rounds")
+                .help("Number of incremental rounds")
+                .short("r")
+                .long("incremental-rounds")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("streets-per-round")
+                .help("Number of streets changed per incremental round")
+                .short("s")
+                .long("streets-per-round")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("shuffles-per-street")
+                .help("Maximum number of shuffles per street on incremental rounds")
+                .short("x")
+                .long("shuffles-per-street")
+                .takes_value(true),
+        )
         .get_matches();
+
+    let rounds = if args.is_present("rounds") {
+        let value = value_t!(args.value_of("rounds"), u32)
+            .unwrap_or_else(|e| e.exit());
+        Some(value)
+    } else {
+        None
+    };
+
+    let streets_per_round = if args.is_present("streets-per-round") {
+        let value = value_t!(args.value_of("streets-per-round"), u32)
+            .unwrap_or_else(|e| e.exit());
+        Some(value)
+    } else {
+        None
+    };
+
+    let shuffles_per_street = if args.is_present("shuffles-per-street") {
+        let value = value_t!(args.value_of("shuffles-per-street"), u32)
+            .unwrap_or_else(|e| e.exit());
+        Some(value)
+    } else {
+        None
+    };
 
     println!(crate_description!());
 
@@ -51,6 +97,19 @@ fn main() {
     );
 
     let schedule = match args.value_of("algorithm").unwrap() {
+        "incremental" => {
+            let mut scheduler = IncrementalScheduler::default();
+            if let Some(value) = rounds {
+                scheduler.set_rounds(value);
+            }
+            if let Some(value) = streets_per_round {
+                scheduler.set_streets_per_round(value);
+            }
+            if let Some(value) = shuffles_per_street {
+                scheduler.set_max_shuffles_per_street(value);
+            }
+            scheduler.schedule(&simulation)
+        },
         "naive" => NaiveScheduler::default().schedule(&simulation),
         "traffic" => TrafficScheduler::default().schedule(&simulation),
         _ => unreachable!(),

@@ -2,16 +2,19 @@ use super::*;
 use std::collections::{HashSet, VecDeque};
 use std::convert::TryFrom;
 use std::fmt::{Display, Formatter};
+use rand::{seq::SliceRandom, thread_rng};
 
 pub trait Scheduler {
     fn schedule<'a>(&self, simulation: &'a Simulation) -> Schedule<'a>;
 }
 
+#[derive(Clone)]
 pub struct Schedule<'a> {
     simulation: &'a Simulation,
     intersections: HashMap<IntersectionId, Intersection>,
 }
 
+#[derive(Clone)]
 pub struct Intersection {
     turns: Vec<(StreetId, Time)>,
     cycle: Time,
@@ -24,6 +27,7 @@ pub struct ScheduleStats {
     pub earliest_arrival: Time,
     pub latest_arrival: Time,
     pub crossed_streets: HashSet<StreetId>,
+    pub total_wait_time: HashMap<StreetId, Time>,
     pub score: u32,
 }
 
@@ -43,6 +47,7 @@ impl ScheduleStats {
             earliest_arrival: 0,
             latest_arrival: 0,
             crossed_streets: HashSet::new(),
+            total_wait_time: HashMap::new(),
             score: 0,
         }
     }
@@ -58,6 +63,21 @@ impl Intersection {
     pub fn add_street(&mut self, street_id: StreetId, time: Time) {
         self.turns.push((street_id, time));
         self.cycle += time;
+    }
+
+    pub fn add_street_time(&mut self, street_id: StreetId, add_time: Time) {
+        for (id, time) in self.turns.iter_mut() {
+            if *id == street_id {
+                *time += add_time;
+                return;
+            }
+        }
+        panic!("Failed to add time to street {} in intersection", street_id);
+    }
+
+    pub fn shuffle(&mut self) {
+        let mut rng = thread_rng();
+        self.turns.shuffle(&mut rng);
     }
 
     pub fn is_green(&self, street_id: StreetId, at_time: Time) -> bool {
@@ -94,6 +114,42 @@ impl<'a> Schedule<'a> {
             .or_insert_with(|| Intersection::new(street_id, time));
     }
 
+    pub fn add_street_time(
+        &mut self,
+        street_id: StreetId,
+        add_time: Time,
+    ) {
+        let inter_id = self
+            .simulation
+            .streets[street_id]
+            .end_intersection;
+        self.intersections
+            .entry(inter_id)
+            .and_modify(|inter| inter.add_street_time(street_id, add_time));
+    }
+
+    pub fn shuffle_intersection(&mut self, street_id: StreetId) {
+        let inter_id = self
+            .simulation
+            .streets[street_id]
+            .end_intersection;
+        self.intersections
+            .entry(inter_id)
+            .and_modify(|inter| inter.shuffle());
+    }
+
+    pub fn num_streets_in_intersection(&self, street_id: StreetId) -> usize {
+        let inter_id = self
+            .simulation
+            .streets[street_id]
+            .end_intersection;
+        self.intersections
+            .get(&inter_id)
+            .unwrap()
+            .turns
+            .len()
+    }
+
     pub fn is_green(
         &self,
         inter_id: IntersectionId,
@@ -104,6 +160,23 @@ impl<'a> Schedule<'a> {
             .get(&inter_id)
             .map(|inter| inter.is_green(street_id, at_time))
             .unwrap_or(false)
+    }
+
+    pub fn is_street_always_green(&self, street_id: StreetId) -> bool {
+        let inter_id = self
+            .simulation
+            .streets[street_id]
+            .end_intersection;
+        let turns = &self
+            .intersections
+            .get(&inter_id)
+            .unwrap()
+            .turns;
+        if turns.len() == 1 && turns[0].0 == street_id {
+            true
+        } else {
+            false
+        }
     }
 
     pub fn stats(&self) -> Result<ScheduleStats, String> {
@@ -161,6 +234,15 @@ impl<'a> Schedule<'a> {
 
             // Drop empty traffic light queues
             queues.retain(|_, cars| !cars.is_empty());
+
+            // Add 1 second to the total wait time of each street with a queue
+            for &street_id in queues.keys() {
+                stats
+                    .total_wait_time
+                    .entry(street_id)
+                    .and_modify(|wait_time| *wait_time += 1)
+                    .or_insert_with(|| 1);
+            }
 
             // Update score for cars that reached their end
             let arrived_cars = moving_cars
