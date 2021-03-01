@@ -39,13 +39,6 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
-            Arg::with_name("streets-per-round")
-                .help("Number of streets changed per incremental round")
-                .short("s")
-                .long("streets-per-round")
-                .takes_value(true),
-        )
-        .arg(
             Arg::with_name("shuffles-per-street")
                 .help("Maximum number of shuffles per street on incremental rounds")
                 .short("x")
@@ -62,16 +55,8 @@ fn main() {
         None
     };
 
-    let streets_per_round = if args.is_present("streets-per-round") {
-        let value = value_t!(args.value_of("streets-per-round"), u32)
-            .unwrap_or_else(|e| e.exit());
-        Some(value)
-    } else {
-        None
-    };
-
     let shuffles_per_street = if args.is_present("shuffles-per-street") {
-        let value = value_t!(args.value_of("shuffles-per-street"), u32)
+        let value = value_t!(args.value_of("shuffles-per-street"), usize)
             .unwrap_or_else(|e| e.exit());
         Some(value)
     } else {
@@ -101,9 +86,6 @@ fn main() {
             let mut scheduler = IncrementalScheduler::default();
             if let Some(value) = rounds {
                 scheduler.set_rounds(value);
-            }
-            if let Some(value) = streets_per_round {
-                scheduler.set_streets_per_round(value);
             }
             if let Some(value) = shuffles_per_street {
                 scheduler.set_max_shuffles_per_street(value);

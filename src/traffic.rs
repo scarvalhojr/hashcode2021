@@ -32,8 +32,8 @@ impl Scheduler for TrafficScheduler {
 
         println!(
             "\n\
-            Traffic scheduler (log 2)\n\
-            -------------------------",
+            Traffic scheduler (log 10)\n\
+            --------------------------",
         );
 
         // List intersections that have large difference between its quitests
@@ -58,7 +58,7 @@ impl Scheduler for TrafficScheduler {
                 // Normalize the time each street gets based on the total
                 // number of cars that need to cross it
                 let time =
-                    ((counter as f32) / min_traffic).log2().round().max(1_f32)
+                    ((counter as f32) / min_traffic).log10().round().max(1_f32)
                         as Time;
                 assert!(time > 0);
                 schedule.add_street(inter_id, street_id, time);

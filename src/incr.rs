@@ -5,7 +5,7 @@ use crate::sched::{Schedule, ScheduleStats, Scheduler};
 pub struct IncrementalScheduler {
     rounds: u32,
     streets_per_round: u32,
-    max_shuffles_per_street: u32,
+    max_shuffles_per_street: usize,
 }
 
 impl Default for IncrementalScheduler {
@@ -27,9 +27,20 @@ impl IncrementalScheduler {
         self.streets_per_round = streets_per_round;
     }
 
-    pub fn set_max_shuffles_per_street(&mut self, max_shuffles: u32) {
+    pub fn set_max_shuffles_per_street(&mut self, max_shuffles: usize) {
         self.max_shuffles_per_street = max_shuffles;
     }
+}
+
+fn bounded_factorial(num: usize, max: usize) -> usize {
+    let mut fact = 1;
+    for n in (2..=num).rev() {
+        fact *= n;
+        if fact > max {
+            return max;
+        }
+    }
+    fact
 }
 
 impl Scheduler for IncrementalScheduler {
@@ -51,7 +62,7 @@ impl Scheduler for IncrementalScheduler {
                 stats.total_wait_time.into_iter().collect();
             wait_times.sort_unstable_by(|a, b| b.1.cmp(&a.1));
 
-            let mut streets_tried = 0;
+            let mut best_count = 0;
             let mut best_score = stats.score;
             let mut best_change: Option<(Schedule, ScheduleStats)> = None;
             for &(street_id, wait_time) in wait_times.iter() {
@@ -60,34 +71,43 @@ impl Scheduler for IncrementalScheduler {
                     continue;
                 }
 
+                let shuffles = bounded_factorial(
+                    schedule.num_streets_in_intersection(street_id),
+                    self.max_shuffles_per_street,
+                );
                 println!(
-                    "Adding time to street {}: {} total wait time, \
-                    {} streets in the intersection",
+                    "Street {}: {} total wait time, \
+                    {} streets in the intersection, {} shuffles",
                     street_id,
                     wait_time,
                     schedule.num_streets_in_intersection(street_id),
+                    shuffles,
                 );
+                for add_time in 0..=2 {
+                    println!(
+                        "  Adding {} time to street {}",
+                        add_time, street_id,
+                    );
 
-                for _ in 1..=self.max_shuffles_per_street {
                     let mut new_schedule = schedule.clone();
-                    new_schedule.add_street_time(street_id, 1);
-                    new_schedule.shuffle_intersection(street_id);
-                    let new_stats = new_schedule.stats().unwrap();
-
-                    if new_stats.score > best_score {
-                        println!(
-                            "  => New best score: {} ***",
-                            new_stats.score
-                        );
-                        best_score = new_stats.score;
-                        best_change = Some((new_schedule, new_stats));
-                    } else {
-                        println!("  => New score: {}", new_stats.score);
+                    new_schedule.add_street_time(street_id, add_time);
+                    for _ in 0..=shuffles {
+                        let new_stats = new_schedule.stats().unwrap();
+                        if new_stats.score > best_score {
+                            println!(
+                                "  => New best score: {} ***",
+                                new_stats.score
+                            );
+                            best_count += 1;
+                            best_score = new_stats.score;
+                            best_change =
+                                Some((new_schedule.clone(), new_stats));
+                        }
+                        new_schedule.shuffle_intersection(street_id);
                     }
                 }
 
-                streets_tried += 1;
-                if streets_tried == self.streets_per_round {
+                if best_count >= 5 {
                     break;
                 }
             }
