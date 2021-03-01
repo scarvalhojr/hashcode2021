@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use std::convert::TryInto;
+use std::convert::{TryFrom, TryInto};
 use std::fmt::{Display, Formatter};
 use std::num::ParseIntError;
 use std::str::FromStr;
@@ -27,6 +27,28 @@ pub struct Street {
     pub start_insersection: IntersectionId,
     pub end_intersection: IntersectionId,
     pub travel_time: Time,
+}
+
+impl Simulation {
+    pub fn max_theoretical_score(&self) -> u32 {
+        self.bonus * u32::try_from(self.car_paths.len()).unwrap()
+            + self
+                .car_paths
+                .iter()
+                .map(|streets| {
+                    let min_travel_time: u32 = streets
+                        .iter()
+                        .skip(1)
+                        .map(|&street_id| self.streets[street_id].travel_time)
+                        .sum();
+                    if min_travel_time <= self.duration {
+                        self.duration - min_travel_time
+                    } else {
+                        0
+                    }
+                })
+                .sum::<u32>()
+    }
 }
 
 impl FromStr for Simulation {
@@ -130,11 +152,13 @@ impl Display for Simulation {
             Intersections: {}\n\
             Streets      : {}\n\
             Cars         : {}\n\
+            Max score    : {}\n\
             Bonus points : {}",
             self.duration,
             self.num_intersections,
             self.streets.len(),
             self.car_paths.len(),
+            self.max_theoretical_score(),
             self.bonus,
         )
     }

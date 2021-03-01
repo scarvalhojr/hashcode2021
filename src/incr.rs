@@ -1,6 +1,6 @@
 use super::*;
-use crate::sched::{Schedule, ScheduleStats, Scheduler};
 use crate::naive::NaiveScheduler;
+use crate::sched::{Schedule, ScheduleStats, Scheduler};
 
 pub struct IncrementalScheduler {
     rounds: u32,
@@ -47,10 +47,8 @@ impl Scheduler for IncrementalScheduler {
             println!("Round {}, current score: {}", round, stats.score);
 
             // Sort streets by total wait time
-            let mut wait_times: Vec<(StreetId, Time)> = stats
-                .total_wait_time
-                .into_iter()
-                .collect();
+            let mut wait_times: Vec<(StreetId, Time)> =
+                stats.total_wait_time.into_iter().collect();
             wait_times.sort_unstable_by(|a, b| b.1.cmp(&a.1));
 
             let mut streets_tried = 0;
@@ -65,7 +63,8 @@ impl Scheduler for IncrementalScheduler {
                 println!(
                     "Adding time to street {}: {} total wait time, \
                     {} streets in the intersection",
-                    street_id, wait_time,
+                    street_id,
+                    wait_time,
                     schedule.num_streets_in_intersection(street_id),
                 );
 
@@ -76,7 +75,10 @@ impl Scheduler for IncrementalScheduler {
                     let new_stats = new_schedule.stats().unwrap();
 
                     if new_stats.score > best_score {
-                        println!("  => New best score: {} ***", new_stats.score);
+                        println!(
+                            "  => New best score: {} ***",
+                            new_stats.score
+                        );
                         best_score = new_stats.score;
                         best_change = Some((new_schedule, new_stats));
                     } else {

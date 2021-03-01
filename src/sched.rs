@@ -1,8 +1,8 @@
 use super::*;
+use rand::{seq::SliceRandom, thread_rng};
 use std::collections::{HashSet, VecDeque};
 use std::convert::TryFrom;
 use std::fmt::{Display, Formatter};
-use rand::{seq::SliceRandom, thread_rng};
 
 pub trait Scheduler {
     fn schedule<'a>(&self, simulation: &'a Simulation) -> Schedule<'a>;
@@ -114,40 +114,23 @@ impl<'a> Schedule<'a> {
             .or_insert_with(|| Intersection::new(street_id, time));
     }
 
-    pub fn add_street_time(
-        &mut self,
-        street_id: StreetId,
-        add_time: Time,
-    ) {
-        let inter_id = self
-            .simulation
-            .streets[street_id]
-            .end_intersection;
+    pub fn add_street_time(&mut self, street_id: StreetId, add_time: Time) {
+        let inter_id = self.simulation.streets[street_id].end_intersection;
         self.intersections
             .entry(inter_id)
             .and_modify(|inter| inter.add_street_time(street_id, add_time));
     }
 
     pub fn shuffle_intersection(&mut self, street_id: StreetId) {
-        let inter_id = self
-            .simulation
-            .streets[street_id]
-            .end_intersection;
+        let inter_id = self.simulation.streets[street_id].end_intersection;
         self.intersections
             .entry(inter_id)
             .and_modify(|inter| inter.shuffle());
     }
 
     pub fn num_streets_in_intersection(&self, street_id: StreetId) -> usize {
-        let inter_id = self
-            .simulation
-            .streets[street_id]
-            .end_intersection;
-        self.intersections
-            .get(&inter_id)
-            .unwrap()
-            .turns
-            .len()
+        let inter_id = self.simulation.streets[street_id].end_intersection;
+        self.intersections.get(&inter_id).unwrap().turns.len()
     }
 
     pub fn is_green(
@@ -163,20 +146,9 @@ impl<'a> Schedule<'a> {
     }
 
     pub fn is_street_always_green(&self, street_id: StreetId) -> bool {
-        let inter_id = self
-            .simulation
-            .streets[street_id]
-            .end_intersection;
-        let turns = &self
-            .intersections
-            .get(&inter_id)
-            .unwrap()
-            .turns;
-        if turns.len() == 1 && turns[0].0 == street_id {
-            true
-        } else {
-            false
-        }
+        let inter_id = self.simulation.streets[street_id].end_intersection;
+        let turns = &self.intersections.get(&inter_id).unwrap().turns;
+        turns.len() == 1 && turns[0].0 == street_id
     }
 
     pub fn stats(&self) -> Result<ScheduleStats, String> {
@@ -351,6 +323,7 @@ impl Display for ScheduleStats {
             Earliest arrival: {}\n\
             Latest arrival  : {}\n\
             Crossed streets : {}\n\
+            Total wait time : {}\n\
             Schedule score  : {}",
             self.num_intersections,
             self.num_streets,
@@ -358,6 +331,7 @@ impl Display for ScheduleStats {
             self.earliest_arrival,
             self.latest_arrival,
             self.crossed_streets.len(),
+            self.total_wait_time.values().sum::<Time>(),
             self.score,
         )
     }

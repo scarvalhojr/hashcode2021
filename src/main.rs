@@ -55,8 +55,8 @@ fn main() {
         .get_matches();
 
     let rounds = if args.is_present("rounds") {
-        let value = value_t!(args.value_of("rounds"), u32)
-            .unwrap_or_else(|e| e.exit());
+        let value =
+            value_t!(args.value_of("rounds"), u32).unwrap_or_else(|e| e.exit());
         Some(value)
     } else {
         None
@@ -109,7 +109,7 @@ fn main() {
                 scheduler.set_max_shuffles_per_street(value);
             }
             scheduler.schedule(&simulation)
-        },
+        }
         "naive" => NaiveScheduler::default().schedule(&simulation),
         "traffic" => TrafficScheduler::default().schedule(&simulation),
         _ => unreachable!(),
