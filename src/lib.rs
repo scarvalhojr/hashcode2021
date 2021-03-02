@@ -10,10 +10,10 @@ pub mod naive;
 pub mod sched;
 pub mod traffic;
 
-type Time = u32;
-type CarId = usize;
-type StreetId = usize;
-type IntersectionId = u32;
+pub type Time = u32;
+pub type CarId = usize;
+pub type StreetId = usize;
+pub type IntersectionId = u32;
 
 pub struct Simulation {
     pub duration: Time,

@@ -4,16 +4,18 @@ use crate::sched::{Schedule, ScheduleStats, Scheduler};
 
 pub struct IncrementalScheduler {
     rounds: u32,
-    streets_per_round: u32,
+    min_wait_time: Time,
+    max_streets_per_round: usize,
     max_shuffles_per_street: usize,
 }
 
 impl Default for IncrementalScheduler {
     fn default() -> Self {
         Self {
-            rounds: 20,
-            streets_per_round: 5,
-            max_shuffles_per_street: 5,
+            rounds: 10,
+            min_wait_time: 10,
+            max_streets_per_round: 10,
+            max_shuffles_per_street: 10,
         }
     }
 }
@@ -23,8 +25,12 @@ impl IncrementalScheduler {
         self.rounds = rounds;
     }
 
-    pub fn set_streets_per_round(&mut self, streets_per_round: u32) {
-        self.streets_per_round = streets_per_round;
+    pub fn set_min_wait_time(&mut self, min_wait_time: u32) {
+        self.min_wait_time = min_wait_time;
+    }
+
+    pub fn set_max_streets_per_round(&mut self, max_streets_per_round: usize) {
+        self.max_streets_per_round = max_streets_per_round;
     }
 
     pub fn set_max_shuffles_per_street(&mut self, max_shuffles: usize) {
@@ -51,21 +57,34 @@ impl Scheduler for IncrementalScheduler {
         println!(
             "\n\
             Incremental scheduler\n\
-            ---------------------",
+            ------------------------\n\
+            Rounds                 : {}\n\
+            Min wait time          : {}\n\
+            Max streets per round  : {}\n\
+            Max shuffles per street: {}",
+            self.rounds,
+            self.min_wait_time,
+            self.max_streets_per_round,
+            self.max_shuffles_per_street,
         );
 
         for round in 1..=self.rounds {
             println!("Round {}, current score: {}", round, stats.score);
 
             // Sort streets by total wait time
-            let mut wait_times: Vec<(StreetId, Time)> =
-                stats.total_wait_time.into_iter().collect();
+            let mut wait_times: Vec<(StreetId, Time)> = stats
+                .total_wait_time
+                .into_iter()
+                .filter(|&(_, time)| time >= self.min_wait_time)
+                .collect();
             wait_times.sort_unstable_by(|a, b| b.1.cmp(&a.1));
 
             let mut best_count = 0;
             let mut best_score = stats.score;
             let mut best_change: Option<(Schedule, ScheduleStats)> = None;
-            for &(street_id, wait_time) in wait_times.iter() {
+            for &(street_id, wait_time) in
+                wait_times.iter().take(self.max_streets_per_round)
+            {
                 if schedule.is_street_always_green(street_id) {
                     // This street is always green so can't be improved
                     continue;

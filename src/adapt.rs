@@ -39,14 +39,6 @@ impl Scheduler for AdaptiveScheduler {
             }
         }
 
-        println!(
-            "\n\
-            Adaptive scheduler\n\
-            ------------------\n\
-            Ignored cars: {}",
-            ignored_cars.len(),
-        );
-
         let mut inter_order: HashMap<IntersectionId, Vec<Option<StreetId>>> =
             HashMap::new();
         for (&inter_id, streets) in crossed_streets.iter() {
@@ -133,6 +125,18 @@ impl Scheduler for AdaptiveScheduler {
             // Remove cars that reached their end
             moving_cars.retain(|_, car| car.state != CarState::Arrived);
         }
+
+        let unused_count: usize =
+            crossed_streets.values().map(|streets| streets.len()).sum();
+        println!(
+            "\n\
+            Adaptive scheduler\n\
+            ------------------\n\
+            Ignored cars  : {}\n\
+            Unused streets: {}",
+            ignored_cars.len(),
+            unused_count,
+        );
 
         let mut schedule = Schedule::new(simulation);
         for (&inter_id, streets) in inter_order.iter() {
