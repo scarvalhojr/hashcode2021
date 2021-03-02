@@ -4,6 +4,7 @@ use std::fmt::{Display, Formatter};
 use std::num::ParseIntError;
 use std::str::FromStr;
 
+pub mod adapt;
 pub mod incr;
 pub mod naive;
 pub mod sched;

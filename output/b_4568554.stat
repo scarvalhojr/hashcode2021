@@ -1,0 +1,25 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 5070
+Intersections: 7073
+Streets      : 9102
+Cars         : 1000
+Max score    : 4576202
+Bonus points : 1000
+
+Adaptive scheduler
+------------------
+Ignored cars: 0
+
+Schedule
+--------
+Intersections   : 6296
+Street lights   : 7964
+Arrived cars    : 1000
+Earliest arrival: 36
+Latest arrival  : 5043
+Crossed streets : 7964
+Total wait time : 6026
+Schedule score  : 4568554

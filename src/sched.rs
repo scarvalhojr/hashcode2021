@@ -242,22 +242,22 @@ impl<'a> Schedule<'a> {
 }
 
 #[derive(PartialEq)]
-enum CarState {
+pub enum CarState {
     Ready,
     Waiting,
     Arrived,
 }
 
-struct Car {
+pub struct Car {
     // Remaining path in reverse order (last element is current street)
     remain_path: Vec<StreetId>,
     // Remaining time in current street
     remain_time: Time,
-    state: CarState,
+    pub state: CarState,
 }
 
 impl Car {
-    fn new(full_path: &[StreetId]) -> Self {
+    pub fn new(full_path: &[StreetId]) -> Self {
         Self {
             remain_path: full_path.iter().copied().rev().collect(),
             remain_time: 0,
@@ -265,11 +265,11 @@ impl Car {
         }
     }
 
-    fn start(&mut self) -> StreetId {
+    pub fn start(&mut self) -> StreetId {
         self.remain_path.pop().unwrap()
     }
 
-    fn cross_intersection(&mut self, simul: &Simulation) {
+    pub fn cross_intersection(&mut self, simul: &Simulation) {
         assert_eq!(self.remain_time, 0);
 
         let street_id = self.remain_path.last().copied().unwrap();
@@ -277,7 +277,7 @@ impl Car {
         self.state = CarState::Ready;
     }
 
-    fn move_forward(&mut self) -> Option<StreetId> {
+    pub fn move_forward(&mut self) -> Option<StreetId> {
         // Move forward on the current street
         self.remain_time -= 1;
 

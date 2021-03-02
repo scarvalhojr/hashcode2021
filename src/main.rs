@@ -1,4 +1,5 @@
 use clap::{crate_description, value_t, App, Arg};
+use hashcode2021::adapt::AdaptiveScheduler;
 use hashcode2021::incr::IncrementalScheduler;
 use hashcode2021::naive::NaiveScheduler;
 use hashcode2021::sched::{Schedule, Scheduler};
@@ -20,7 +21,7 @@ fn main() {
             Arg::with_name("algorithm")
                 .help("Scheduler algorithm")
                 .required(true)
-                .possible_values(&["incremental", "naive", "traffic"])
+                .possible_values(&["adaptive", "incremental", "naive", "traffic"])
                 .index(2),
         )
         .arg(
@@ -82,6 +83,7 @@ fn main() {
     );
 
     let schedule = match args.value_of("algorithm").unwrap() {
+        "adaptive" => AdaptiveScheduler::default().schedule(&simulation),
         "incremental" => {
             let mut scheduler = IncrementalScheduler::default();
             if let Some(value) = rounds {
