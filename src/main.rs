@@ -12,28 +12,37 @@ fn main() {
     let args = App::new(crate_description!())
         .arg(
             Arg::with_name("input")
-                .value_name("input file")
-                .help("File path to puzzle input")
+                .value_name("simulation file")
+                .help("File with simulation input")
                 .required(true)
                 .index(1),
         )
         .arg(
-            Arg::with_name("algorithm")
-                .help("Scheduler algorithm")
+            Arg::with_name("scheduler")
+                .help("Load schedule from file or run scheduler algorithm")
                 .required(true)
-                .possible_values(&["adaptive", "incremental", "naive", "traffic"])
+                .possible_values(&["load", "naive", "adaptive", "traffic"])
                 .index(2),
+        )
+        .arg(
+            Arg::with_name("schedule")
+                .value_name("schedule file")
+                .help("Schedule file to load as starting solution")
+                .required_if("scheduler", "load")
+                .short("l")
+                .long("schedule-file")
+                .takes_value(true),
         )
         .arg(
             Arg::with_name("output")
                 .value_name("output file")
-                .help("File path to save solution")
+                .help("File to save schedule solution")
                 .short("o")
                 .long("output")
                 .takes_value(true),
         )
         .arg(
-            Arg::with_name("rounds")
+            Arg::with_name("incremental-rounds")
                 .help("Number of incremental rounds")
                 .short("r")
                 .long("incremental-rounds")
@@ -62,9 +71,9 @@ fn main() {
         )
         .get_matches();
 
-    let rounds = if args.is_present("rounds") {
-        let value =
-            value_t!(args.value_of("rounds"), u32).unwrap_or_else(|e| e.exit());
+    let incremental_rounds = if args.is_present("incremental-rounds") {
+        let value = value_t!(args.value_of("incremental-rounds"), u32)
+            .unwrap_or_else(|e| e.exit());
         Some(value)
     } else {
         None
@@ -97,14 +106,7 @@ fn main() {
 
     println!(crate_description!());
 
-    let simulation = match read_input(args.value_of("input").unwrap()) {
-        Ok(data) => data,
-        Err(err) => {
-            println!("Failed to read input: {}", err);
-            exit(2);
-        }
-    };
-
+    let simulation = load_simulation(args.value_of("input").unwrap());
     println!(
         "\n\
         Simulation\n\
@@ -113,24 +115,13 @@ fn main() {
         simulation
     );
 
-    let schedule = match args.value_of("algorithm").unwrap() {
-        "adaptive" => AdaptiveScheduler::default().schedule(&simulation),
-        "incremental" => {
-            let mut scheduler = IncrementalScheduler::default();
-            if let Some(value) = rounds {
-                scheduler.set_rounds(value);
-            }
-            if let Some(value) = min_wait_time {
-                scheduler.set_min_wait_time(value);
-            }
-            if let Some(value) = max_streets_per_round {
-                scheduler.set_max_streets_per_round(value);
-            }
-            if let Some(value) = max_shuffles_per_street {
-                scheduler.set_max_shuffles_per_street(value);
-            }
-            scheduler.schedule(&simulation)
+    let mut schedule = match args.value_of("scheduler").unwrap() {
+        "load" => {
+            let mut schedule = Schedule::new(&simulation);
+            load_schedule(&mut schedule, args.value_of("schedule").unwrap());
+            schedule
         }
+        "adaptive" => AdaptiveScheduler::default().schedule(&simulation),
         "naive" => NaiveScheduler::default().schedule(&simulation),
         "traffic" => TrafficScheduler::default().schedule(&simulation),
         _ => unreachable!(),
@@ -140,7 +131,7 @@ fn main() {
         Ok(score) => score,
         Err(err) => {
             println!("\nError: {}", err);
-            exit(3);
+            exit(4);
         }
     };
 
@@ -152,6 +143,36 @@ fn main() {
         sched_stats,
     );
 
+    if let Some(rounds) = incremental_rounds {
+        let mut scheduler = IncrementalScheduler::new(rounds);
+        if let Some(value) = min_wait_time {
+            scheduler.set_min_wait_time(value);
+        }
+        if let Some(value) = max_streets_per_round {
+            scheduler.set_max_streets_per_round(value);
+        }
+        if let Some(value) = max_shuffles_per_street {
+            scheduler.set_max_shuffles_per_street(value);
+        }
+        schedule = scheduler.improve(schedule);
+
+        let sched_stats = match schedule.stats() {
+            Ok(score) => score,
+            Err(err) => {
+                println!("\nError: {}", err);
+                exit(3);
+            }
+        };
+
+        println!(
+            "\n\
+            Schedule\n\
+            --------\n\
+            {}",
+            sched_stats,
+        );
+    }
+
     if let Some(filename) = args.value_of("output") {
         write_output(&filename, &schedule);
     }
@@ -159,10 +180,31 @@ fn main() {
     exit(0);
 }
 
-fn read_input(filename: &str) -> Result<Simulation, String> {
-    read_to_string(filename)
-        .map_err(|err| err.to_string())?
-        .parse()
+fn load_simulation(filename: &str) -> Simulation {
+    match read_file(filename).parse() {
+        Ok(data) => data,
+        Err(err) => {
+            println!("Failed to parse simulation file: {}", err);
+            exit(3);
+        }
+    }
+}
+
+fn load_schedule(schedule: &mut Schedule, filename: &str) {
+    if let Err(err) = schedule.load_from_str(&read_file(filename)) {
+        println!("Failed to parse schedule file: {}", err);
+        exit(5);
+    }
+}
+
+fn read_file(filename: &str) -> String {
+    match read_to_string(filename) {
+        Ok(data) => data,
+        Err(err) => {
+            println!("Failed to read '{}': {}", filename, err);
+            exit(2);
+        }
+    }
 }
 
 fn write_output(filename: &str, sched: &Schedule) {

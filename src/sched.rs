@@ -14,7 +14,7 @@ pub struct Schedule<'a> {
     intersections: HashMap<IntersectionId, Intersection>,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Default)]
 pub struct Intersection {
     turns: Vec<(StreetId, Time)>,
     cycle: Time,
@@ -238,6 +238,95 @@ impl<'a> Schedule<'a> {
         }
 
         Ok(stats)
+    }
+
+    pub fn load_from_str(&mut self, s: &str) -> Result<(), String> {
+        let mut lines = s.lines().zip(1..);
+        let mut intersections = HashMap::new();
+
+        let num_intersections: usize = lines
+            .next()
+            .ok_or_else(|| "Missing first line".to_string())?
+            .0
+            .parse()
+            .map_err(|err: ParseIntError| {
+                format!("Line 1: Invalid number: {}", err)
+            })?;
+
+        for _ in 0..num_intersections {
+            let (line, line_num) = lines
+                .next()
+                .ok_or_else(|| "Missing intersections".to_string())?;
+            let inter_id: IntersectionId =
+                line.parse().map_err(|err: ParseIntError| {
+                    format!("Line {}: Invalid number: {}", line_num, err)
+                })?;
+            if inter_id >= self.simulation.num_intersections {
+                return Err(format!(
+                    "Intersection ID {} is out of bounds",
+                    inter_id
+                ));
+            }
+
+            let mut intersection = Intersection::default();
+
+            let (line, line_num) = lines.next().ok_or_else(|| {
+                format!("Incomplete intersection {}", inter_id)
+            })?;
+            let num_streets: usize =
+                line.parse().map_err(|err: ParseIntError| {
+                    format!("Line {}: Invalid number: {}", line_num, err)
+                })?;
+            let mut added_streets = HashSet::new();
+
+            for _ in 0..num_streets {
+                let (line, line_num) = lines.next().ok_or_else(|| {
+                    format!("Incomplete intersection {}", inter_id)
+                })?;
+                let mut fields = line.split_whitespace();
+                let street_name = fields.next().ok_or_else(|| {
+                    format!("Line {}: missing street name", line_num)
+                })?;
+                let street_id = self
+                    .simulation
+                    .streets
+                    .iter()
+                    .enumerate()
+                    .find(|(_, street)| street.name == street_name)
+                    .map(|(street_id, _)| street_id)
+                    .ok_or_else(|| {
+                        format!(
+                            "Line {}: unknown street: {}",
+                            line_num, street_name
+                        )
+                    })?;
+                if !added_streets.insert(street_id) {
+                    return Err(format!(
+                        "Line {}: street {} appears multiple times",
+                        line_num, street_name
+                    ));
+                }
+                let time = fields
+                    .next()
+                    .ok_or_else(|| {
+                        format!(
+                            "Line {}: missing duration of green light at {}",
+                            line_num, street_name
+                        )
+                    })?
+                    .parse()
+                    .map_err(|err: ParseIntError| {
+                        format!("Line {}: Invalid number: {}", line_num, err)
+                    })?;
+
+                intersection.add_street(street_id, time);
+            }
+
+            intersections.insert(inter_id, intersection);
+        }
+
+        self.intersections = intersections;
+        Ok(())
     }
 }
 

@@ -1,6 +1,5 @@
 use super::*;
-use crate::naive::NaiveScheduler;
-use crate::sched::{Schedule, ScheduleStats, Scheduler};
+use crate::sched::{Schedule, ScheduleStats};
 
 pub struct IncrementalScheduler {
     rounds: u32,
@@ -9,20 +8,14 @@ pub struct IncrementalScheduler {
     max_shuffles_per_street: usize,
 }
 
-impl Default for IncrementalScheduler {
-    fn default() -> Self {
+impl IncrementalScheduler {
+    pub fn new(rounds: u32) -> Self {
         Self {
-            rounds: 10,
+            rounds,
             min_wait_time: 10,
             max_streets_per_round: 10,
             max_shuffles_per_street: 10,
         }
-    }
-}
-
-impl IncrementalScheduler {
-    pub fn set_rounds(&mut self, rounds: u32) {
-        self.rounds = rounds;
     }
 
     pub fn set_min_wait_time(&mut self, min_wait_time: u32) {
@@ -36,28 +29,14 @@ impl IncrementalScheduler {
     pub fn set_max_shuffles_per_street(&mut self, max_shuffles: usize) {
         self.max_shuffles_per_street = max_shuffles;
     }
-}
 
-fn bounded_factorial(num: usize, max: usize) -> usize {
-    let mut fact = 1;
-    for n in (2..=num).rev() {
-        fact *= n;
-        if fact > max {
-            return max;
-        }
-    }
-    fact
-}
-
-impl Scheduler for IncrementalScheduler {
-    fn schedule<'a>(&self, simulation: &'a Simulation) -> Schedule<'a> {
-        let mut schedule = NaiveScheduler::default().schedule(simulation);
+    pub fn improve<'a>(&self, mut schedule: Schedule<'a>) -> Schedule<'a> {
         let mut stats = schedule.stats().unwrap();
 
         println!(
             "\n\
             Incremental scheduler\n\
-            ------------------------\n\
+            ---------------------\n\
             Rounds                 : {}\n\
             Min wait time          : {}\n\
             Max streets per round  : {}\n\
@@ -103,19 +82,15 @@ impl Scheduler for IncrementalScheduler {
                     shuffles,
                 );
                 for add_time in 0..=2 {
-                    println!(
-                        "  Adding {} time to street {}",
-                        add_time, street_id,
-                    );
-
                     let mut new_schedule = schedule.clone();
                     new_schedule.add_street_time(street_id, add_time);
                     for _ in 0..=shuffles {
                         let new_stats = new_schedule.stats().unwrap();
                         if new_stats.score > best_score {
                             println!(
-                                "  => New best score: {} ***",
-                                new_stats.score
+                                "  => New best score by adding {} to street \
+                                {}: {} ***",
+                                add_time, street_id, new_stats.score
                             );
                             best_count += 1;
                             best_score = new_stats.score;
@@ -142,4 +117,15 @@ impl Scheduler for IncrementalScheduler {
 
         schedule
     }
+}
+
+fn bounded_factorial(num: usize, max: usize) -> usize {
+    let mut fact = 1;
+    for n in (2..=num).rev() {
+        fact *= n;
+        if fact > max {
+            return max;
+        }
+    }
+    fact
 }
