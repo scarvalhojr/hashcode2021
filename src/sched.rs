@@ -69,6 +69,7 @@ impl Intersection {
         for (id, time) in self.turns.iter_mut() {
             if *id == street_id {
                 *time += add_time;
+                self.cycle += add_time;
                 return;
             }
         }
