@@ -1,0 +1,551 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 5070
+Intersections: 7073
+Streets      : 9102
+Cars         : 1000
+Max score    : 4576202
+Bonus points : 1000
+
+Schedule
+--------
+Intersections   : 6296
+Street lights   : 7964
+Arrived cars    : 1000
+Earliest arrival: 36
+Latest arrival  : 5043
+Crossed streets : 7964
+Total wait time : 6026
+Schedule score  : 4568554
+
+Incremental scheduler
+---------------------
+Rounds                 : 20
+Min wait time          : 10
+Max streets per round  : 50
+Max shuffles per street: 200
+Round 1, current score: 4568554
+Street 4432: 54 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568555 ***
+  => New best score by adding 0 to street 4432: 4568561 ***
+  => New best score by adding 1 to street 4432: 4568567 ***
+  => New best score by adding 2 to street 4432: 4568573 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4291: 37 total wait time, 7 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4291: 4568578 ***
+  => New best score by adding 1 to street 4291: 4568582 ***
+  => New best score by adding 2 to street 4291: 4568586 ***
+  => New best score by adding 2 to street 4291: 4568589 ***
+Round 2, current score: 4568589
+Street 4432: 54 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568590 ***
+  => New best score by adding 0 to street 4432: 4568595 ***
+  => New best score by adding 0 to street 4432: 4568599 ***
+  => New best score by adding 0 to street 4432: 4568603 ***
+  => New best score by adding 1 to street 4432: 4568608 ***
+  => New best score by adding 2 to street 4432: 4568610 ***
+Round 3, current score: 4568610
+Street 4432: 39 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568612 ***
+  => New best score by adding 1 to street 4432: 4568614 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 7252: 4568616 ***
+Street 6094: 36 total wait time, 10 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 6094: 4568617 ***
+  => New best score by adding 0 to street 6094: 4568622 ***
+  => New best score by adding 1 to street 6094: 4568656 ***
+Round 4, current score: 4568656
+Street 4432: 39 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4432: 4568660 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 7252: 4568672 ***
+  => New best score by adding 1 to street 7252: 4568674 ***
+Street 6457: 33 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 6457: 4568676 ***
+Street 4293: 31 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 0 to street 4293: 4568689 ***
+  => New best score by adding 1 to street 4293: 4568693 ***
+Round 5, current score: 4568693
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568695 ***
+  => New best score by adding 1 to street 4432: 4568703 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 7252: 4568711 ***
+Street 6457: 33 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 6457: 4568713 ***
+Street 6181: 29 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7023: 27 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 7990: 25 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6955: 24 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 0 to street 6955: 4568722 ***
+  => New best score by adding 1 to street 6955: 4568728 ***
+Round 6, current score: 4568728
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4432: 4568738 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 7252: 4568746 ***
+Street 6181: 29 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7023: 27 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 7990: 25 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 660: 22 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 3887: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8169: 21 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 8169: 4568750 ***
+  => New best score by adding 2 to street 8169: 4568753 ***
+Street 8229: 21 total wait time, 3 streets in the intersection, 6 shuffles
+Street 2783: 21 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 2783: 4568775 ***
+Round 7, current score: 4568775
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4432: 4568785 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 7252: 4568793 ***
+Street 6181: 29 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7023: 27 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 7990: 25 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 660: 22 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 8229: 21 total wait time, 3 streets in the intersection, 6 shuffles
+Street 3887: 21 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 0 to street 3887: 4568795 ***
+Street 8169: 21 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 8169: 4568797 ***
+  => New best score by adding 2 to street 8169: 4568800 ***
+Round 8, current score: 4568800
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568802 ***
+  => New best score by adding 1 to street 4432: 4568810 ***
+  => New best score by adding 1 to street 4432: 4568814 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 7252: 4568818 ***
+Street 6181: 29 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7023: 27 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 7990: 25 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 660: 22 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8229: 21 total wait time, 3 streets in the intersection, 6 shuffles
+Street 3887: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 629: 20 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 629: 4568821 ***
+Round 9, current score: 4568821
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568823 ***
+  => New best score by adding 1 to street 4432: 4568831 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 7252: 4568837 ***
+Street 6181: 29 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7023: 27 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7990: 25 total wait time, 2 streets in the intersection, 2 shuffles
+  => New best score by adding 1 to street 7990: 4568839 ***
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 660: 22 total wait time, 4 streets in the intersection, 24 shuffles
+Street 3887: 21 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 0 to street 3887: 4568841 ***
+Round 10, current score: 4568841
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568843 ***
+  => New best score by adding 1 to street 4432: 4568851 ***
+  => New best score by adding 1 to street 4432: 4568855 ***
+Street 7252: 37 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 7252: 4568857 ***
+  => New best score by adding 1 to street 7252: 4568859 ***
+Round 11, current score: 4568859
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4432: 4568869 ***
+Street 6181: 29 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7023: 27 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 7990: 25 total wait time, 2 streets in the intersection, 2 shuffles
+  => New best score by adding 1 to street 7990: 4568877 ***
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 660: 22 total wait time, 4 streets in the intersection, 24 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 8229: 21 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7252: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 7059: 20 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 7059: 4568879 ***
+  => New best score by adding 0 to street 7059: 4568882 ***
+  => New best score by adding 0 to street 7059: 4568883 ***
+  => New best score by adding 0 to street 7059: 4568884 ***
+  => New best score by adding 0 to street 7059: 4568888 ***
+Round 12, current score: 4568888
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568890 ***
+  => New best score by adding 1 to street 4432: 4568898 ***
+Street 6181: 29 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7023: 28 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 7990: 25 total wait time, 2 streets in the intersection, 2 shuffles
+  => New best score by adding 1 to street 7990: 4568906 ***
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 660: 22 total wait time, 4 streets in the intersection, 24 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7252: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8229: 21 total wait time, 3 streets in the intersection, 6 shuffles
+Street 36: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8123: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4877: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7059: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4882: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4017: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4636: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4009: 18 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6457: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6106: 18 total wait time, 10 streets in the intersection, 200 shuffles
+Street 6098: 17 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7063: 17 total wait time, 6 streets in the intersection, 200 shuffles
+Street 8646: 17 total wait time, 3 streets in the intersection, 6 shuffles
+Street 8240: 17 total wait time, 2 streets in the intersection, 2 shuffles
+Street 5043: 17 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6104: 16 total wait time, 10 streets in the intersection, 200 shuffles
+Street 1564: 16 total wait time, 7 streets in the intersection, 200 shuffles
+Street 8033: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 238: 16 total wait time, 7 streets in the intersection, 200 shuffles
+Street 640: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 1725: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 7047: 15 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4430: 15 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4364: 15 total wait time, 5 streets in the intersection, 120 shuffles
+Street 667: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 6103: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 6109: 14 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4670: 14 total wait time, 3 streets in the intersection, 6 shuffles
+Street 3895: 14 total wait time, 5 streets in the intersection, 120 shuffles
+Street 629: 14 total wait time, 4 streets in the intersection, 24 shuffles
+Street 3658: 14 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4178: 14 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4296: 13 total wait time, 7 streets in the intersection, 200 shuffles
+Street 642: 13 total wait time, 4 streets in the intersection, 24 shuffles
+Street 1065: 13 total wait time, 3 streets in the intersection, 6 shuffles
+Street 2783: 13 total wait time, 3 streets in the intersection, 6 shuffles
+Round 13, current score: 4568906
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568908 ***
+  => New best score by adding 1 to street 4432: 4568916 ***
+Street 6181: 29 total wait time, 8 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 6181: 4568918 ***
+  => New best score by adding 1 to street 6181: 4568920 ***
+  => New best score by adding 1 to street 6181: 4568928 ***
+Round 14, current score: 4568928
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4432: 4568938 ***
+Street 7023: 28 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 5753: 4568940 ***
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 660: 22 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 0 to street 660: 4568946 ***
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 7252: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8229: 21 total wait time, 3 streets in the intersection, 6 shuffles
+Street 36: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8123: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4877: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4017: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4636: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7059: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4882: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4009: 18 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6457: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6106: 18 total wait time, 10 streets in the intersection, 200 shuffles
+Street 8646: 17 total wait time, 3 streets in the intersection, 6 shuffles
+Street 5043: 17 total wait time, 3 streets in the intersection, 6 shuffles
+Street 8240: 17 total wait time, 2 streets in the intersection, 2 shuffles
+Street 7063: 17 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6098: 17 total wait time, 10 streets in the intersection, 200 shuffles
+Street 238: 16 total wait time, 7 streets in the intersection, 200 shuffles
+Street 7986: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 1564: 16 total wait time, 7 streets in the intersection, 200 shuffles
+Street 8033: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6763: 16 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7990: 16 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6104: 16 total wait time, 10 streets in the intersection, 200 shuffles
+Street 667: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 1725: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 7047: 15 total wait time, 2 streets in the intersection, 2 shuffles
+Street 7178: 15 total wait time, 8 streets in the intersection, 200 shuffles
+Street 4430: 15 total wait time, 3 streets in the intersection, 6 shuffles
+Street 640: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 6103: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4364: 15 total wait time, 5 streets in the intersection, 120 shuffles
+Street 629: 14 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4178: 14 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6109: 14 total wait time, 10 streets in the intersection, 200 shuffles
+Street 3658: 14 total wait time, 3 streets in the intersection, 6 shuffles
+Street 3895: 14 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4670: 14 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4305: 13 total wait time, 3 streets in the intersection, 6 shuffles
+Street 5105: 13 total wait time, 2 streets in the intersection, 2 shuffles
+Round 15, current score: 4568946
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568948 ***
+  => New best score by adding 1 to street 4432: 4568956 ***
+Street 7023: 28 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 2 to street 5753: 4568958 ***
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 8229: 21 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 8229: 4568959 ***
+  => New best score by adding 2 to street 8229: 4568961 ***
+Round 16, current score: 4568961
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4432: 4568971 ***
+Street 7023: 28 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 5753: 4568973 ***
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7252: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 36: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 660: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4877: 20 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 4877: 4568976 ***
+Street 8123: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4636: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4882: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7059: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4017: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6106: 18 total wait time, 10 streets in the intersection, 200 shuffles
+Street 6457: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4009: 18 total wait time, 6 streets in the intersection, 200 shuffles
+Street 8646: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6098: 17 total wait time, 10 streets in the intersection, 200 shuffles
+Street 8240: 17 total wait time, 2 streets in the intersection, 2 shuffles
+Street 7063: 17 total wait time, 6 streets in the intersection, 200 shuffles
+Street 5043: 17 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 5043: 4568981 ***
+Street 7990: 16 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6104: 16 total wait time, 10 streets in the intersection, 200 shuffles
+Street 1564: 16 total wait time, 7 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 1564: 4568982 ***
+Round 17, current score: 4568982
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4568984 ***
+  => New best score by adding 1 to street 4432: 4568992 ***
+Street 7023: 28 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 5753: 4568994 ***
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 7252: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8123: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 660: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4877: 20 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 4877: 4568997 ***
+Street 36: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 7059: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4882: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4017: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4636: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 8646: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6457: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6106: 18 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4009: 18 total wait time, 6 streets in the intersection, 200 shuffles
+Street 8240: 17 total wait time, 2 streets in the intersection, 2 shuffles
+Street 7063: 17 total wait time, 6 streets in the intersection, 200 shuffles
+Street 5043: 17 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 5043: 4569002 ***
+Round 18, current score: 4569002
+Street 4432: 49 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 0 to street 4432: 4569004 ***
+  => New best score by adding 1 to street 4432: 4569014 ***
+  => New best score by adding 1 to street 4432: 4569018 ***
+Street 7023: 28 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7252: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8123: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4877: 20 total wait time, 3 streets in the intersection, 6 shuffles
+  => New best score by adding 1 to street 4877: 4569019 ***
+Street 36: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 660: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4017: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 7059: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4882: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4636: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6457: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4009: 18 total wait time, 6 streets in the intersection, 200 shuffles
+Street 8646: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6106: 18 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7063: 17 total wait time, 6 streets in the intersection, 200 shuffles
+Street 8240: 17 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6098: 17 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7986: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7990: 16 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6763: 16 total wait time, 8 streets in the intersection, 200 shuffles
+Street 6104: 16 total wait time, 10 streets in the intersection, 200 shuffles
+Street 8033: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7178: 15 total wait time, 8 streets in the intersection, 200 shuffles
+Street 7047: 15 total wait time, 2 streets in the intersection, 2 shuffles
+Street 1725: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 640: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4430: 15 total wait time, 3 streets in the intersection, 6 shuffles
+Street 500: 15 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6103: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4364: 15 total wait time, 5 streets in the intersection, 120 shuffles
+Street 629: 14 total wait time, 4 streets in the intersection, 24 shuffles
+Street 3658: 14 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4178: 14 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4670: 14 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6109: 14 total wait time, 10 streets in the intersection, 200 shuffles
+Street 3895: 14 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4078: 13 total wait time, 2 streets in the intersection, 2 shuffles
+Street 388: 13 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4305: 13 total wait time, 3 streets in the intersection, 6 shuffles
+Street 8166: 13 total wait time, 2 streets in the intersection, 2 shuffles
+Street 5105: 13 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6094: 13 total wait time, 10 streets in the intersection, 200 shuffles
+Round 19, current score: 4569019
+Street 4432: 48 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4432: 4569025 ***
+  => New best score by adding 2 to street 4432: 4569026 ***
+Street 7023: 28 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4013: 4569027 ***
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 5753: 4569031 ***
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 7252: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4670: 21 total wait time, 3 streets in the intersection, 6 shuffles
+Street 8123: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 660: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 36: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 7059: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4017: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4636: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 8646: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4009: 18 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6106: 18 total wait time, 10 streets in the intersection, 200 shuffles
+Street 6457: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6098: 17 total wait time, 10 streets in the intersection, 200 shuffles
+Street 8240: 17 total wait time, 2 streets in the intersection, 2 shuffles
+Street 7063: 17 total wait time, 6 streets in the intersection, 200 shuffles
+Street 7990: 16 total wait time, 2 streets in the intersection, 2 shuffles
+Street 8033: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6763: 16 total wait time, 8 streets in the intersection, 200 shuffles
+Street 6104: 16 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7986: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 500: 15 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6103: 15 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 2 to street 6103: 4569033 ***
+Round 20, current score: 4569033
+Street 4432: 48 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4432: 4569039 ***
+Street 7023: 28 total wait time, 2 streets in the intersection, 2 shuffles
+Street 6095: 26 total wait time, 10 streets in the intersection, 200 shuffles
+Street 4013: 26 total wait time, 6 streets in the intersection, 200 shuffles
+  => New best score by adding 1 to street 4013: 4569043 ***
+Street 7249: 25 total wait time, 4 streets in the intersection, 24 shuffles
+Street 5753: 24 total wait time, 4 streets in the intersection, 24 shuffles
+  => New best score by adding 1 to street 5753: 4569045 ***
+Street 6455: 23 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4300: 22 total wait time, 7 streets in the intersection, 200 shuffles
+Street 6096: 22 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7252: 21 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4670: 21 total wait time, 3 streets in the intersection, 6 shuffles
+Street 36: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 660: 20 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8123: 20 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7059: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4017: 19 total wait time, 6 streets in the intersection, 200 shuffles
+Street 4636: 19 total wait time, 3 streets in the intersection, 6 shuffles
+Street 8646: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 4009: 18 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6457: 18 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6106: 18 total wait time, 10 streets in the intersection, 200 shuffles
+Street 8240: 17 total wait time, 2 streets in the intersection, 2 shuffles
+Street 7063: 17 total wait time, 6 streets in the intersection, 200 shuffles
+Street 6098: 17 total wait time, 10 streets in the intersection, 200 shuffles
+Street 6763: 16 total wait time, 8 streets in the intersection, 200 shuffles
+Street 6104: 16 total wait time, 10 streets in the intersection, 200 shuffles
+Street 7990: 16 total wait time, 2 streets in the intersection, 2 shuffles
+Street 7986: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 8033: 16 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7047: 15 total wait time, 2 streets in the intersection, 2 shuffles
+  => New best score by adding 2 to street 7047: 4569047 ***
+Street 1725: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4364: 15 total wait time, 5 streets in the intersection, 120 shuffles
+Street 500: 15 total wait time, 3 streets in the intersection, 6 shuffles
+Street 640: 15 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4430: 15 total wait time, 3 streets in the intersection, 6 shuffles
+Street 7178: 15 total wait time, 8 streets in the intersection, 200 shuffles
+Street 3895: 14 total wait time, 5 streets in the intersection, 120 shuffles
+Street 4178: 14 total wait time, 2 streets in the intersection, 2 shuffles
+Street 3658: 14 total wait time, 3 streets in the intersection, 6 shuffles
+Street 6109: 14 total wait time, 10 streets in the intersection, 200 shuffles
+Street 629: 14 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4010: 13 total wait time, 4 streets in the intersection, 24 shuffles
+Street 4078: 13 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4305: 13 total wait time, 3 streets in the intersection, 6 shuffles
+Street 1060: 13 total wait time, 4 streets in the intersection, 24 shuffles
+Street 8166: 13 total wait time, 2 streets in the intersection, 2 shuffles
+Street 3600: 13 total wait time, 2 streets in the intersection, 2 shuffles
+Street 4882: 13 total wait time, 3 streets in the intersection, 6 shuffles
+Street 1065: 13 total wait time, 3 streets in the intersection, 6 shuffles
+Street 5105: 13 total wait time, 2 streets in the intersection, 2 shuffles
+
+Schedule
+--------
+Intersections   : 6296
+Street lights   : 7964
+Arrived cars    : 1000
+Earliest arrival: 36
+Latest arrival  : 5041
+Crossed streets : 7964
+Total wait time : 5810
+Schedule score  : 4569047
