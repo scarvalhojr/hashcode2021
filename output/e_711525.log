@@ -1,0 +1,2680 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 676
+Intersections: 500
+Streets      : 998
+Cars         : 1000
+Max score    : 921203
+Bonus points : 500
+
+Adaptive scheduler
+------------------
+Ignored cars  : 0
+Unused streets: 7
+
+Incremental scheduler
+------------------------
+Rounds                 : 20
+Min wait time          : 10
+Max streets per round  : 50
+Max shuffles per street: 100
+Round 1, current score: 700352
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  => New best score: 701783 ***
+  Adding 2 time to street 545
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 197: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 197
+  Adding 1 time to street 197
+  => New best score: 702377 ***
+  Adding 2 time to street 197
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  Adding 2 time to street 553
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  Adding 2 time to street 453
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 129: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 129
+  Adding 1 time to street 129
+  Adding 2 time to street 129
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 749: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 749
+  Adding 1 time to street 749
+  Adding 2 time to street 749
+  => New best score: 702409 ***
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  Adding 2 time to street 297
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 745: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 745
+  Adding 1 time to street 745
+  => New best score: 702700 ***
+  Adding 2 time to street 745
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 25: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 25
+  Adding 1 time to street 25
+  Adding 2 time to street 25
+Street 149: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 149
+  Adding 1 time to street 149
+  Adding 2 time to street 149
+Street 977: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 977
+  Adding 1 time to street 977
+  Adding 2 time to street 977
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 617: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 617
+  Adding 1 time to street 617
+  Adding 2 time to street 617
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 401: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 401
+  Adding 1 time to street 401
+  Adding 2 time to street 401
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 589: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 209: 665 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 73: 657 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 813: 642 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 85: 640 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Round 2, current score: 702700
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  => New best score: 703314 ***
+  Adding 2 time to street 781
+  => New best score: 703450 ***
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 617: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 617
+  Adding 1 time to street 617
+  => New best score: 703908 ***
+  Adding 2 time to street 617
+  => New best score: 703942 ***
+Street 749: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 749
+  Adding 1 time to street 749
+  Adding 2 time to street 749
+  => New best score: 704755 ***
+Round 3, current score: 704755
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  => New best score: 705465 ***
+  Adding 2 time to street 453
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  => New best score: 705626 ***
+  Adding 2 time to street 297
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+  => New best score: 705770 ***
+Street 149: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 149
+  Adding 1 time to street 149
+  => New best score: 705792 ***
+  Adding 2 time to street 149
+  => New best score: 705998 ***
+Round 4, current score: 705998
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  => New best score: 706372 ***
+  Adding 2 time to street 453
+Street 25: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 25
+  Adding 1 time to street 25
+  => New best score: 706780 ***
+  Adding 2 time to street 25
+  => New best score: 706967 ***
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 197: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 197
+  Adding 1 time to street 197
+  => New best score: 707323 ***
+  Adding 2 time to street 197
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 617: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 617
+  Adding 1 time to street 617
+  Adding 2 time to street 617
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  Adding 2 time to street 297
+Street 129: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 129
+  Adding 1 time to street 129
+  Adding 2 time to street 129
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  Adding 2 time to street 553
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 977: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 977
+  Adding 1 time to street 977
+  Adding 2 time to street 977
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 401: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 401
+  Adding 1 time to street 401
+  Adding 2 time to street 401
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 209: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 73: 662 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 813: 647 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 646 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 105: 639 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 638 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Round 5, current score: 707323
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  => New best score: 707578 ***
+  Adding 2 time to street 37
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  => New best score: 707947 ***
+  Adding 2 time to street 297
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  Adding 2 time to street 453
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 617: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 617
+  Adding 1 time to street 617
+  => New best score: 708120 ***
+  Adding 2 time to street 617
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  => New best score: 708345 ***
+  Adding 2 time to street 621
+Street 25: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 25
+  Adding 1 time to street 25
+  Adding 2 time to street 25
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  Adding 2 time to street 553
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 129: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 129
+  Adding 1 time to street 129
+  => New best score: 708435 ***
+  Adding 2 time to street 129
+Round 6, current score: 708435
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  => New best score: 708479 ***
+  Adding 2 time to street 769
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  => New best score: 708700 ***
+  Adding 2 time to street 453
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  => New best score: 709259 ***
+  Adding 2 time to street 621
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  Adding 2 time to street 553
+Street 25: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 25
+  Adding 1 time to street 25
+  Adding 2 time to street 25
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  Adding 2 time to street 297
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 401: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 401
+  Adding 1 time to street 401
+  Adding 2 time to street 401
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 977: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 977
+  Adding 1 time to street 977
+  => New best score: 709335 ***
+  Adding 2 time to street 977
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 617: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 617
+  Adding 1 time to street 617
+  Adding 2 time to street 617
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 209: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 813: 649 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 648 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 105: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 489: 640 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 337: 637 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Round 7, current score: 709335
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  => New best score: 709400 ***
+  Adding 2 time to street 269
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  => New best score: 710102 ***
+  Adding 2 time to street 621
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  Adding 2 time to street 553
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 617: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 617
+  Adding 1 time to street 617
+  Adding 2 time to street 617
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 25: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 25
+  Adding 1 time to street 25
+  Adding 2 time to street 25
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  Adding 2 time to street 297
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  Adding 2 time to street 453
+Street 401: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 401
+  Adding 1 time to street 401
+  Adding 2 time to street 401
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 209: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 9: 649 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 105: 642 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 337: 638 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Round 8, current score: 710102
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 617: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 617
+  Adding 1 time to street 617
+  => New best score: 710174 ***
+  Adding 2 time to street 617
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  Adding 2 time to street 453
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 861: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 861
+  Adding 1 time to street 861
+  Adding 2 time to street 861
+Street 401: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 401
+  Adding 1 time to street 401
+  Adding 2 time to street 401
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  Adding 2 time to street 297
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  Adding 2 time to street 553
+Street 25: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 25
+  Adding 1 time to street 25
+  => New best score: 710239 ***
+  Adding 2 time to street 25
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 209: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 651 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 9: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 105: 643 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 642 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Round 9, current score: 710239
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  => New best score: 710425 ***
+  Adding 2 time to street 453
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  => New best score: 710664 ***
+  Adding 2 time to street 781
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 861: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 861
+  Adding 1 time to street 861
+  Adding 2 time to street 861
+Street 617: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 617
+  Adding 1 time to street 617
+  => New best score: 710759 ***
+  Adding 2 time to street 617
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  Adding 2 time to street 553
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  Adding 2 time to street 297
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 401: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 401
+  Adding 1 time to street 401
+  Adding 2 time to street 401
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 209: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 652 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 651 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 105: 644 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 643 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 337: 640 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Round 10, current score: 710759
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  => New best score: 710798 ***
+  Adding 2 time to street 781
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  => New best score: 711005 ***
+  Adding 2 time to street 553
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 297: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 297
+  Adding 1 time to street 297
+  => New best score: 711237 ***
+  Adding 2 time to street 297
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  Adding 2 time to street 453
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 957: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 957
+  Adding 1 time to street 957
+  Adding 2 time to street 957
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 861: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 861
+  Adding 1 time to street 861
+  Adding 2 time to street 861
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 401: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 401
+  Adding 1 time to street 401
+  Adding 2 time to street 401
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 209: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 653 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 652 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 105: 645 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 644 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 337: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Round 11, current score: 711237
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 401: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 401
+  Adding 1 time to street 401
+  => New best score: 711509 ***
+  Adding 2 time to street 401
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 861: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 861
+  Adding 1 time to street 861
+  Adding 2 time to street 861
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  Adding 2 time to street 453
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 957: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 957
+  Adding 1 time to street 957
+  Adding 2 time to street 957
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  Adding 2 time to street 553
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 209: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 654 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 653 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 105: 646 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 645 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 337: 642 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 585: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 585
+  Adding 1 time to street 585
+  Adding 2 time to street 585
+Round 12, current score: 711509
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 957: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 957
+  Adding 1 time to street 957
+  Adding 2 time to street 957
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  => New best score: 711522 ***
+  Adding 2 time to street 545
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 861: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 861
+  Adding 1 time to street 861
+  Adding 2 time to street 861
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  => New best score: 711630 ***
+  Adding 2 time to street 553
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 453: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 453
+  Adding 1 time to street 453
+  => New best score: 711701 ***
+  Adding 2 time to street 453
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 209: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 655 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 654 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 105: 646 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 645 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 337: 642 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Street 585: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 585
+  Adding 1 time to street 585
+  Adding 2 time to street 585
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 57: 623 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 57
+  Adding 1 time to street 57
+  Adding 2 time to street 57
+Round 13, current score: 711701
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 553: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 553
+  Adding 1 time to street 553
+  => New best score: 712435 ***
+  Adding 2 time to street 553
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 957: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 957
+  Adding 1 time to street 957
+  Adding 2 time to street 957
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 861: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 861
+  Adding 1 time to street 861
+  Adding 2 time to street 861
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 671 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 209: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 656 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 655 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 105: 647 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 646 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 337: 643 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Street 585: 642 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 585
+  Adding 1 time to street 585
+  Adding 2 time to street 585
+Street 85: 641 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 57: 624 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 57
+  Adding 1 time to street 57
+  Adding 2 time to street 57
+Street 893: 622 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 893
+  Adding 1 time to street 893
+  Adding 2 time to street 893
+Round 14, current score: 712435
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  => New best score: 712473 ***
+  Adding 2 time to street 577
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 861: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 861
+  Adding 1 time to street 861
+  Adding 2 time to street 861
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 957: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 957
+  Adding 1 time to street 957
+  Adding 2 time to street 957
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  => New best score: 712553 ***
+  Adding 2 time to street 269
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 621: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 621
+  Adding 1 time to street 621
+  Adding 2 time to street 621
+  => New best score: 712698 ***
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 589: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 209: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 657 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 656 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 105: 648 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 489: 647 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 337: 644 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Street 585: 643 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 585
+  Adding 1 time to street 585
+  Adding 2 time to street 585
+Street 85: 642 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 57: 625 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 57
+  Adding 1 time to street 57
+  Adding 2 time to street 57
+Street 893: 623 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 893
+  Adding 1 time to street 893
+  Adding 2 time to street 893
+Street 25: 620 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 25
+  Adding 1 time to street 25
+  Adding 2 time to street 25
+Round 15, current score: 712698
+Street 41: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 41
+  Adding 1 time to street 41
+  Adding 2 time to street 41
+Street 477: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 477
+  Adding 1 time to street 477
+  Adding 2 time to street 477
+Street 93: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 93
+  Adding 1 time to street 93
+  Adding 2 time to street 93
+Street 957: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 957
+  Adding 1 time to street 957
+  Adding 2 time to street 957
+Street 781: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 781
+  Adding 1 time to street 781
+  Adding 2 time to street 781
+Street 345: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 345
+  Adding 1 time to street 345
+  Adding 2 time to street 345
+Street 109: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 109
+  Adding 1 time to street 109
+  Adding 2 time to street 109
+Street 365: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 365
+  Adding 1 time to street 365
+  Adding 2 time to street 365
+Street 341: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 341
+  Adding 1 time to street 341
+  Adding 2 time to street 341
+Street 285: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 285
+  Adding 1 time to street 285
+  Adding 2 time to street 285
+Street 577: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 577
+  Adding 1 time to street 577
+  Adding 2 time to street 577
+Street 833: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 833
+  Adding 1 time to street 833
+  Adding 2 time to street 833
+Street 233: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 233
+  Adding 1 time to street 233
+  Adding 2 time to street 233
+Street 73: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 73
+  Adding 1 time to street 73
+  Adding 2 time to street 73
+Street 289: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 289
+  Adding 1 time to street 289
+  Adding 2 time to street 289
+Street 205: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 205
+  Adding 1 time to street 205
+  Adding 2 time to street 205
+Street 17: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 17
+  Adding 1 time to street 17
+  Adding 2 time to street 17
+Street 37: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 37
+  Adding 1 time to street 37
+  Adding 2 time to street 37
+Street 141: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 141
+  Adding 1 time to street 141
+  Adding 2 time to street 141
+Street 581: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 581
+  Adding 1 time to street 581
+  Adding 2 time to street 581
+Street 501: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 501
+  Adding 1 time to street 501
+  Adding 2 time to street 501
+Street 145: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 145
+  Adding 1 time to street 145
+  Adding 2 time to street 145
+Street 89: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 89
+  Adding 1 time to street 89
+  Adding 2 time to street 89
+Street 473: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 473
+  Adding 1 time to street 473
+  Adding 2 time to street 473
+Street 545: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 545
+  Adding 1 time to street 545
+  Adding 2 time to street 545
+Street 769: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 769
+  Adding 1 time to street 769
+  Adding 2 time to street 769
+Street 713: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 713
+  Adding 1 time to street 713
+  Adding 2 time to street 713
+Street 269: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 269
+  Adding 1 time to street 269
+  Adding 2 time to street 269
+Street 861: 677 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 861
+  Adding 1 time to street 861
+  Adding 2 time to street 861
+Street 65: 673 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 65
+  Adding 1 time to street 65
+  Adding 2 time to street 65
+Street 609: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 609
+  Adding 1 time to street 609
+  Adding 2 time to street 609
+Street 589: 672 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 589
+  Adding 1 time to street 589
+  Adding 2 time to street 589
+Street 225: 670 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 225
+  Adding 1 time to street 225
+  Adding 2 time to street 225
+Street 209: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 209
+  Adding 1 time to street 209
+  Adding 2 time to street 209
+Street 377: 668 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 377
+  Adding 1 time to street 377
+  Adding 2 time to street 377
+Street 333: 667 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 333
+  Adding 1 time to street 333
+  Adding 2 time to street 333
+Street 853: 666 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 853
+  Adding 1 time to street 853
+  Adding 2 time to street 853
+Street 77: 664 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 77
+  Adding 1 time to street 77
+  Adding 2 time to street 77
+Street 813: 659 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 813
+  Adding 1 time to street 813
+  Adding 2 time to street 813
+Street 9: 658 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 9
+  Adding 1 time to street 9
+  Adding 2 time to street 9
+Street 105: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 105
+  Adding 1 time to street 105
+  Adding 2 time to street 105
+Street 281: 650 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 281
+  Adding 1 time to street 281
+  Adding 2 time to street 281
+Street 489: 649 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 489
+  Adding 1 time to street 489
+  Adding 2 time to street 489
+Street 337: 646 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 337
+  Adding 1 time to street 337
+  Adding 2 time to street 337
+Street 585: 645 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 585
+  Adding 1 time to street 585
+  Adding 2 time to street 585
+Street 85: 642 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 85
+  Adding 1 time to street 85
+  Adding 2 time to street 85
+Street 57: 627 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 57
+  Adding 1 time to street 57
+  Adding 2 time to street 57
+Street 893: 625 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 893
+  Adding 1 time to street 893
+  Adding 2 time to street 893
+Street 25: 622 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 25
+  Adding 1 time to street 25
+  Adding 2 time to street 25
+Street 977: 620 total wait time, 221 streets in the intersection, 100 shuffles
+  Adding 0 time to street 977
+  Adding 1 time to street 977
+  Adding 2 time to street 977
+No further improvements could be made
+
+Schedule
+--------
+Intersections   : 500
+Street lights   : 956
+Arrived cars    : 833
+Earliest arrival: 3
+Latest arrival  : 676
+Crossed streets : 932
+Total wait time : 85848
+Schedule score  : 712698
+
+### The score above is incorrect ###
