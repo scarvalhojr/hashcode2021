@@ -1,8 +1,10 @@
 use clap::{crate_description, value_t, App, Arg};
 use hashcode2021::adapt::AdaptiveScheduler;
-use hashcode2021::incr::IncrementalScheduler;
+use hashcode2021::greedy::GreedyImprover;
+use hashcode2021::improve::IncrementalImprover;
 use hashcode2021::naive::NaiveScheduler;
 use hashcode2021::sched::{Schedule, Scheduler};
+use hashcode2021::shuffle::ShuffleImprover;
 use hashcode2021::traffic::TrafficScheduler;
 use hashcode2021::{Simulation, Time};
 use std::fs::{read_to_string, write};
@@ -23,6 +25,13 @@ fn main() {
                 .required(true)
                 .possible_values(&["load", "naive", "adaptive", "traffic"])
                 .index(2),
+        )
+        .arg(
+            Arg::with_name("improver")
+                .value_name("incremental improver")
+                .help("Incremental improver algorithm")
+                .possible_values(&["shuffle", "greedy"])
+                .index(3),
         )
         .arg(
             Arg::with_name("schedule")
@@ -115,7 +124,7 @@ fn main() {
         simulation
     );
 
-    let mut schedule = match args.value_of("scheduler").unwrap() {
+    let schedule = match args.value_of("scheduler").unwrap() {
         "load" => {
             let mut schedule = Schedule::new(&simulation);
             load_schedule(&mut schedule, args.value_of("schedule").unwrap());
@@ -134,7 +143,6 @@ fn main() {
             exit(4);
         }
     };
-
     println!(
         "\n\
         Schedule\n\
@@ -143,38 +151,62 @@ fn main() {
         sched_stats,
     );
 
-    if let Some(rounds) = incremental_rounds {
-        let mut scheduler = IncrementalScheduler::new(rounds);
-        if let Some(value) = min_wait_time {
-            scheduler.set_min_wait_time(value);
-        }
-        if let Some(value) = max_streets_per_round {
-            scheduler.set_max_streets_per_round(value);
-        }
-        if let Some(value) = max_shuffles_per_street {
-            scheduler.set_max_shuffles_per_street(value);
-        }
-        schedule = scheduler.improve(schedule);
-
-        let sched_stats = match schedule.stats() {
-            Ok(score) => score,
-            Err(err) => {
-                println!("\nError: {}", err);
-                exit(3);
+    let final_schedule = match args.value_of("improver") {
+        Some(algorithm_name) => {
+            let mut improver = IncrementalImprover::default();
+            if let Some(rounds) = incremental_rounds {
+                improver.set_rounds(rounds);
             }
-        };
 
-        println!(
-            "\n\
-            Schedule\n\
-            --------\n\
-            {}",
-            sched_stats,
-        );
-    }
+            let improved_schedule = match algorithm_name {
+                "greedy" => {
+                    let mut greedy = GreedyImprover::default();
+                    if let Some(value) = min_wait_time {
+                        greedy.set_min_wait_time(value);
+                    }
+                    if let Some(value) = max_streets_per_round {
+                        greedy.set_max_streets(value);
+                    }
+                    improver.improve(&schedule, &greedy)
+                }
+                "shuffle" => {
+                    let mut shuffle = ShuffleImprover::default();
+                    if let Some(value) = min_wait_time {
+                        shuffle.set_min_wait_time(value);
+                    }
+                    if let Some(value) = max_streets_per_round {
+                        shuffle.set_max_streets(value);
+                    }
+                    if let Some(value) = max_shuffles_per_street {
+                        shuffle.set_max_shuffles(value);
+                    }
+                    improver.improve(&schedule, &shuffle)
+                }
+                _ => unreachable!(),
+            };
+
+            let improved_stats = match improved_schedule.stats() {
+                Ok(score) => score,
+                Err(err) => {
+                    println!("\nError: {}", err);
+                    exit(3);
+                }
+            };
+
+            println!(
+                "\n\
+                Improved schedule\n\
+                -----------------\n\
+                {}",
+                improved_stats,
+            );
+            improved_schedule
+        }
+        _ => schedule,
+    };
 
     if let Some(filename) = args.value_of("output") {
-        write_output(&filename, &schedule);
+        write_output(&filename, &final_schedule);
     }
 
     exit(0);

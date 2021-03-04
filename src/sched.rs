@@ -10,13 +10,13 @@ pub trait Scheduler {
 
 #[derive(Clone)]
 pub struct Schedule<'a> {
-    simulation: &'a Simulation,
-    intersections: HashMap<IntersectionId, Intersection>,
+    pub simulation: &'a Simulation,
+    pub intersections: HashMap<IntersectionId, Intersection>,
 }
 
 #[derive(Clone, Default)]
 pub struct Intersection {
-    turns: Vec<(StreetId, Time)>,
+    pub turns: Vec<(StreetId, Time)>,
     cycle: Time,
 }
 
@@ -28,7 +28,7 @@ pub struct ScheduleStats {
     pub latest_arrival: Time,
     pub crossed_streets: HashSet<StreetId>,
     pub total_wait_time: HashMap<StreetId, Time>,
-    pub score: u32,
+    pub score: Score,
 }
 
 impl ScheduleStats {
@@ -152,6 +152,20 @@ impl<'a> Schedule<'a> {
         turns.len() == 1 && turns[0].0 == street_id
     }
 
+    pub fn get_intersection_id(
+        &self,
+        street_id: StreetId,
+    ) -> Option<IntersectionId> {
+        self.simulation
+            .streets
+            .get(street_id)
+            .map(|street| street.end_intersection)
+    }
+
+    pub fn reset_intersection(&mut self, inter_id: IntersectionId) {
+        self.intersections.remove(&inter_id);
+    }
+
     pub fn stats(&self) -> Result<ScheduleStats, String> {
         let mut stats = ScheduleStats::new(self);
 
@@ -225,7 +239,7 @@ impl<'a> Schedule<'a> {
             stats.num_arrived_cars += arrived_cars;
             stats.score += (self.simulation.bonus
                 + (self.simulation.duration - time))
-                * u32::try_from(arrived_cars).unwrap();
+                * Score::try_from(arrived_cars).unwrap();
 
             if arrived_cars > 0 {
                 stats.latest_arrival = time;

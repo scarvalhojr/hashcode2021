@@ -5,22 +5,25 @@ use std::num::ParseIntError;
 use std::str::FromStr;
 
 pub mod adapt;
-pub mod incr;
+pub mod greedy;
+pub mod improve;
 pub mod naive;
 pub mod sched;
+pub mod shuffle;
 pub mod traffic;
 
 pub type Time = u32;
 pub type CarId = usize;
 pub type StreetId = usize;
 pub type IntersectionId = u32;
+pub type Score = u32;
 
 pub struct Simulation {
     pub duration: Time,
     pub num_intersections: u32,
     pub streets: Vec<Street>,
     pub car_paths: Vec<Vec<StreetId>>,
-    pub bonus: u32,
+    pub bonus: Score,
 }
 
 pub struct Street {
@@ -31,8 +34,8 @@ pub struct Street {
 }
 
 impl Simulation {
-    pub fn max_theoretical_score(&self) -> u32 {
-        self.bonus * u32::try_from(self.car_paths.len()).unwrap()
+    pub fn max_theoretical_score(&self) -> Score {
+        self.bonus * Score::try_from(self.car_paths.len()).unwrap()
             + self
                 .car_paths
                 .iter()
@@ -48,7 +51,7 @@ impl Simulation {
                         0
                     }
                 })
-                .sum::<u32>()
+                .sum::<Score>()
     }
 }
 
