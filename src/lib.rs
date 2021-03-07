@@ -10,6 +10,7 @@ pub mod improve;
 pub mod naive;
 pub mod sched;
 pub mod shuffle;
+pub mod sums;
 pub mod traffic;
 
 pub type Time = u32;

@@ -65,6 +65,13 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
+            Arg::with_name("max-add-time")
+                .help("Maximum time added to a street on incremental rounds")
+                .short("a")
+                .long("max-add-time")
+                .takes_value(true),
+        )
+        .arg(
             Arg::with_name("max-streets-per-round")
                 .help("Maximum number of streets per round on incremental rounds")
                 .short("s")
@@ -90,6 +97,14 @@ fn main() {
 
     let min_wait_time = if args.is_present("min-wait-time") {
         let value = value_t!(args.value_of("min-wait-time"), Time)
+            .unwrap_or_else(|e| e.exit());
+        Some(value)
+    } else {
+        None
+    };
+
+    let max_add_time = if args.is_present("max-add-time") {
+        let value = value_t!(args.value_of("max-add-time"), Time)
             .unwrap_or_else(|e| e.exit());
         Some(value)
     } else {
@@ -163,6 +178,9 @@ fn main() {
                     let mut greedy = GreedyImprover::default();
                     if let Some(value) = min_wait_time {
                         greedy.set_min_wait_time(value);
+                    }
+                    if let Some(value) = max_add_time {
+                        greedy.set_max_add_time(value);
                     }
                     if let Some(value) = max_streets_per_round {
                         greedy.set_max_streets(value);
