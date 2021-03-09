@@ -1,0 +1,53 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 8071
+Intersections: 8000
+Streets      : 95928
+Cars         : 1000
+Max score    : 3986591
+Bonus points : 1000
+
+Schedule
+--------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1483549
+Schedule score  : 2492461
+Incremental Improver: 5 rounds
+Greedy improver: 10 minimum wait time, 1000 max streets per round, 1000 streets selected, 84 intersections
+  => New best score after updating intersection 179: 2492506
+  => New best score after updating intersection 65: 2492992
+Round 1, new score: 2492992
+Greedy improver: 10 minimum wait time, 1000 max streets per round, 1000 streets selected, 84 intersections
+  => New best score after updating intersection 74: 2493119
+Round 2, new score: 2493119
+Greedy improver: 10 minimum wait time, 1000 max streets per round, 1000 streets selected, 84 intersections
+  => New best score after updating intersection 208: 2493159
+  => New best score after updating intersection 179: 2493164
+  => New best score after updating intersection 64: 2493213
+Round 3, new score: 2493213
+Greedy improver: 10 minimum wait time, 1000 max streets per round, 1000 streets selected, 84 intersections
+  => New best score after updating intersection 40: 2493353
+Round 4, new score: 2493353
+Greedy improver: 10 minimum wait time, 1000 max streets per round, 1000 streets selected, 83 intersections
+  => New best score after updating intersection 28: 2493369
+  => New best score after updating intersection 179: 2493398
+  => New best score after updating intersection 44: 2493404
+Round 5, new score: 2493404
+
+Improved schedule
+-----------------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1482620
+Schedule score  : 2493404

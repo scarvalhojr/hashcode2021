@@ -1,0 +1,267 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 5070
+Intersections: 7073
+Streets      : 9102
+Cars         : 1000
+Max score    : 4576202
+Bonus points : 1000
+
+Schedule
+--------
+Intersections   : 6296
+Street lights   : 7964
+Arrived cars    : 1000
+Earliest arrival: 35
+Latest arrival  : 5041
+Crossed streets : 7964
+Total wait time : 4956
+Schedule score  : 4570006
+Incremental Improver: 100 rounds
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1543 streets selected, 973 intersections
+  => New best score after updating intersection 1008: 4570007 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {ViableSwapNotFound: 29, SimpleSwap: 48, FailedSwapTooLarge: 2, RightSwap: 4}
+Round 1, new score: 4570007
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1540 streets selected, 972 intersections
+  => New best score after adding 1 to street 6763: 4570009 (swaps: {SimpleSwap: 2, LeftSwap: 1})
+  => New best score after adding 1 to street 500: 4570012 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 718, ViableSwapNotFound: 323, RightSwap: 24, LeftSwap: 27, FailedSwapTooLarge: 28}
+Round 2, new score: 4570012
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1543 streets selected, 974 intersections
+  => New best score after adding 1 to street 6763: 4570014 (swaps: {SimpleSwap: 2, LeftSwap: 1})
+  => New best score after adding 1 to street 7191: 4570015 (swaps: {SimpleSwap: 1})
+  => New best score after adding 1 to street 679: 4570016 (swaps: {})
+  => New best score after adding 1 to street 6487: 4570017 (swaps: {SimpleSwap: 2, FailedSwapTooLarge: 1})
+Improvement done, swaps: {ViableSwapNotFound: 323, LeftSwap: 27, SimpleSwap: 711, FailedSwapTooLarge: 29, RightSwap: 24}
+Round 3, new score: 4570017
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1545 streets selected, 974 intersections
+  => New best score after adding 1 to street 6763: 4570019 (swaps: {LeftSwap: 1, SimpleSwap: 2})
+  => New best score after adding 1 to street 7191: 4570020 (swaps: {SimpleSwap: 1})
+  => New best score after adding 1 to street 5747: 4570022 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 693, FailedSwapTooLarge: 29, ViableSwapNotFound: 323, RightSwap: 24, LeftSwap: 27}
+Round 4, new score: 4570022
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1542 streets selected, 972 intersections
+  => New best score after adding 1 to street 6763: 4570024 (swaps: {LeftSwap: 1, SimpleSwap: 2})
+  => New best score after adding 1 to street 7191: 4570025 (swaps: {SimpleSwap: 1})
+  => New best score after adding 1 to street 7840: 4570026 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 30, RightSwap: 24, LeftSwap: 27, ViableSwapNotFound: 323, SimpleSwap: 718}
+Round 5, new score: 4570026
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1540 streets selected, 971 intersections
+  => New best score after adding 1 to street 6763: 4570028 (swaps: {SimpleSwap: 2, LeftSwap: 1})
+  => New best score after adding 1 to street 679: 4570030 (swaps: {})
+Improvement done, swaps: {SimpleSwap: 699, LeftSwap: 27, RightSwap: 24, FailedSwapTooLarge: 30, ViableSwapNotFound: 323}
+Round 6, new score: 4570030
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1540 streets selected, 971 intersections
+  => New best score after adding 1 to street 6763: 4570032 (swaps: {LeftSwap: 1, SimpleSwap: 2})
+  => New best score after adding 1 to street 7191: 4570033 (swaps: {SimpleSwap: 1})
+  => New best score after adding 1 to street 55: 4570034 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 721, RightSwap: 24, LeftSwap: 27, FailedSwapTooLarge: 30, ViableSwapNotFound: 323}
+Round 7, new score: 4570034
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1539 streets selected, 970 intersections
+  => New best score after adding 1 to street 6763: 4570036 (swaps: {LeftSwap: 1, SimpleSwap: 2})
+  => New best score after adding 1 to street 7191: 4570037 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 694, ViableSwapNotFound: 322, FailedSwapTooLarge: 30, RightSwap: 24, LeftSwap: 27}
+Round 8, new score: 4570037
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1539 streets selected, 970 intersections
+  => New best score after adding 1 to street 6763: 4570039 (swaps: {SimpleSwap: 2, LeftSwap: 1})
+  => New best score after adding 1 to street 2581: 4570040 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 30, ViableSwapNotFound: 320, SimpleSwap: 703, RightSwap: 24, LeftSwap: 27}
+Round 9, new score: 4570040
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1538 streets selected, 971 intersections
+  => New best score after adding 1 to street 6763: 4570042 (swaps: {LeftSwap: 1, SimpleSwap: 2})
+  => New best score after adding 1 to street 2547: 4570043 (swaps: {})
+Improvement done, swaps: {RightSwap: 24, FailedSwapTooLarge: 30, ViableSwapNotFound: 319, SimpleSwap: 701, LeftSwap: 27}
+Round 10, new score: 4570043
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1538 streets selected, 971 intersections
+  => New best score after adding 1 to street 6763: 4570045 (swaps: {SimpleSwap: 2, LeftSwap: 1})
+  => New best score after adding 1 to street 640: 4570050 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {ViableSwapNotFound: 319, FailedSwapTooLarge: 30, RightSwap: 24, SimpleSwap: 693, LeftSwap: 27}
+Round 11, new score: 4570050
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1538 streets selected, 970 intersections
+  => New best score after updating intersection 1413: 4570053 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {ViableSwapNotFound: 29, FailedSwapTooLarge: 3, RightSwap: 4, SimpleSwap: 44}
+Round 12, new score: 4570053
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1538 streets selected, 970 intersections
+  => New best score after adding 1 to street 6763: 4570055 (swaps: {SimpleSwap: 2, LeftSwap: 1})
+  => New best score after adding 1 to street 2004: 4570056 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {LeftSwap: 27, ViableSwapNotFound: 321, RightSwap: 24, FailedSwapTooLarge: 30, SimpleSwap: 700}
+Round 13, new score: 4570056
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1537 streets selected, 969 intersections
+  => New best score after updating intersection 4905: 4570059 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 3, ViableSwapNotFound: 31, SimpleSwap: 48, RightSwap: 4}
+Round 14, new score: 4570059
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1538 streets selected, 969 intersections
+  => New best score after adding 1 to street 6763: 4570061 (swaps: {LeftSwap: 1, SimpleSwap: 2})
+  => New best score after adding 1 to street 6998: 4570063 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 677, ViableSwapNotFound: 322, LeftSwap: 27, FailedSwapTooLarge: 30, RightSwap: 24}
+Round 15, new score: 4570063
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1537 streets selected, 969 intersections
+  => New best score after adding 1 to street 6763: 4570065 (swaps: {SimpleSwap: 2, LeftSwap: 1})
+Improvement done, swaps: {SimpleSwap: 689, RightSwap: 24, FailedSwapTooLarge: 30, ViableSwapNotFound: 322, LeftSwap: 27}
+Round 16, new score: 4570065
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1536 streets selected, 969 intersections
+  => New best score after adding 1 to street 6436: 4570066 (swaps: {SimpleSwap: 1, LeftSwap: 1})
+  => New best score after adding 1 to street 6287: 4570067 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 29, ViableSwapNotFound: 332, LeftSwap: 27, SimpleSwap: 689, RightSwap: 23}
+Round 17, new score: 4570067
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1537 streets selected, 969 intersections
+  => New best score after adding 1 to street 6436: 4570068 (swaps: {SimpleSwap: 1, LeftSwap: 1})
+  => New best score after adding 1 to street 1873: 4570069 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {ViableSwapNotFound: 336, SimpleSwap: 682, FailedSwapTooLarge: 29, LeftSwap: 27, RightSwap: 23}
+Round 18, new score: 4570069
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1537 streets selected, 969 intersections
+  => New best score after adding 1 to street 6436: 4570070 (swaps: {LeftSwap: 1, SimpleSwap: 1})
+  => New best score after adding 1 to street 7664: 4570071 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 697, FailedSwapTooLarge: 31, RightSwap: 24, LeftSwap: 27, ViableSwapNotFound: 337}
+Round 19, new score: 4570071
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1538 streets selected, 969 intersections
+  => New best score after adding 1 to street 6436: 4570072 (swaps: {LeftSwap: 1, SimpleSwap: 1})
+  => New best score after adding 1 to street 6734: 4570073 (swaps: {})
+Improvement done, swaps: {FailedSwapTooLarge: 31, LeftSwap: 27, SimpleSwap: 680, RightSwap: 24, ViableSwapNotFound: 335}
+Round 20, new score: 4570073
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1538 streets selected, 969 intersections
+  => New best score after adding 1 to street 6436: 4570074 (swaps: {SimpleSwap: 1, LeftSwap: 1})
+  => New best score after adding 1 to street 6125: 4570075 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 31, ViableSwapNotFound: 335, LeftSwap: 27, SimpleSwap: 686, RightSwap: 24}
+Round 21, new score: 4570075
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1538 streets selected, 969 intersections
+  => New best score after adding 1 to street 6436: 4570076 (swaps: {LeftSwap: 1, SimpleSwap: 1})
+  => New best score after adding 1 to street 5252: 4570077 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 31, LeftSwap: 27, RightSwap: 24, ViableSwapNotFound: 335, SimpleSwap: 700}
+Round 22, new score: 4570077
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1536 streets selected, 968 intersections
+  => New best score after adding 1 to street 6436: 4570078 (swaps: {SimpleSwap: 1, LeftSwap: 1})
+  => New best score after adding 1 to street 6172: 4570079 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {RightSwap: 24, LeftSwap: 27, ViableSwapNotFound: 335, FailedSwapTooLarge: 31, SimpleSwap: 672}
+Round 23, new score: 4570079
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1534 streets selected, 968 intersections
+  => New best score after adding 1 to street 6436: 4570080 (swaps: {LeftSwap: 1, SimpleSwap: 1})
+  => New best score after adding 1 to street 6297: 4570081 (swaps: {})
+Improvement done, swaps: {ViableSwapNotFound: 335, RightSwap: 22, LeftSwap: 27, FailedSwapTooLarge: 29, SimpleSwap: 677}
+Round 24, new score: 4570081
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1533 streets selected, 968 intersections
+  => New best score after adding 1 to street 6101: 4570082 (swaps: {SimpleSwap: 1})
+  => New best score after adding 1 to street 6682: 4570083 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 667, FailedSwapTooLarge: 29, LeftSwap: 27, RightSwap: 22, ViableSwapNotFound: 335}
+Round 25, new score: 4570083
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1531 streets selected, 967 intersections
+  => New best score after adding 1 to street 6436: 4570084 (swaps: {LeftSwap: 1, SimpleSwap: 1})
+  => New best score after adding 1 to street 601: 4570085 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {ViableSwapNotFound: 335, RightSwap: 22, FailedSwapTooLarge: 29, LeftSwap: 27, SimpleSwap: 674}
+Round 26, new score: 4570085
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1530 streets selected, 966 intersections
+  => New best score after adding 1 to street 6436: 4570086 (swaps: {SimpleSwap: 1, LeftSwap: 1})
+  => New best score after adding 1 to street 6537: 4570088 (swaps: {SimpleSwap: 2})
+Improvement done, swaps: {RightSwap: 22, SimpleSwap: 668, ViableSwapNotFound: 335, LeftSwap: 27, FailedSwapTooLarge: 29}
+Round 27, new score: 4570088
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1529 streets selected, 966 intersections
+  => New best score after adding 1 to street 6436: 4570089 (swaps: {SimpleSwap: 1, LeftSwap: 1})
+  => New best score after adding 1 to street 8065: 4570091 (swaps: {SimpleSwap: 3})
+  => New best score after adding 1 to street 8061: 4570094 (swaps: {FailedSwapTooLarge: 1})
+  => New best score after adding 1 to street 8038: 4570096 (swaps: {ViableSwapNotFound: 1, SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 29, LeftSwap: 27, RightSwap: 22, SimpleSwap: 673, ViableSwapNotFound: 338}
+Round 28, new score: 4570096
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1530 streets selected, 966 intersections
+  => New best score after adding 1 to street 6436: 4570097 (swaps: {LeftSwap: 1, SimpleSwap: 1})
+  => New best score after adding 1 to street 5640: 4570098 (swaps: {})
+Improvement done, swaps: {SimpleSwap: 687, ViableSwapNotFound: 331, RightSwap: 22, FailedSwapTooLarge: 28, LeftSwap: 27}
+Round 29, new score: 4570098
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1529 streets selected, 966 intersections
+  => New best score after adding 1 to street 6436: 4570099 (swaps: {LeftSwap: 1, SimpleSwap: 1})
+Improvement done, swaps: {LeftSwap: 27, ViableSwapNotFound: 331, RightSwap: 22, SimpleSwap: 679, FailedSwapTooLarge: 28}
+Round 30, new score: 4570099
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1528 streets selected, 965 intersections
+  => New best score after adding 1 to street 8393: 4570100 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {ViableSwapNotFound: 332, RightSwap: 22, FailedSwapTooLarge: 28, LeftSwap: 26, SimpleSwap: 670}
+Round 31, new score: 4570100
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1528 streets selected, 966 intersections
+  => New best score after adding 1 to street 4250: 4570101 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {ViableSwapNotFound: 332, RightSwap: 22, LeftSwap: 26, SimpleSwap: 657, FailedSwapTooLarge: 28}
+Round 32, new score: 4570101
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1528 streets selected, 965 intersections
+  => New best score after adding 1 to street 5513: 4570102 (swaps: {})
+  => New best score after adding 1 to street 4453: 4570104 (swaps: {})
+Improvement done, swaps: {SimpleSwap: 674, ViableSwapNotFound: 331, FailedSwapTooLarge: 28, RightSwap: 21, LeftSwap: 26}
+Round 33, new score: 4570104
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1527 streets selected, 965 intersections
+  => New best score after adding 1 to street 5513: 4570105 (swaps: {})
+Improvement done, swaps: {SimpleSwap: 678, ViableSwapNotFound: 331, RightSwap: 21, FailedSwapTooLarge: 28, LeftSwap: 26}
+Round 34, new score: 4570105
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1527 streets selected, 965 intersections
+  => New best score after adding 1 to street 8253: 4570106 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 28, LeftSwap: 26, SimpleSwap: 664, ViableSwapNotFound: 331, RightSwap: 21}
+Round 35, new score: 4570106
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1527 streets selected, 965 intersections
+  => New best score after adding 1 to street 926: 4570107 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 661, ViableSwapNotFound: 331, LeftSwap: 26, RightSwap: 21, FailedSwapTooLarge: 28}
+Round 36, new score: 4570107
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1528 streets selected, 965 intersections
+  => New best score after adding 1 to street 8112: 4570108 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {RightSwap: 21, ViableSwapNotFound: 331, LeftSwap: 26, SimpleSwap: 676, FailedSwapTooLarge: 28}
+Round 37, new score: 4570108
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1528 streets selected, 965 intersections
+  => New best score after adding 1 to street 2301: 4570109 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {SimpleSwap: 666, ViableSwapNotFound: 331, LeftSwap: 26, RightSwap: 21, FailedSwapTooLarge: 28}
+Round 38, new score: 4570109
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1526 streets selected, 966 intersections
+  => New best score after adding 1 to street 1513: 4570110 (swaps: {ViableSwapNotFound: 1})
+Improvement done, swaps: {LeftSwap: 26, ViableSwapNotFound: 330, RightSwap: 21, SimpleSwap: 668, FailedSwapTooLarge: 28}
+Round 39, new score: 4570110
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1525 streets selected, 966 intersections
+  => New best score after adding 1 to street 3763: 4570111 (swaps: {})
+Improvement done, swaps: {SimpleSwap: 674, LeftSwap: 26, FailedSwapTooLarge: 28, ViableSwapNotFound: 329, RightSwap: 21}
+Round 40, new score: 4570111
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1525 streets selected, 966 intersections
+  => New best score after adding 1 to street 3029: 4570112 (swaps: {SimpleSwap: 1})
+  => New best score after adding 1 to street 4470: 4570113 (swaps: {})
+Improvement done, swaps: {ViableSwapNotFound: 329, SimpleSwap: 662, FailedSwapTooLarge: 28, LeftSwap: 26, RightSwap: 21}
+Round 41, new score: 4570113
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1523 streets selected, 965 intersections
+  => New best score after adding 1 to street 5109: 4570114 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {FailedSwapTooLarge: 28, LeftSwap: 26, SimpleSwap: 684, ViableSwapNotFound: 325, RightSwap: 21}
+Round 42, new score: 4570114
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1521 streets selected, 965 intersections
+  => New best score after adding 1 to street 3029: 4570115 (swaps: {SimpleSwap: 1})
+  => New best score after adding 1 to street 5197: 4570116 (swaps: {})
+Improvement done, swaps: {SimpleSwap: 667, ViableSwapNotFound: 323, RightSwap: 21, LeftSwap: 26, FailedSwapTooLarge: 28}
+Round 43, new score: 4570116
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1519 streets selected, 964 intersections
+  => New best score after adding 1 to street 2324: 4570117 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {LeftSwap: 26, RightSwap: 21, SimpleSwap: 661, ViableSwapNotFound: 320, FailedSwapTooLarge: 28}
+Round 44, new score: 4570117
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1518 streets selected, 964 intersections
+  => New best score after adding 1 to street 7819: 4570118 (swaps: {})
+Improvement done, swaps: {FailedSwapTooLarge: 28, RightSwap: 21, LeftSwap: 26, ViableSwapNotFound: 321, SimpleSwap: 670}
+Round 45, new score: 4570118
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1517 streets selected, 964 intersections
+  => New best score after adding 1 to street 6101: 4570119 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {LeftSwap: 26, RightSwap: 21, SimpleSwap: 674, ViableSwapNotFound: 321, FailedSwapTooLarge: 28}
+Round 46, new score: 4570119
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1516 streets selected, 965 intersections
+  => New best score after adding 1 to street 3029: 4570120 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {RightSwap: 21, ViableSwapNotFound: 323, SimpleSwap: 667, LeftSwap: 26, FailedSwapTooLarge: 28}
+Round 47, new score: 4570120
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1515 streets selected, 964 intersections
+  => New best score after adding 1 to street 8575: 4570121 (swaps: {})
+Improvement done, swaps: {LeftSwap: 26, SimpleSwap: 656, RightSwap: 21, FailedSwapTooLarge: 28, ViableSwapNotFound: 323}
+Round 48, new score: 4570121
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1514 streets selected, 963 intersections
+  => New best score after adding 1 to street 3357: 4570122 (swaps: {SimpleSwap: 1})
+Improvement done, swaps: {RightSwap: 21, FailedSwapTooLarge: 28, ViableSwapNotFound: 323, LeftSwap: 26, SimpleSwap: 657}
+Round 49, new score: 4570122
+Greedy improver: 0 minimum wait time, 1 max additional time, 8000 max streets per round, 1513 streets selected, 962 intersections
+Improvement done, swaps: {SimpleSwap: 676, ViableSwapNotFound: 323, RightSwap: 21, FailedSwapTooLarge: 28, LeftSwap: 26}
+Round 50, no improvement
+
+Improved schedule
+-----------------
+Intersections   : 6296
+Street lights   : 7964
+Arrived cars    : 1000
+Earliest arrival: 35
+Latest arrival  : 5041
+Crossed streets : 7964
+Total wait time : 4853
+Schedule score  : 4570122

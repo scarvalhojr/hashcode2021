@@ -1,0 +1,61 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 8071
+Intersections: 8000
+Streets      : 95928
+Cars         : 1000
+Max score    : 3986591
+Bonus points : 1000
+
+Schedule
+--------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1473606
+Schedule score  : 2502929
+Incremental Improver: 5 rounds
+Greedy improver: 10 minimum wait time, 1 max additional time, 30000 max streets per round, 30000 streets selected, 5009 intersections
+  => New best score after updating intersection 20: 2502944 (swaps: {})
+Improvement done, swaps: {InnerSwap: 1, RangeSwap: 3, ViableSwapNotFound: 6}
+Round 1, new score: 2502944
+Greedy improver: 10 minimum wait time, 1 max additional time, 30000 max streets per round, 30000 streets selected, 4987 intersections
+  => New best score after adding 1 to street 33232: 2502948 (swaps: {})
+  => New best score after adding 1 to street 44868: 2503032 (swaps: {RangeSwap: 1, InnerSwap: 1})
+  => New best score after adding 1 to street 38210: 2503140 (swaps: {RangeSwap: 1, InnerSwap: 1, ViableSwapNotFound: 1})
+  => New best score after adding 1 to street 60409: 2503172 (swaps: {InnerSwap: 1})
+  => New best score after adding 1 to street 59993: 2503199 (swaps: {InnerSwap: 1})
+Improvement done, swaps: {ViableSwapNotFound: 5051, RangeSwap: 11503, InnerSwap: 13775}
+Round 2, new score: 2503199
+Greedy improver: 10 minimum wait time, 1 max additional time, 30000 max streets per round, 30000 streets selected, 5005 intersections
+  => New best score after updating intersection 3296: 2503233 (swaps: {})
+Improvement done, swaps: {InnerSwap: 1, RangeSwap: 3, ViableSwapNotFound: 6}
+Round 3, new score: 2503233
+Greedy improver: 10 minimum wait time, 1 max additional time, 30000 max streets per round, 30000 streets selected, 5009 intersections
+  => New best score after adding 1 to street 33232: 2503237 (swaps: {})
+  => New best score after adding 1 to street 60409: 2503461 (swaps: {InnerSwap: 1})
+  => New best score after adding 1 to street 47687: 2503538 (swaps: {ViableSwapNotFound: 2, RangeSwap: 1})
+  => New best score after adding 1 to street 60407: 2503598 (swaps: {InnerSwap: 1, RangeSwap: 2, ViableSwapNotFound: 3})
+  => New best score after adding 1 to street 89714: 2503682 (swaps: {InnerSwap: 2})
+Improvement done, swaps: {RangeSwap: 20280, ViableSwapNotFound: 10606, InnerSwap: 28394}
+Round 4, new score: 2503682
+Greedy improver: 10 minimum wait time, 1 max additional time, 30000 max streets per round, 30000 streets selected, 5005 intersections
+  => New best score after updating intersection 1115: 2503962 (swaps: {})
+Improvement done, swaps: {ViableSwapNotFound: 6, RangeSwap: 3, InnerSwap: 1}
+Round 5, new score: 2503962
+
+Improved schedule
+-----------------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1473248
+Schedule score  : 2503962

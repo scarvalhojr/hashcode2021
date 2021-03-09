@@ -1,0 +1,99 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 8071
+Intersections: 8000
+Streets      : 95928
+Cars         : 1000
+Max score    : 3986591
+Bonus points : 1000
+
+Schedule
+--------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1482620
+Schedule score  : 2493404
+Incremental Improver: 20 rounds
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 322 intersections
+  => New best score after updating intersection 179: 2493449
+  => New best score after updating intersection 59: 2493497
+  => New best score after updating intersection 24: 2493656
+  => New best score after updating intersection 226: 2493796
+Round 1, new score: 2493796
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 323 intersections
+  => New best score after updating intersection 24: 2494048
+Round 2, new score: 2494048
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 323 intersections
+  => New best score after updating intersection 494: 2494244
+Round 3, new score: 2494244
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 323 intersections
+  => New best score after updating intersection 144: 2494284
+  => New best score after updating intersection 259: 2494338
+  => New best score after updating intersection 111: 2494414
+Round 4, new score: 2494414
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 323 intersections
+  => New best score after updating intersection 131: 2494442
+  => New best score after updating intersection 179: 2494459
+  => New best score after updating intersection 492: 2494464
+  => New best score after updating intersection 259: 2494508
+Round 5, new score: 2494508
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 323 intersections
+  => New best score after updating intersection 49: 2494590
+  => New best score after updating intersection 59: 2494601
+  => New best score after updating intersection 547: 2494628
+Round 6, new score: 2494628
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 322 intersections
+  => New best score after updating intersection 32: 2494644
+  => New best score after updating intersection 144: 2494668
+  => New best score after updating intersection 59: 2494721
+Round 7, new score: 2494721
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 323 intersections
+  => New best score after updating intersection 27: 2494742
+  => New best score after updating intersection 179: 2494766
+  => New best score after updating intersection 492: 2494771
+Round 8, new score: 2494771
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 324 intersections
+  => New best score after updating intersection 63: 2494801
+  => New best score after updating intersection 179: 2494816
+Round 9, new score: 2494816
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 324 intersections
+  => New best score after updating intersection 27: 2494837
+  => New best score after updating intersection 177: 2494868
+Round 10, new score: 2494868
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 323 intersections
+  => New best score after updating intersection 208: 2494908
+  => New best score after updating intersection 32: 2494933
+Round 11, new score: 2494933
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 323 intersections
+  => New best score after updating intersection 27: 2494954
+  => New best score after updating intersection 144: 2494973
+Round 12, new score: 2494973
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 324 intersections
+  => New best score after updating intersection 28: 2494989
+  => New best score after updating intersection 27: 2494994
+Round 13, new score: 2494994
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 324 intersections
+  => New best score after updating intersection 63: 2495024
+Round 14, new score: 2495024
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 324 intersections
+  => New best score after updating intersection 131: 2495052
+Round 15, new score: 2495052
+Greedy improver: 5 minimum wait time, 4000 max streets per round, 4000 streets selected, 325 intersections
+Round 16, no improvement
+
+Improved schedule
+-----------------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1480972
+Schedule score  : 2495052

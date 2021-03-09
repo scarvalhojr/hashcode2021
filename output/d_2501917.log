@@ -1,0 +1,39 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 8071
+Intersections: 8000
+Streets      : 95928
+Cars         : 1000
+Max score    : 3986591
+Bonus points : 1000
+
+Schedule
+--------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1474914
+Schedule score  : 2501622
+Incremental Improver: 1 rounds
+Greedy improver: 2 minimum wait time, 1 max additional time, 20000 max streets per round, 20000 streets selected, 2987 intersections
+  => New best score after updating intersection 894: 2501692 (swaps: {RangeSwap: 2})
+  => New best score after updating intersection 1232: 2501818 (swaps: {})
+  => New best score after updating intersection 1435: 2501917 (swaps: {})
+Improvement done, swaps: {RangeSwap: 5, ViableSwapNotFound: 6, SimpleSwap: 1}
+Round 1, new score: 2501917
+
+Improved schedule
+-----------------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1474619
+Schedule score  : 2501917

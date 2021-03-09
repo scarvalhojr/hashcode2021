@@ -1,0 +1,57 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 8071
+Intersections: 8000
+Streets      : 95928
+Cars         : 1000
+Max score    : 3986591
+Bonus points : 1000
+
+Schedule
+--------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1480972
+Schedule score  : 2495052
+Incremental Improver: 50 rounds
+Greedy improver: 4 minimum wait time, 6000 max streets per round, 6000 streets selected, 537 intersections
+  => New best score after updating intersection 100: 2495094
+  => New best score after updating intersection 49: 2495134
+Round 1, new score: 2495134
+Greedy improver: 4 minimum wait time, 6000 max streets per round, 6000 streets selected, 536 intersections
+  => New best score after updating intersection 28: 2495150
+Round 2, new score: 2495150
+Greedy improver: 4 minimum wait time, 6000 max streets per round, 6000 streets selected, 534 intersections
+  => New best score after updating intersection 282: 2495210
+  => New best score after updating intersection 114: 2495420
+Round 3, new score: 2495420
+Greedy improver: 4 minimum wait time, 6000 max streets per round, 6000 streets selected, 534 intersections
+  => New best score after updating intersection 282: 2495480
+  => New best score after updating intersection 13: 2495564
+Round 4, new score: 2495564
+Greedy improver: 4 minimum wait time, 6000 max streets per round, 6000 streets selected, 533 intersections
+  => New best score after updating intersection 282: 2495624
+Round 5, new score: 2495624
+Greedy improver: 4 minimum wait time, 6000 max streets per round, 6000 streets selected, 536 intersections
+  => New best score after updating intersection 34: 2495653
+  => New best score after updating intersection 100: 2495666
+Round 6, new score: 2495666
+Greedy improver: 4 minimum wait time, 6000 max streets per round, 6000 streets selected, 533 intersections
+Round 7, no improvement
+
+Improved schedule
+-----------------
+Intersections   : 8000
+Street lights   : 83874
+Arrived cars    : 1000
+Earliest arrival: 5659
+Latest arrival  : 7807
+Crossed streets : 83874
+Total wait time : 1480363
+Schedule score  : 2495666
