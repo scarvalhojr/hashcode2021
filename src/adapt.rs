@@ -1,5 +1,6 @@
 use super::*;
 use crate::sched::{Car, CarState, Schedule, Scheduler};
+use log::info;
 use std::collections::{HashSet, VecDeque};
 
 #[derive(Default)]
@@ -128,12 +129,8 @@ impl Scheduler for AdaptiveScheduler {
 
         let unused_count: usize =
             crossed_streets.values().map(|streets| streets.len()).sum();
-        println!(
-            "\n\
-            Adaptive scheduler\n\
-            ------------------\n\
-            Ignored cars  : {}\n\
-            Unused streets: {}",
+        info!(
+            "Adaptive scheduler: {} ignored cars, {} unused streets",
             ignored_cars.len(),
             unused_count,
         );

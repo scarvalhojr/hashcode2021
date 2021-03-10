@@ -1,5 +1,6 @@
 use super::*;
 use crate::sched::{Schedule, Scheduler};
+use log::info;
 use std::collections::HashMap;
 
 #[derive(Default)]
@@ -30,11 +31,7 @@ impl Scheduler for TrafficScheduler {
             }
         }
 
-        println!(
-            "\n\
-            Traffic scheduler (log 10)\n\
-            --------------------------",
-        );
+        info!("Traffic scheduler (log 10)");
 
         // List intersections that have large difference between its quitests
         // and busiest streets (for informational purposes only)
@@ -44,7 +41,7 @@ impl Scheduler for TrafficScheduler {
             let max_traffic = counters.values().max().unwrap();
             let traffic_delta = max_traffic - min_traffic;
             if traffic_delta > max_delta {
-                println!(
+                info!(
                     "Intersection {}: {} min traffic, {} max traffic, {} delta",
                     inter_id, min_traffic, max_traffic, traffic_delta,
                 );

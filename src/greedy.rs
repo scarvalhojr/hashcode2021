@@ -2,9 +2,12 @@ use super::*;
 use crate::improve::Improver;
 use crate::sched::{Car, CarState, Schedule};
 use crate::sums::AllSums;
+use log::info;
 use std::collections::{HashSet, VecDeque};
 use std::iter::once;
 use std::ops::{RangeBounds, RangeInclusive};
+use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::Arc;
 
 pub struct GreedyImprover {
     min_wait_time: Time,
@@ -39,6 +42,7 @@ impl GreedyImprover {
 impl Improver for GreedyImprover {
     fn improve<'a>(
         &self,
+        abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
     ) -> Option<(Schedule<'a>, Score)> {
         // Sort streets by total wait time
@@ -62,7 +66,7 @@ impl Improver for GreedyImprover {
             })
             .collect();
 
-        println!(
+        info!(
             "Greedy improver: {} minimum wait time, {} max additional time, \
             {} max streets per round, {} streets selected, {} intersections",
             self.min_wait_time,
@@ -79,14 +83,17 @@ impl Improver for GreedyImprover {
         // First, try to improve each intersection by reordering streets
         // without changing their times
         for &inter_id in inter_ids.iter() {
+            if abort_flag.load(Ordering::SeqCst) {
+                break;
+            }
             let mut new_schedule = schedule.clone();
             rebuild_intersection(&mut new_schedule, inter_id);
             let new_stats = new_schedule.stats().unwrap();
             if new_stats.score <= best_score {
                 continue;
             }
-            println!(
-                "  => New best score after updating intersection {}: {}",
+            info!(
+                "=> New best score after updating intersection {}: {}",
                 inter_id, new_stats.score,
             );
             best_count += 1;
@@ -101,10 +108,16 @@ impl Improver for GreedyImprover {
             // If a better schedule was found, return it
             return Some((sched, best_score));
         }
+        if abort_flag.load(Ordering::SeqCst) {
+            return None;
+        }
 
         // Try to improve schedule by adding time to busy streets
         'outer: for add_time in 1..=self.max_add_time {
             for &(street_id, wait_time) in wait_times.iter() {
+                if abort_flag.load(Ordering::SeqCst) {
+                    break 'outer;
+                }
                 let intersection_id =
                     schedule.get_intersection_id(street_id).unwrap();
                 let mut new_schedule = schedule.clone();
@@ -115,8 +128,8 @@ impl Improver for GreedyImprover {
                 if new_stats.score <= best_score {
                     continue;
                 }
-                println!(
-                    "  => New best score after adding {} to street {}, \
+                info!(
+                    "=> New best score after adding {} to street {}, \
                     intersection {} ({} streets in the intersection), {} wait \
                     time: {}",
                     add_time,

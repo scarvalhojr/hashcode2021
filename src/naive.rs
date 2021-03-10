@@ -1,5 +1,6 @@
 use super::*;
 use crate::sched::{Schedule, Scheduler};
+use log::info;
 use std::collections::HashSet;
 
 #[derive(Default)]
@@ -30,13 +31,7 @@ impl Scheduler for NaiveScheduler {
             }
         }
 
-        println!(
-            "\n\
-            Naive scheduler\n\
-            ---------------\n\
-            Ignored cars: {}",
-            ignored_cars,
-        );
+        info!("Naive scheduler: {} ignored cars", ignored_cars);
 
         for &street_id in crossed_streets.iter() {
             let inter_id = simulation.streets[street_id].end_intersection;

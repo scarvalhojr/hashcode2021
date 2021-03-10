@@ -1,4 +1,5 @@
 use clap::{crate_description, value_t, App, Arg};
+use ctrlc::set_handler;
 use hashcode2021::adapt::AdaptiveScheduler;
 use hashcode2021::greedy::GreedyImprover;
 use hashcode2021::improve::IncrementalImprover;
@@ -9,6 +10,8 @@ use hashcode2021::traffic::TrafficScheduler;
 use hashcode2021::{Simulation, Time};
 use std::fs::{read_to_string, write};
 use std::process::exit;
+use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::Arc;
 
 fn main() {
     let args = App::new(crate_description!())
@@ -128,6 +131,7 @@ fn main() {
         None
     };
 
+    env_logger::init();
     println!(crate_description!());
 
     let simulation = load_simulation(args.value_of("input").unwrap());
@@ -166,11 +170,20 @@ fn main() {
         sched_stats,
     );
 
+    // Setup Ctrl-C handler
+    let abort_flag = Arc::new(AtomicBool::new(false));
+    let abort_clone = abort_flag.clone();
+    set_handler(move || {
+        eprintln!("Received termination request");
+        abort_clone.store(true, Ordering::SeqCst);
+    })
+    .expect("Error setting Ctrl-C handler");
+
     let final_schedule = match args.value_of("improver") {
         Some(algorithm_name) => {
-            let mut improver = IncrementalImprover::default();
+            let mut improver = IncrementalImprover::new(abort_flag);
             if let Some(rounds) = incremental_rounds {
-                improver.set_rounds(rounds);
+                improver.set_max_rounds(rounds);
             }
 
             let improved_schedule = match algorithm_name {

@@ -1,6 +1,9 @@
 use super::*;
 use crate::improve::Improver;
 use crate::sched::Schedule;
+use log::info;
+use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::Arc;
 
 pub struct ShuffleImprover {
     min_wait_time: Time,
@@ -35,9 +38,10 @@ impl ShuffleImprover {
 impl Improver for ShuffleImprover {
     fn improve<'a>(
         &self,
+        abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
     ) -> Option<(Schedule<'a>, Score)> {
-        println!(
+        info!(
             "Shuffle improver: {} min wait time, {} max streets per round, \
             {} max shuffles per street",
             self.min_wait_time, self.max_streets, self.max_shuffles,
@@ -55,7 +59,8 @@ impl Improver for ShuffleImprover {
         let mut best_count = 0;
         let mut best_score = stats.score;
         let mut best_sched = None;
-        for &(street_id, wait_time) in wait_times.iter().take(self.max_streets)
+        'outer: for &(street_id, wait_time) in
+            wait_times.iter().take(self.max_streets)
         {
             if schedule.is_street_always_green(street_id) {
                 // This street is always green so can't be improved
@@ -66,7 +71,7 @@ impl Improver for ShuffleImprover {
                 schedule.num_streets_in_intersection(street_id),
                 self.max_shuffles,
             );
-            println!(
+            info!(
                 "Street {}: {} total wait time, \
                 {} streets in the intersection, {} shuffles",
                 street_id,
@@ -78,12 +83,16 @@ impl Improver for ShuffleImprover {
                 let mut new_schedule = schedule.clone();
                 new_schedule.add_street_time(street_id, add_time);
                 for _ in 0..=shuffles {
+                    if abort_flag.load(Ordering::SeqCst) {
+                        break 'outer;
+                    }
+
                     let new_stats = new_schedule.stats().unwrap();
                     if new_stats.score <= best_score {
                         continue;
                     }
-                    println!(
-                        "  => New best score by adding {} to street \
+                    info!(
+                        "=> New best score by adding {} to street \
                         {}: {}",
                         add_time, street_id, new_stats.score
                     );
