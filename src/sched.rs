@@ -73,7 +73,9 @@ impl Intersection {
                 return;
             }
         }
-        panic!("Failed to add time to street {} in intersection", street_id);
+        // Street was not in the interesection yet: add it
+        self.turns.push((street_id, add_time));
+        self.cycle += add_time;
     }
 
     pub fn shuffle(&mut self) {
@@ -82,6 +84,9 @@ impl Intersection {
     }
 
     pub fn is_green(&self, street_id: StreetId, at_time: Time) -> bool {
+        if self.cycle == 0 {
+            return false;
+        }
         let time = at_time % self.cycle;
         let mut acc_time = 0;
         for &(turn_street_id, turn_street_time) in &self.turns {

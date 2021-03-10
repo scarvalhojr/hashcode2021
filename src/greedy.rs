@@ -242,6 +242,9 @@ impl OpenIntersection {
     }
 
     fn is_or_set_green(&mut self, street_id: StreetId, at_time: Time) -> bool {
+        if self.cycle == 0 {
+            return false;
+        }
         let mod_time = at_time % self.cycle;
         let mut slot_idx = None;
         let mut slot_street = None;
