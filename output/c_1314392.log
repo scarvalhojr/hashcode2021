@@ -1,0 +1,276 @@
+Hash Code 2021
+
+Simulation
+----------
+Duration     : 1640
+Intersections: 10000
+Streets      : 35030
+Cars         : 1000
+Max score    : 1328389
+Bonus points : 100
+
+Schedule
+--------
+Intersections   : 7660
+Street lights   : 11472
+Arrived cars    : 999
+Earliest arrival: 1
+Latest arrival  : 1628
+Crossed streets : 11472
+Total wait time : 14129
+Schedule score  : 1314206
+Incremental Improver: 100 rounds
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3268 streets selected, 2291 intersections
+  => New best score after adding 1 to street 10830, intersection 8545 (2 streets in the intersection), 2 wait time: 1314207
+Round 1, new score: 1314207
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3269 streets selected, 2292 intersections
+  => New best score after adding 1 to street 28831, intersection 6951 (2 streets in the intersection), 2 wait time: 1314208
+Round 2, new score: 1314208
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3270 streets selected, 2293 intersections
+  => New best score after adding 1 to street 3634, intersection 7914 (2 streets in the intersection), 1 wait time: 1314209
+Round 3, new score: 1314209
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3270 streets selected, 2293 intersections
+  => New best score after adding 1 to street 30203, intersection 7914 (2 streets in the intersection), 6 wait time: 1314210
+Round 4, new score: 1314210
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3270 streets selected, 2293 intersections
+  => New best score after adding 1 to street 12457, intersection 3627 (2 streets in the intersection), 1 wait time: 1314211
+Round 5, new score: 1314211
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3270 streets selected, 2293 intersections
+  => New best score after adding 1 to street 5632, intersection 6691 (2 streets in the intersection), 1 wait time: 1314212
+Round 6, new score: 1314212
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3269 streets selected, 2292 intersections
+  => New best score after adding 1 to street 29347, intersection 1677 (3 streets in the intersection), 6 wait time: 1314214
+Round 7, new score: 1314214
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3267 streets selected, 2291 intersections
+  => New best score after adding 2 to street 31505, intersection 6185 (2 streets in the intersection), 12 wait time: 1314217
+  => New best score after adding 2 to street 21544, intersection 8265 (3 streets in the intersection), 7 wait time: 1314219
+  => New best score after adding 2 to street 2048, intersection 3443 (4 streets in the intersection), 7 wait time: 1314221
+  => New best score after adding 2 to street 17143, intersection 6182 (2 streets in the intersection), 4 wait time: 1314222
+Round 8, new score: 1314222
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3267 streets selected, 2291 intersections
+  => New best score after adding 1 to street 23622, intersection 7241 (3 streets in the intersection), 44 wait time: 1314225
+  => New best score after adding 1 to street 24138, intersection 7326 (3 streets in the intersection), 2 wait time: 1314226
+Round 9, new score: 1314226
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3263 streets selected, 2290 intersections
+  => New best score after adding 1 to street 3846, intersection 7446 (2 streets in the intersection), 8 wait time: 1314227
+Round 10, new score: 1314227
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3264 streets selected, 2290 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314228
+  => New best score after adding 2 to street 8696, intersection 537 (2 streets in the intersection), 9 wait time: 1314229
+  => New best score after adding 2 to street 21544, intersection 8265 (3 streets in the intersection), 7 wait time: 1314232
+  => New best score after adding 2 to street 3006, intersection 6054 (2 streets in the intersection), 3 wait time: 1314233
+Round 11, new score: 1314233
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3264 streets selected, 2290 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314234
+  => New best score after adding 2 to street 8696, intersection 537 (2 streets in the intersection), 9 wait time: 1314235
+  => New best score after adding 2 to street 2048, intersection 3443 (4 streets in the intersection), 7 wait time: 1314240
+Round 12, new score: 1314240
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3267 streets selected, 2290 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314241
+  => New best score after adding 2 to street 18914, intersection 9132 (2 streets in the intersection), 9 wait time: 1314242
+  => New best score after adding 2 to street 11612, intersection 1607 (2 streets in the intersection), 7 wait time: 1314244
+  => New best score after adding 2 to street 21544, intersection 8265 (3 streets in the intersection), 7 wait time: 1314245
+  => New best score after adding 2 to street 9785, intersection 5954 (2 streets in the intersection), 3 wait time: 1314246
+Round 13, new score: 1314246
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3267 streets selected, 2290 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314247
+  => New best score after adding 2 to street 14929, intersection 4460 (2 streets in the intersection), 9 wait time: 1314248
+  => New best score after adding 2 to street 21544, intersection 8265 (3 streets in the intersection), 7 wait time: 1314251
+Round 14, new score: 1314251
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3264 streets selected, 2290 intersections
+  => New best score after adding 1 to street 20488, intersection 8078 (2 streets in the intersection), 10 wait time: 1314252
+Round 15, new score: 1314252
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3264 streets selected, 2290 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314253
+  => New best score after adding 2 to street 18914, intersection 9132 (2 streets in the intersection), 9 wait time: 1314254
+  => New best score after adding 2 to street 11612, intersection 1607 (2 streets in the intersection), 7 wait time: 1314256
+Round 16, new score: 1314256
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3262 streets selected, 2289 intersections
+  => New best score after updating intersection 1697: 1314262
+Round 17, new score: 1314262
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3262 streets selected, 2289 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314263
+  => New best score after adding 2 to street 18914, intersection 9132 (2 streets in the intersection), 9 wait time: 1314264
+  => New best score after adding 2 to street 17128, intersection 9293 (2 streets in the intersection), 6 wait time: 1314265
+  => New best score after adding 2 to street 4440, intersection 8655 (2 streets in the intersection), 2 wait time: 1314266
+Round 18, new score: 1314266
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3261 streets selected, 2288 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314267
+  => New best score after adding 2 to street 14929, intersection 4460 (2 streets in the intersection), 9 wait time: 1314268
+  => New best score after adding 2 to street 17128, intersection 9293 (2 streets in the intersection), 6 wait time: 1314269
+  => New best score after adding 2 to street 17149, intersection 1355 (2 streets in the intersection), 1 wait time: 1314270
+Round 19, new score: 1314270
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3260 streets selected, 2287 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314271
+  => New best score after adding 2 to street 18914, intersection 9132 (2 streets in the intersection), 9 wait time: 1314272
+  => New best score after adding 2 to street 17128, intersection 9293 (2 streets in the intersection), 6 wait time: 1314273
+  => New best score after adding 2 to street 15727, intersection 3435 (2 streets in the intersection), 1 wait time: 1314274
+Round 20, new score: 1314274
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3256 streets selected, 2286 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314275
+  => New best score after adding 2 to street 8696, intersection 537 (2 streets in the intersection), 9 wait time: 1314276
+  => New best score after adding 2 to street 17128, intersection 9293 (2 streets in the intersection), 6 wait time: 1314277
+Round 21, new score: 1314277
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3256 streets selected, 2286 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314278
+  => New best score after adding 2 to street 8696, intersection 537 (2 streets in the intersection), 9 wait time: 1314279
+  => New best score after adding 2 to street 21123, intersection 9218 (2 streets in the intersection), 6 wait time: 1314283
+Round 22, new score: 1314283
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3255 streets selected, 2285 intersections
+  => New best score after adding 1 to street 29552, intersection 9775 (2 streets in the intersection), 6 wait time: 1314289
+Round 23, new score: 1314289
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3256 streets selected, 2285 intersections
+  => New best score after adding 1 to street 16052, intersection 8951 (2 streets in the intersection), 3 wait time: 1314292
+  => New best score after adding 1 to street 34592, intersection 9054 (2 streets in the intersection), 3 wait time: 1314297
+Round 24, new score: 1314297
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3254 streets selected, 2284 intersections
+  => New best score after adding 1 to street 16052, intersection 8951 (2 streets in the intersection), 3 wait time: 1314298
+  => New best score after adding 1 to street 17756, intersection 9708 (2 streets in the intersection), 1 wait time: 1314305
+Round 25, new score: 1314305
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3250 streets selected, 2283 intersections
+  => New best score after adding 1 to street 17804, intersection 9372 (3 streets in the intersection), 6 wait time: 1314306
+Round 26, new score: 1314306
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3247 streets selected, 2280 intersections
+  => New best score after adding 1 to street 11105, intersection 8644 (3 streets in the intersection), 7 wait time: 1314309
+  => New best score after adding 1 to street 10339, intersection 8396 (3 streets in the intersection), 6 wait time: 1314315
+Round 27, new score: 1314315
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3243 streets selected, 2278 intersections
+  => New best score after adding 1 to street 6799, intersection 9294 (2 streets in the intersection), 5 wait time: 1314316
+  => New best score after adding 1 to street 8242, intersection 8310 (2 streets in the intersection), 1 wait time: 1314321
+Round 28, new score: 1314321
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3243 streets selected, 2277 intersections
+  => New best score after adding 1 to street 6799, intersection 9294 (2 streets in the intersection), 5 wait time: 1314322
+  => New best score after adding 1 to street 10830, intersection 8545 (2 streets in the intersection), 1 wait time: 1314323
+Round 29, new score: 1314323
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3241 streets selected, 2277 intersections
+  => New best score after adding 1 to street 6799, intersection 9294 (2 streets in the intersection), 5 wait time: 1314324
+Round 30, new score: 1314324
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3239 streets selected, 2276 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314325
+  => New best score after adding 2 to street 8696, intersection 537 (2 streets in the intersection), 9 wait time: 1314326
+  => New best score after adding 2 to street 1149, intersection 8446 (2 streets in the intersection), 2 wait time: 1314327
+Round 31, new score: 1314327
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3237 streets selected, 2273 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314328
+  => New best score after adding 2 to street 8696, intersection 537 (2 streets in the intersection), 9 wait time: 1314329
+Round 32, new score: 1314329
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3234 streets selected, 2272 intersections
+  => New best score after updating intersection 462: 1314336
+Round 33, new score: 1314336
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3232 streets selected, 2273 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314337
+  => New best score after adding 2 to street 14929, intersection 4460 (2 streets in the intersection), 9 wait time: 1314338
+Round 34, new score: 1314338
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3233 streets selected, 2274 intersections
+  => New best score after adding 1 to street 24699, intersection 4717 (2 streets in the intersection), 2 wait time: 1314339
+Round 35, new score: 1314339
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3234 streets selected, 2274 intersections
+  => New best score after adding 1 to street 316, intersection 4790 (2 streets in the intersection), 2 wait time: 1314340
+Round 36, new score: 1314340
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3234 streets selected, 2275 intersections
+  => New best score after adding 1 to street 20876, intersection 4870 (2 streets in the intersection), 1 wait time: 1314344
+Round 37, new score: 1314344
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3232 streets selected, 2275 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314345
+  => New best score after adding 2 to street 9223, intersection 8793 (2 streets in the intersection), 7 wait time: 1314346
+Round 38, new score: 1314346
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3233 streets selected, 2275 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314347
+  => New best score after adding 2 to street 15258, intersection 7310 (2 streets in the intersection), 6 wait time: 1314348
+Round 39, new score: 1314348
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3233 streets selected, 2275 intersections
+  => New best score after adding 1 to street 31856, intersection 7842 (3 streets in the intersection), 24 wait time: 1314350
+  => New best score after adding 1 to street 10165, intersection 7732 (3 streets in the intersection), 6 wait time: 1314354
+Round 40, new score: 1314354
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3236 streets selected, 2276 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314355
+  => New best score after adding 2 to street 16272, intersection 2398 (2 streets in the intersection), 6 wait time: 1314356
+Round 41, new score: 1314356
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3234 streets selected, 2274 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314357
+  => New best score after adding 2 to street 17765, intersection 4413 (2 streets in the intersection), 3 wait time: 1314358
+Round 42, new score: 1314358
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3235 streets selected, 2274 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314359
+  => New best score after adding 2 to street 34397, intersection 279 (2 streets in the intersection), 1 wait time: 1314360
+Round 43, new score: 1314360
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3234 streets selected, 2273 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314361
+  => New best score after adding 2 to street 26752, intersection 1664 (2 streets in the intersection), 1 wait time: 1314362
+Round 44, new score: 1314362
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3232 streets selected, 2272 intersections
+  => New best score after updating intersection 1543: 1314366
+Round 45, new score: 1314366
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3231 streets selected, 2272 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314367
+  => New best score after adding 2 to street 9602, intersection 7777 (2 streets in the intersection), 1 wait time: 1314368
+Round 46, new score: 1314368
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3232 streets selected, 2273 intersections
+  => New best score after adding 1 to street 9602, intersection 7777 (2 streets in the intersection), 1 wait time: 1314369
+Round 47, new score: 1314369
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3232 streets selected, 2274 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314370
+  => New best score after adding 2 to street 13387, intersection 9915 (2 streets in the intersection), 1 wait time: 1314371
+Round 48, new score: 1314371
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3230 streets selected, 2272 intersections
+  => New best score after adding 2 to street 17305, intersection 1322 (2 streets in the intersection), 11 wait time: 1314372
+Round 49, new score: 1314372
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3230 streets selected, 2272 intersections
+  => New best score after adding 2 to street 17258, intersection 4506 (3 streets in the intersection), 10 wait time: 1314373
+Round 50, new score: 1314373
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3228 streets selected, 2272 intersections
+  => New best score after adding 2 to street 14148, intersection 4808 (2 streets in the intersection), 7 wait time: 1314374
+Round 51, new score: 1314374
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3229 streets selected, 2272 intersections
+  => New best score after adding 2 to street 21985, intersection 6330 (2 streets in the intersection), 6 wait time: 1314375
+Round 52, new score: 1314375
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3228 streets selected, 2271 intersections
+  => New best score after adding 1 to street 25860, intersection 6894 (3 streets in the intersection), 3 wait time: 1314377
+Round 53, new score: 1314377
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3228 streets selected, 2271 intersections
+  => New best score after adding 1 to street 31761, intersection 7003 (2 streets in the intersection), 14 wait time: 1314379
+  => New best score after adding 1 to street 16907, intersection 7302 (2 streets in the intersection), 1 wait time: 1314381
+Round 54, new score: 1314381
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3226 streets selected, 2270 intersections
+  => New best score after adding 1 to street 31761, intersection 7003 (2 streets in the intersection), 14 wait time: 1314383
+Round 55, new score: 1314383
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3229 streets selected, 2271 intersections
+  => New best score after adding 2 to street 15964, intersection 7574 (2 streets in the intersection), 6 wait time: 1314384
+Round 56, new score: 1314384
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3228 streets selected, 2270 intersections
+  => New best score after adding 2 to street 17258, intersection 4506 (3 streets in the intersection), 4 wait time: 1314385
+Round 57, new score: 1314385
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3230 streets selected, 2270 intersections
+  => New best score after adding 2 to street 31509, intersection 6059 (2 streets in the intersection), 4 wait time: 1314386
+Round 58, new score: 1314386
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3230 streets selected, 2270 intersections
+  => New best score after adding 2 to street 12208, intersection 6567 (2 streets in the intersection), 4 wait time: 1314387
+Round 59, new score: 1314387
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3229 streets selected, 2271 intersections
+  => New best score after adding 2 to street 23847, intersection 6332 (2 streets in the intersection), 4 wait time: 1314388
+Round 60, new score: 1314388
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3229 streets selected, 2271 intersections
+  => New best score after adding 2 to street 4747, intersection 2889 (2 streets in the intersection), 3 wait time: 1314389
+Round 61, new score: 1314389
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3230 streets selected, 2272 intersections
+  => New best score after adding 2 to street 14371, intersection 8932 (2 streets in the intersection), 3 wait time: 1314390
+Round 62, new score: 1314390
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3229 streets selected, 2271 intersections
+  => New best score after adding 2 to street 16305, intersection 3394 (2 streets in the intersection), 2 wait time: 1314391
+Round 63, new score: 1314391
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3230 streets selected, 2271 intersections
+  => New best score after adding 2 to street 16426, intersection 5932 (2 streets in the intersection), 1 wait time: 1314392
+Round 64, new score: 1314392
+Greedy improver: 0 minimum wait time, 2 max additional time, 12000 max streets per round, 3229 streets selected, 2270 intersections
+Round 65, no improvement
+
+Improved schedule
+-----------------
+Intersections   : 7660
+Street lights   : 11472
+Arrived cars    : 999
+Earliest arrival: 1
+Latest arrival  : 1628
+Crossed streets : 11472
+Total wait time : 13942
+Schedule score  : 1314392
