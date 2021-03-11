@@ -83,6 +83,12 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
+            Arg::with_name("no-add-new-streets")
+                .help("Do not add new streets to traffic lights")
+                .short("n")
+                .long("no-add-new-streets")
+        )
+        .arg(
             Arg::with_name("max-streets-per-round")
                 .help("Maximum number of streets per round on incremental rounds")
                 .short("s")
@@ -223,6 +229,9 @@ fn main() {
                     }
                     if let Some(value) = max_sub_time {
                         phased.set_max_sub_time(value);
+                    }
+                    if args.is_present("no-add-new-streets") {
+                        phased.set_add_new_streets(false);
                     }
                     improver.improve(&schedule, &phased)
                 }
