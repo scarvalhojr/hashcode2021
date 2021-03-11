@@ -78,6 +78,22 @@ impl Intersection {
         self.cycle += add_time;
     }
 
+    pub fn sub_street_time(&mut self, street_id: StreetId, sub_time: Time) {
+        let mut remove_idx = None;
+        for (idx, (id, time)) in self.turns.iter_mut().enumerate() {
+            if *id == street_id {
+                if *time > sub_time {
+                    *time -= sub_time;
+                    self.cycle -= sub_time;
+                    return;
+                }
+                self.cycle -= *time;
+                remove_idx = Some(idx);
+            }
+        }
+        self.turns.remove(remove_idx.unwrap());
+    }
+
     pub fn shuffle(&mut self) {
         let mut rng = thread_rng();
         self.turns.shuffle(&mut rng);
@@ -125,6 +141,13 @@ impl<'a> Schedule<'a> {
         self.intersections
             .entry(inter_id)
             .and_modify(|inter| inter.add_street_time(street_id, add_time));
+    }
+
+    pub fn sub_street_time(&mut self, street_id: StreetId, sub_time: Time) {
+        let inter_id = self.simulation.streets[street_id].end_intersection;
+        self.intersections
+            .entry(inter_id)
+            .and_modify(|inter| inter.sub_street_time(street_id, sub_time));
     }
 
     pub fn shuffle_intersection(&mut self, street_id: StreetId) {

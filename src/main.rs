@@ -4,6 +4,7 @@ use hashcode2021::adapt::AdaptiveScheduler;
 use hashcode2021::greedy::GreedyImprover;
 use hashcode2021::improve::IncrementalImprover;
 use hashcode2021::naive::NaiveScheduler;
+use hashcode2021::phased::PhasedImprover;
 use hashcode2021::sched::{Schedule, Scheduler};
 use hashcode2021::shuffle::ShuffleImprover;
 use hashcode2021::traffic::TrafficScheduler;
@@ -33,7 +34,7 @@ fn main() {
             Arg::with_name("improver")
                 .value_name("incremental improver")
                 .help("Incremental improver algorithm")
-                .possible_values(&["shuffle", "greedy"])
+                .possible_values(&["shuffle", "phased", "greedy"])
                 .index(3),
         )
         .arg(
@@ -75,6 +76,13 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
+            Arg::with_name("max-sub-time")
+                .help("Maximum time subtracted from a street on incremental rounds")
+                .short("m")
+                .long("max-sub-time")
+                .takes_value(true),
+        )
+        .arg(
             Arg::with_name("max-streets-per-round")
                 .help("Maximum number of streets per round on incremental rounds")
                 .short("s")
@@ -108,6 +116,14 @@ fn main() {
 
     let max_add_time = if args.is_present("max-add-time") {
         let value = value_t!(args.value_of("max-add-time"), Time)
+            .unwrap_or_else(|e| e.exit());
+        Some(value)
+    } else {
+        None
+    };
+
+    let max_sub_time = if args.is_present("max-sub-time") {
+        let value = value_t!(args.value_of("max-sub-time"), Time)
             .unwrap_or_else(|e| e.exit());
         Some(value)
     } else {
@@ -199,6 +215,16 @@ fn main() {
                         greedy.set_max_streets(value);
                     }
                     improver.improve(&schedule, &greedy)
+                }
+                "phased" => {
+                    let mut phased = PhasedImprover::default();
+                    if let Some(value) = max_add_time {
+                        phased.set_max_add_time(value);
+                    }
+                    if let Some(value) = max_sub_time {
+                        phased.set_max_sub_time(value);
+                    }
+                    improver.improve(&schedule, &phased)
                 }
                 "shuffle" => {
                     let mut shuffle = ShuffleImprover::default();
