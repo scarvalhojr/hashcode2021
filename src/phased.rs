@@ -44,15 +44,12 @@ impl Improver for PhasedImprover {
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
     ) -> Option<(Schedule<'a>, Score)> {
-
         let stats = schedule.stats().unwrap();
 
         // Sum up total wait time by intersection
         let mut inter_wait: HashMap<IntersectionId, Time> = HashMap::new();
-        for (&street_id, &time) in stats
-            .total_wait_time
-            .iter()
-            .filter(|&(&street_id, _)| {
+        for (&street_id, &time) in
+            stats.total_wait_time.iter().filter(|&(&street_id, _)| {
                 !schedule.is_street_always_green(street_id)
             })
         {
@@ -81,11 +78,7 @@ impl Improver for PhasedImprover {
         }
 
         // Phase 2
-        let result2 = self.phase2(
-            abort_flag.clone(),
-            schedule.clone(),
-            &stats,
-        );
+        let result2 = self.phase2(abort_flag.clone(), schedule.clone(), &stats);
         if result2.is_some() || abort_flag.load(Ordering::SeqCst) {
             return result2;
         }
@@ -100,7 +93,7 @@ impl PhasedImprover {
         &self,
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
-        score: Score,
+        curr_score: Score,
         intersections: &[(IntersectionId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
         // Loop thought all intersections in decreasing order of total wait
@@ -129,20 +122,19 @@ impl PhasedImprover {
             // Try to improve intersection by reordering streets
             // without changing their times
             let mut new_schedule = schedule.clone();
-            reorder_intersection(&mut new_schedule, inter_id);
-            let new_stats = new_schedule.stats().unwrap();
-            if new_stats.score > score {
+            let new_score = reorder_intersection(&mut new_schedule, inter_id);
+            if new_score > curr_score {
                 info!(
                     "New best score {} after reordering intersection {} (\
                     previous total wait time {}, {} streets), {} \
                     intersection(s) examined",
-                    new_stats.score,
+                    new_score,
                     inter_id,
                     inter_wait,
                     turns.len(),
                     count,
                 );
-                return Some((new_schedule, new_stats.score));
+                return Some((new_schedule, new_score));
             }
         }
 
@@ -154,7 +146,7 @@ impl PhasedImprover {
         &self,
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
-        stats: &ScheduleStats,
+        curr_stats: &ScheduleStats,
     ) -> Option<(Schedule<'a>, Score)> {
         if self.max_add_time == 0 {
             info!("Phased improver, phase 2: skipping since max_add_time is 0");
@@ -163,7 +155,7 @@ impl PhasedImprover {
 
         // Collect all streets with non-zero wait times whose traffic lights
         // are not always green
-        let mut streets: Vec<(StreetId, Time)> = stats
+        let mut streets: Vec<(StreetId, Time)> = curr_stats
             .total_wait_time
             .iter()
             .filter(|&(&street_id, _)| {
@@ -179,7 +171,8 @@ impl PhasedImprover {
             "Phased improver, phase 2: adding 1 second to traffic lights of \
             streets with non-zero wait times, {} streets selected, {} max \
             streets per intersection",
-            streets.len(), self.max_streets_per_inter,
+            streets.len(),
+            self.max_streets_per_inter,
         );
 
         // Loop through all streets in decreasing order of wait times; add 1 to
@@ -219,21 +212,20 @@ impl PhasedImprover {
 
             let mut new_schedule = schedule.clone();
             new_schedule.add_street_time(street_id, 1);
-            reorder_intersection(&mut new_schedule, inter_id);
-            let new_stats = new_schedule.stats().unwrap();
-            if new_stats.score > stats.score {
+            let new_score = reorder_intersection(&mut new_schedule, inter_id);
+            if new_score > curr_stats.score {
                 info!(
                     "New best score {} after adding 1 second to traffic lights \
                     of street {} (previous wait time {}), intersection {}, {} \
                     streets in the intersection, {} street(s) examined",
-                    new_stats.score,
+                    new_score,
                     street_id,
                     street_wait,
                     inter_id,
                     turns.len(),
                     count,
                 );
-                return Some((new_schedule, new_stats.score));
+                return Some((new_schedule, new_score));
             }
         }
 

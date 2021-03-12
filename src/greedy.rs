@@ -85,17 +85,16 @@ impl Improver for GreedyImprover {
                 break;
             }
             let mut new_schedule = schedule.clone();
-            reorder_intersection(&mut new_schedule, inter_id);
-            let new_stats = new_schedule.stats().unwrap();
-            if new_stats.score <= best_score {
+            let new_score = reorder_intersection(&mut new_schedule, inter_id);
+            if new_score <= best_score {
                 continue;
             }
             info!(
                 "=> New best score after updating intersection {}: {}",
-                inter_id, new_stats.score,
+                inter_id, new_score,
             );
             best_count += 1;
-            best_score = new_stats.score;
+            best_score = new_score;
             best_sched = Some(new_schedule.clone());
             if best_count >= 5 {
                 break;
@@ -120,10 +119,9 @@ impl Improver for GreedyImprover {
                     schedule.get_intersection_id(street_id).unwrap();
                 let mut new_schedule = schedule.clone();
                 new_schedule.add_street_time(street_id, add_time);
-                reorder_intersection(&mut new_schedule, intersection_id);
-
-                let new_stats = new_schedule.stats().unwrap();
-                if new_stats.score <= best_score {
+                let new_score =
+                    reorder_intersection(&mut new_schedule, intersection_id);
+                if new_score <= best_score {
                     continue;
                 }
                 info!(
@@ -135,10 +133,10 @@ impl Improver for GreedyImprover {
                     intersection_id,
                     schedule.num_streets_in_intersection(street_id),
                     wait_time,
-                    new_stats.score,
+                    new_score,
                 );
                 best_count += 1;
-                best_score = new_stats.score;
+                best_score = new_score;
                 best_sched = Some(new_schedule.clone());
                 if best_count >= 5 {
                     break 'outer;

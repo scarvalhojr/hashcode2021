@@ -5,8 +5,12 @@ use std::collections::VecDeque;
 use std::iter::once;
 use std::ops::{RangeBounds, RangeInclusive};
 
-pub fn reorder_intersection(schedule: &mut Schedule, inter_id: IntersectionId) {
+pub fn reorder_intersection(
+    schedule: &mut Schedule,
+    inter_id: IntersectionId,
+) -> Score {
     let mut intersection = OpenIntersection::from(schedule, inter_id);
+    let mut score = 0;
 
     // All cars that haven't reached their end yet
     let mut moving_cars: HashMap<CarId, Car> = schedule
@@ -44,12 +48,12 @@ pub fn reorder_intersection(schedule: &mut Schedule, inter_id: IntersectionId) {
 
         // Let cars at the top of the queue cross intersections
         for (&street_id, cars) in queues.iter_mut() {
-            let stree_inter_id =
+            let street_inter_id =
                 schedule.simulation.streets[street_id].end_intersection;
-            let is_green = if stree_inter_id == inter_id {
+            let is_green = if street_inter_id == inter_id {
                 intersection.is_or_set_green(street_id, time)
             } else {
-                schedule.is_green(stree_inter_id, street_id, time)
+                schedule.is_green(street_inter_id, street_id, time)
             };
             if is_green {
                 let car_id = cars.pop_front().unwrap();
@@ -60,13 +64,17 @@ pub fn reorder_intersection(schedule: &mut Schedule, inter_id: IntersectionId) {
             }
         }
 
-        if intersection.is_done() {
-            // No need to continue further with simulation
-            break;
-        }
-
         // Drop empty traffic light queues
         queues.retain(|_, cars| !cars.is_empty());
+
+        // Update score for cars that reached their end
+        let arrived_cars = moving_cars
+            .iter()
+            .filter(|(_, car)| car.state == CarState::Arrived)
+            .count();
+        score += (schedule.simulation.bonus
+            + (schedule.simulation.duration - time))
+            * Score::try_from(arrived_cars).unwrap();
 
         // Remove cars that reached their end
         moving_cars.retain(|_, car| car.state != CarState::Arrived);
@@ -74,6 +82,7 @@ pub fn reorder_intersection(schedule: &mut Schedule, inter_id: IntersectionId) {
 
     intersection.assign_remaining_streets();
     intersection.update_schedule(schedule, inter_id);
+    score
 }
 
 struct OpenIntersection {
@@ -472,10 +481,6 @@ impl OpenIntersection {
         self.slots[left_start..mid_start].copy_from_slice(&right);
         self.slots[mid_start..new_right_start].copy_from_slice(&middle);
         self.slots[new_right_start..=right_end].copy_from_slice(&left);
-    }
-
-    fn is_done(&self) -> bool {
-        self.slots.iter().all(|(street, _)| street.is_some())
     }
 
     fn assign_remaining_streets(&mut self) {
