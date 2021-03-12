@@ -303,13 +303,18 @@ impl PhasedImprover {
                     return None;
                 }
 
-                let wait_time = *curr_stats
-                    .total_wait_time
-                    .get(&street_id)
-                    .unwrap_or(&0);
+                let wait_time =
+                    *curr_stats.total_wait_time.get(&street_id).unwrap_or(&0);
 
-                if wait_time > 0 && turns.len() > self.max_streets_per_inter {
-                    // Too many streets in the intersection: can't add time
+                if wait_time > 0 {
+                    if self.max_add_time < 2
+                        || turns.len() > self.max_streets_per_inter
+                    {
+                        // Can't add more time
+                        continue;
+                    }
+                } else if self.max_sub_time < 1 {
+                    // Can't substract time
                     continue;
                 }
 
@@ -319,7 +324,8 @@ impl PhasedImprover {
                 } else {
                     new_schedule.sub_street_time(street_id, 1);
                 }
-                let new_score = reorder_intersection(&mut new_schedule, inter_id);
+                let new_score =
+                    reorder_intersection(&mut new_schedule, inter_id);
                 if new_score > best_score {
                     best_score = new_score;
                     best_sched = Some(new_schedule);
