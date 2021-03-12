@@ -9,6 +9,7 @@ use hashcode2021::sched::{Schedule, Scheduler};
 use hashcode2021::shuffle::ShuffleImprover;
 use hashcode2021::traffic::TrafficScheduler;
 use hashcode2021::{Simulation, Time};
+use log::info;
 use std::fs::{read_to_string, write};
 use std::process::exit;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -279,6 +280,7 @@ fn main() {
 }
 
 fn load_simulation(filename: &str) -> Simulation {
+    info!("Loading simulation from '{}'", filename);
     match read_file(filename).parse() {
         Ok(data) => data,
         Err(err) => {
@@ -289,6 +291,7 @@ fn load_simulation(filename: &str) -> Simulation {
 }
 
 fn load_schedule(schedule: &mut Schedule, filename: &str) {
+    info!("Loading schedule from '{}'", filename);
     if let Err(err) = schedule.load_from_str(&read_file(filename)) {
         println!("Failed to parse schedule file: {}", err);
         exit(5);
@@ -306,5 +309,6 @@ fn read_file(filename: &str) -> String {
 }
 
 fn write_output(filename: &str, sched: &Schedule) {
+    info!("Writing schedule to '{}'", filename);
     write(filename, sched.to_string()).expect("Unable to write file");
 }

@@ -217,7 +217,7 @@ impl PhasedImprover {
                 debug!(
                     "Phase 2: skipping street {} ({}/{}), {} sec wait, \
                     intersection {}, {} streets in the intersection",
-                    inter_id,
+                    street_id,
                     count,
                     streets.len(),
                     street_wait,
@@ -230,7 +230,7 @@ impl PhasedImprover {
             debug!(
                 "Phase 2: street {} ({}/{}), {} sec wait, intersection {}, \
                 {} streets in the intersection",
-                inter_id,
+                street_id,
                 count,
                 streets.len(),
                 street_wait,
@@ -270,8 +270,7 @@ impl PhasedImprover {
     ) -> Option<(Schedule<'a>, Score)> {
         if !self.add_new_streets {
             info!(
-                "Phased improver, phase 3: skipping since add_new_streets is \
-                false"
+                "Phased improver, phase 3: skipping (add_new_streets is false)"
             );
             return None;
         }
@@ -298,7 +297,10 @@ impl PhasedImprover {
             debug!(
                 "Phase 3: adding new street {}, {} sec wait, to intersection \
                 {}, {} streets in the intersection",
-                street_id, street_wait, inter_id, turns.len(),
+                street_id,
+                street_wait,
+                inter_id,
+                turns.len(),
             );
 
             let mut new_schedule = schedule.clone();
@@ -309,8 +311,11 @@ impl PhasedImprover {
                     "New best score {} after adding new street {} with time 1 \
                     (previous wait time {}) to intersection {}, {} streets in \
                     the intersection",
-                    new_score, street_id, street_wait, inter_id, turns.len(),
-
+                    new_score,
+                    street_id,
+                    street_wait,
+                    inter_id,
+                    turns.len(),
                 );
                 return Some((new_schedule, new_score));
             }
