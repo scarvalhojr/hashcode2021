@@ -16,7 +16,7 @@ pub struct PhasedImprover {
 impl Default for PhasedImprover {
     fn default() -> Self {
         Self {
-            max_add_time: 1,
+            max_add_time: 2,
             max_sub_time: 1,
             max_streets_per_inter: 30,
             add_new_streets: true,
@@ -83,6 +83,17 @@ impl Improver for PhasedImprover {
             return result2;
         }
 
+        // Phase 3
+        let result3 = self.phase3(
+            abort_flag.clone(),
+            schedule.clone(),
+            &stats,
+            &intersections,
+        );
+        if result3.is_some() || abort_flag.load(Ordering::SeqCst) {
+            return result3;
+        }
+
         // No improvement found
         None
     }
@@ -96,14 +107,14 @@ impl PhasedImprover {
         curr_score: Score,
         intersections: &[(IntersectionId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
-        // Loop thought all intersections in decreasing order of total wait
-        // times, reordering them; return as soon as an improvement is found
         info!(
             "Phased improver, phase 1: reordering intersections with non-zero \
             wait times, {} intersections selected",
             intersections.len()
         );
 
+        // Loop thought all intersections in decreasing order of total wait
+        // times, reordering them; return as soon as an improvement is found
         for (&(inter_id, inter_wait), count) in intersections.iter().zip(1..) {
             if abort_flag.load(Ordering::SeqCst) {
                 return None;
@@ -115,8 +126,8 @@ impl PhasedImprover {
                 inter_id,
                 count,
                 intersections.len(),
+                inter_wait,
                 turns.len(),
-                inter_wait
             );
 
             // Try to improve intersection by reordering streets
@@ -168,7 +179,7 @@ impl PhasedImprover {
         streets.sort_unstable_by(|a, b| b.1.cmp(&a.1));
 
         info!(
-            "Phased improver, phase 2: adding 1 second to traffic lights of \
+            "Phased improver, phase 2: adding 1 sec to traffic lights of \
             streets with non-zero wait times, {} streets selected, {} max \
             streets per intersection",
             streets.len(),
@@ -187,7 +198,7 @@ impl PhasedImprover {
             let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
             if turns.len() > self.max_streets_per_inter {
                 debug!(
-                    "Phase 2: skipping street {} ({}/{}), {} seconds wait, \
+                    "Phase 2: skipping street {} ({}/{}), {} sec wait, \
                     intersection {}, {} streets in the intersection",
                     inter_id,
                     count,
@@ -200,7 +211,7 @@ impl PhasedImprover {
             }
 
             debug!(
-                "Phase 2: street {} ({}/{}), {} seconds wait, intersection {}, \
+                "Phase 2: street {} ({}/{}), {} sec wait, intersection {}, \
                 {} streets in the intersection",
                 inter_id,
                 count,
@@ -215,7 +226,7 @@ impl PhasedImprover {
             let new_score = reorder_intersection(&mut new_schedule, inter_id);
             if new_score > curr_stats.score {
                 info!(
-                    "New best score {} after adding 1 second to traffic lights \
+                    "New best score {} after adding 1 sec to traffic lights \
                     of street {} (previous wait time {}), intersection {}, {} \
                     streets in the intersection, {} street(s) examined",
                     new_score,
@@ -226,6 +237,107 @@ impl PhasedImprover {
                     count,
                 );
                 return Some((new_schedule, new_score));
+            }
+        }
+
+        // No improvement found
+        None
+    }
+
+    fn phase3<'a>(
+        &self,
+        abort_flag: Arc<AtomicBool>,
+        schedule: Schedule<'a>,
+        curr_stats: &ScheduleStats,
+        intersections: &[(IntersectionId, Time)],
+    ) -> Option<(Schedule<'a>, Score)> {
+        if self.max_add_time >= 2 && self.max_sub_time >= 1 {
+            info!(
+                "Phased improver, phase 3: subtracting 1 sec from, or adding 2 \
+                sec to streets of intersections with non-zero wait times, \
+                {} intersections selected",
+                intersections.len()
+            );
+        } else if self.max_add_time >= 2 {
+            info!(
+                "Phased improver, phase 3: adding 2 sec to streets of \
+                intersections with non-zero wait times, {} intersections \
+                selected",
+                intersections.len()
+            );
+        } else if self.max_sub_time >= 1 {
+            info!(
+                "Phased improver, phase 3: subtracting 1 sec from streets of \
+                intersections with non-zero wait times, {} intersections \
+                selected",
+                intersections.len()
+            );
+        } else {
+            info!(
+                "Phased improver, phase 3: skipping since max_add_time is {} \
+                and max_sub_time is {}",
+                self.max_add_time, self.max_sub_time,
+            );
+            return None;
+        }
+
+        let mut best_score = curr_stats.score;
+        let mut best_sched = None;
+
+        // Loop thought all intersections in decreasing order of total wait
+        for (&(inter_id, inter_wait), count) in intersections.iter().zip(1..) {
+            let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
+
+            debug!(
+                "Phase 3: intersection {} ({}/{}), {} total wait, {} streets",
+                inter_id,
+                count,
+                intersections.len(),
+                inter_wait,
+                turns.len(),
+            );
+
+            // Loop through all streets in the intersection
+            for &(street_id, _) in turns.iter() {
+                if abort_flag.load(Ordering::SeqCst) {
+                    return None;
+                }
+
+                let wait_time = *curr_stats
+                    .total_wait_time
+                    .get(&street_id)
+                    .unwrap_or(&0);
+
+                if wait_time > 0 && turns.len() > self.max_streets_per_inter {
+                    // Too many streets in the intersection: can't add time
+                    continue;
+                }
+
+                let mut new_schedule = schedule.clone();
+                if wait_time > 0 {
+                    new_schedule.add_street_time(street_id, 2);
+                } else {
+                    new_schedule.sub_street_time(street_id, 1);
+                }
+                let new_score = reorder_intersection(&mut new_schedule, inter_id);
+                if new_score > best_score {
+                    best_score = new_score;
+                    best_sched = Some(new_schedule);
+                }
+            }
+
+            if let Some(best_schedule) = best_sched {
+                info!(
+                    "New best score {} after updating intersection {} (\
+                    previous total wait time {}, {} streets), {} \
+                    intersection(s) examined",
+                    best_score,
+                    inter_id,
+                    inter_wait,
+                    turns.len(),
+                    count,
+                );
+                return Some((best_schedule, best_score));
             }
         }
 
