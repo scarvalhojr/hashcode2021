@@ -16,8 +16,8 @@ pub struct PhasedImprover {
 impl Default for PhasedImprover {
     fn default() -> Self {
         Self {
-            max_add_time: 2,
-            max_sub_time: 1,
+            max_add_time: 6,
+            max_sub_time: 3,
             max_streets_per_inter: 30,
             add_new_streets: true,
         }
@@ -331,34 +331,71 @@ impl PhasedImprover {
         curr_stats: &ScheduleStats,
         intersections: &[(IntersectionId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
-        if self.max_add_time >= 2 && self.max_sub_time >= 1 {
+        for time in 1.. {
+            let add_time = if time + 1 <= self.max_add_time {
+                time + 1
+            } else {
+                0
+            };
+            let sub_time = if time <= self.max_sub_time {
+                time
+            } else {
+                0
+            };
+            if add_time == 0 && sub_time == 0 {
+                break;
+            }
+            let result = self.phase4_loop(
+                abort_flag.clone(),
+                schedule.clone(),
+                curr_stats,
+                intersections,
+                add_time,
+                sub_time,
+            );
+            if result.is_some() {
+                return result;
+            }
+        }
+
+        // No improvement found
+        None
+    }
+
+    fn phase4_loop<'a>(
+        &self,
+        abort_flag: Arc<AtomicBool>,
+        schedule: Schedule<'a>,
+        curr_stats: &ScheduleStats,
+        intersections: &[(IntersectionId, Time)],
+        add_time: Time,
+        sub_time: Time,
+    ) -> Option<(Schedule<'a>, Score)> {
+        assert!(add_time > 0 || sub_time > 0);
+        assert!(add_time <= self.max_add_time);
+        assert!(sub_time <= self.max_sub_time);
+
+        if add_time > 0 && sub_time > 0 {
             info!(
-                "Phased improver, phase 4: subtracting 1 sec from, or adding 2 \
-                sec to streets of intersections with non-zero wait times, \
+                "Phased improver, phase 4: subtracting {} sec from, or adding \
+                {} sec to streets of intersections with non-zero wait times, \
                 {} intersections selected",
-                intersections.len()
+                sub_time, add_time, intersections.len()
             );
-        } else if self.max_add_time >= 2 {
+        } else if add_time > 0 {
             info!(
-                "Phased improver, phase 4: adding 2 sec to streets of \
+                "Phased improver, phase 4: adding {} sec to streets of \
                 intersections with non-zero wait times, {} intersections \
                 selected",
-                intersections.len()
-            );
-        } else if self.max_sub_time >= 1 {
-            info!(
-                "Phased improver, phase 4: subtracting 1 sec from streets of \
-                intersections with non-zero wait times, {} intersections \
-                selected",
-                intersections.len()
+                add_time, intersections.len()
             );
         } else {
             info!(
-                "Phased improver, phase 4: skipping since max_add_time is {} \
-                and max_sub_time is {}",
-                self.max_add_time, self.max_sub_time,
+                "Phased improver, phase 4: subtracting {} sec from streets of \
+                intersections with non-zero wait times, {} intersections \
+                selected",
+                sub_time, intersections.len()
             );
-            return None;
         }
 
         let mut best_score = curr_stats.score;
@@ -387,22 +424,22 @@ impl PhasedImprover {
                     *curr_stats.total_wait_time.get(&street_id).unwrap_or(&0);
 
                 if wait_time > 0 {
-                    if self.max_add_time < 2
+                    if add_time == 0
                         || turns.len() > self.max_streets_per_inter
                     {
-                        // Can't add more time
+                        // Can't add time
                         continue;
                     }
-                } else if self.max_sub_time < 1 {
+                } else if sub_time == 0 || street_time < sub_time {
                     // Can't substract time
                     continue;
                 }
 
                 let mut new_schedule = schedule.clone();
                 if wait_time > 0 {
-                    new_schedule.add_street_time(street_id, 2);
+                    new_schedule.add_street_time(street_id, add_time);
                 } else {
-                    new_schedule.sub_street_time(street_id, 1);
+                    new_schedule.sub_street_time(street_id, sub_time);
                 }
                 let new_score =
                     reorder_intersection(&mut new_schedule, inter_id);
@@ -411,9 +448,10 @@ impl PhasedImprover {
                     best_sched = Some(new_schedule);
                     if wait_time > 0 {
                         info!(
-                            "New best score {} after adding 2 sec to street \
+                            "New best score {} after adding {} sec to street \
                             {} ({} time, {} wait time), intersection {}",
                             best_score,
+                            add_time,
                             street_id,
                             street_time,
                             wait_time,
@@ -421,9 +459,10 @@ impl PhasedImprover {
                         );
                     } else {
                         info!(
-                            "New best score {} after subtracting 1 sec from \
+                            "New best score {} after subtracting {} sec from \
                             street {} ({} time, {} wait time), intersection {}",
                             best_score,
+                            sub_time,
                             street_id,
                             street_time,
                             wait_time,
