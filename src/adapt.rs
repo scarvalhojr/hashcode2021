@@ -82,7 +82,7 @@ impl Scheduler for AdaptiveScheduler {
                     }
                 }
             }
-            
+
             // Sort queues by number of cars waiting
             let mut queue_order: Vec<(StreetId, usize)> = queues
                 .iter()
@@ -120,11 +120,8 @@ impl Scheduler for AdaptiveScheduler {
                 }
 
                 // Let the car go through
-                let car_id = queues
-                    .get_mut(&street_id)
-                    .unwrap()
-                    .pop_front()
-                    .unwrap();
+                let car_id =
+                    queues.get_mut(&street_id).unwrap().pop_front().unwrap();
                 moving_cars
                     .get_mut(&car_id)
                     .unwrap()

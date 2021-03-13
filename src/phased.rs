@@ -332,16 +332,12 @@ impl PhasedImprover {
         intersections: &[(IntersectionId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
         for time in 1.. {
-            let add_time = if time + 1 <= self.max_add_time {
+            let add_time = if time < self.max_add_time {
                 time + 1
             } else {
                 0
             };
-            let sub_time = if time <= self.max_sub_time {
-                time
-            } else {
-                0
-            };
+            let sub_time = if time <= self.max_sub_time { time } else { 0 };
             if add_time == 0 && sub_time == 0 {
                 break;
             }
@@ -380,21 +376,25 @@ impl PhasedImprover {
                 "Phased improver, phase 4: subtracting {} sec from, or adding \
                 {} sec to streets of intersections with non-zero wait times, \
                 {} intersections selected",
-                sub_time, add_time, intersections.len()
+                sub_time,
+                add_time,
+                intersections.len()
             );
         } else if add_time > 0 {
             info!(
                 "Phased improver, phase 4: adding {} sec to streets of \
                 intersections with non-zero wait times, {} intersections \
                 selected",
-                add_time, intersections.len()
+                add_time,
+                intersections.len()
             );
         } else {
             info!(
                 "Phased improver, phase 4: subtracting {} sec from streets of \
                 intersections with non-zero wait times, {} intersections \
                 selected",
-                sub_time, intersections.len()
+                sub_time,
+                intersections.len()
             );
         }
 
@@ -424,8 +424,7 @@ impl PhasedImprover {
                     *curr_stats.total_wait_time.get(&street_id).unwrap_or(&0);
 
                 if wait_time > 0 {
-                    if add_time == 0
-                        || turns.len() > self.max_streets_per_inter
+                    if add_time == 0 || turns.len() > self.max_streets_per_inter
                     {
                         // Can't add time
                         continue;

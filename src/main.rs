@@ -56,6 +56,13 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
+            Arg::with_name("traffic-log-base")
+                .help("The logarithm base used in the traffic scheduler")
+                .short("t")
+                .long("traffic-log-base")
+                .takes_value(true),
+        )
+        .arg(
             Arg::with_name("best-of")
                 .help("Run scheduler multiple times, keep best schedule")
                 .short("b")
@@ -118,6 +125,14 @@ fn main() {
         value
     } else {
         1
+    };
+
+    let traffic_log_base = if args.is_present("traffic-log-base") {
+        let value = value_t!(args.value_of("traffic-log-base"), f32)
+            .unwrap_or_else(|e| e.exit());
+        Some(value)
+    } else {
+        None
     };
 
     let incremental_rounds = if args.is_present("incremental-rounds") {
@@ -188,15 +203,20 @@ fn main() {
             schedule
         }
         algorithm => {
+            let scheduler: Box<dyn Scheduler> = match algorithm {
+                "adaptive" => Box::new(AdaptiveScheduler::default()),
+                "naive" => Box::new(NaiveScheduler::default()),
+                "traffic" => match traffic_log_base {
+                    Some(value) => Box::new(TrafficScheduler::new(value)),
+                    None => Box::new(TrafficScheduler::default()),
+                },
+                _ => unreachable!(),
+            };
+
             let mut best_score = 0;
             let mut best_sched = None;
             for num in 1..=best_of {
-                let sched = match algorithm {
-                    "adaptive" => AdaptiveScheduler::default().schedule(&simulation),
-                    "naive" => NaiveScheduler::default().schedule(&simulation),
-                    "traffic" => TrafficScheduler::default().schedule(&simulation),
-                    _ => unreachable!(),
-                };
+                let sched = scheduler.schedule(&simulation);
                 let score = sched.stats().map(|stats| stats.score).unwrap_or(0);
                 info!("Schedule {}/{}: score {}", num, best_of, score);
                 if score >= best_score {

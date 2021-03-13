@@ -1,10 +1,24 @@
 use super::*;
 use crate::sched::{Schedule, Scheduler};
-use log::info;
+use log::{debug, info};
 use std::collections::HashMap;
+use std::f32::consts::E;
 
-#[derive(Default)]
-pub struct TrafficScheduler {}
+pub struct TrafficScheduler {
+    log_base: f32,
+}
+
+impl Default for TrafficScheduler {
+    fn default() -> Self {
+        Self { log_base: E }
+    }
+}
+
+impl TrafficScheduler {
+    pub fn new(log_base: f32) -> Self {
+        Self { log_base }
+    }
+}
 
 impl Scheduler for TrafficScheduler {
     fn schedule<'a>(&self, simulation: &'a Simulation) -> Schedule<'a> {
@@ -31,7 +45,7 @@ impl Scheduler for TrafficScheduler {
             }
         }
 
-        info!("Traffic scheduler (log 10)");
+        info!("Traffic scheduler: log {}", self.log_base);
 
         // List intersections that have large difference between its quitests
         // and busiest streets (for informational purposes only)
@@ -41,7 +55,7 @@ impl Scheduler for TrafficScheduler {
             let max_traffic = counters.values().max().unwrap();
             let traffic_delta = max_traffic - min_traffic;
             if traffic_delta > max_delta {
-                info!(
+                debug!(
                     "Intersection {}: {} min traffic, {} max traffic, {} delta",
                     inter_id, min_traffic, max_traffic, traffic_delta,
                 );
@@ -54,9 +68,10 @@ impl Scheduler for TrafficScheduler {
             for (&street_id, &counter) in counters.iter() {
                 // Normalize the time each street gets based on the total
                 // number of cars that need to cross it
-                let time =
-                    ((counter as f32) / min_traffic).log10().round().max(1_f32)
-                        as Time;
+                let time = ((counter as f32) / min_traffic)
+                    .log(self.log_base)
+                    .round()
+                    .max(1_f32) as Time;
                 assert!(time > 0);
                 schedule.add_street(inter_id, street_id, time);
             }

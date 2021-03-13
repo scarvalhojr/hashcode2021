@@ -63,11 +63,8 @@ pub fn reorder_intersection(
                 schedule.is_green(street_inter_id, street_id, time)
             };
             if is_green {
-                let car_id = queues
-                    .get_mut(&street_id)
-                    .unwrap()
-                    .pop_front()
-                    .unwrap();
+                let car_id =
+                    queues.get_mut(&street_id).unwrap().pop_front().unwrap();
                 moving_cars
                     .get_mut(&car_id)
                     .unwrap()
