@@ -56,6 +56,13 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
+            Arg::with_name("best-of")
+                .help("Run scheduler multiple times, keep best schedule")
+                .short("b")
+                .long("best-of")
+                .takes_value(true),
+        )
+        .arg(
             Arg::with_name("incremental-rounds")
                 .help("Number of incremental rounds")
                 .short("r")
@@ -104,6 +111,14 @@ fn main() {
                 .takes_value(true),
         )
         .get_matches();
+
+    let best_of = if args.is_present("best-of") {
+        let value = value_t!(args.value_of("best-of"), u32)
+            .unwrap_or_else(|e| e.exit());
+        value
+    } else {
+        1
+    };
 
     let incremental_rounds = if args.is_present("incremental-rounds") {
         let value = value_t!(args.value_of("incremental-rounds"), u32)
@@ -172,10 +187,25 @@ fn main() {
             load_schedule(&mut schedule, args.value_of("schedule").unwrap());
             schedule
         }
-        "adaptive" => AdaptiveScheduler::default().schedule(&simulation),
-        "naive" => NaiveScheduler::default().schedule(&simulation),
-        "traffic" => TrafficScheduler::default().schedule(&simulation),
-        _ => unreachable!(),
+        algorithm => {
+            let mut best_score = 0;
+            let mut best_sched = None;
+            for num in 1..=best_of {
+                let sched = match algorithm {
+                    "adaptive" => AdaptiveScheduler::default().schedule(&simulation),
+                    "naive" => NaiveScheduler::default().schedule(&simulation),
+                    "traffic" => TrafficScheduler::default().schedule(&simulation),
+                    _ => unreachable!(),
+                };
+                let score = sched.stats().map(|stats| stats.score).unwrap_or(0);
+                info!("Schedule {}/{}: score {}", num, best_of, score);
+                if score >= best_score {
+                    best_score = score;
+                    best_sched = Some(sched);
+                }
+            }
+            best_sched.unwrap()
+        }
     };
 
     let sched_stats = match schedule.stats() {
