@@ -82,9 +82,16 @@ impl Scheduler for AdaptiveScheduler {
                     }
                 }
             }
+            
+            // Sort queues by number of cars waiting
+            let mut queue_order: Vec<(StreetId, usize)> = queues
+                .iter()
+                .map(|(&street_id, cars)| (street_id, cars.len()))
+                .collect();
+            queue_order.sort_unstable_by(|a, b| b.1.cmp(&a.1));
 
             // Let cars at the top of the queue cross intersections if possible
-            for (&street_id, cars) in queues.iter_mut() {
+            for (street_id, _) in queue_order.into_iter() {
                 let inter_id = simulation.streets[street_id].end_intersection;
                 let order = inter_order.get_mut(&inter_id).unwrap();
                 let slot_pos = usize::try_from(time).unwrap() % order.len();
@@ -113,7 +120,11 @@ impl Scheduler for AdaptiveScheduler {
                 }
 
                 // Let the car go through
-                let car_id = cars.pop_front().unwrap();
+                let car_id = queues
+                    .get_mut(&street_id)
+                    .unwrap()
+                    .pop_front()
+                    .unwrap();
                 moving_cars
                     .get_mut(&car_id)
                     .unwrap()
