@@ -1,5 +1,6 @@
 use super::*;
 use crate::sched::{Schedule, Scheduler};
+use crate::intersect::reorder_all_intersections;
 use log::{debug, info};
 use std::collections::HashMap;
 use std::f32::consts::E;
@@ -47,8 +48,9 @@ impl Scheduler for TrafficScheduler {
 
         info!("Traffic scheduler: log {}", self.log_base);
 
-        // List intersections that have large difference between its quitests
-        // and busiest streets (for informational purposes only)
+        // Find the largest difference in number of cars between the quitest
+        // and the busiest streets among all intersections (for informational
+        // purposes only)
         let mut max_delta = 0;
         for (&inter_id, counters) in traffic.iter() {
             let min_traffic = counters.values().min().unwrap();
@@ -76,6 +78,8 @@ impl Scheduler for TrafficScheduler {
                 schedule.add_street(inter_id, street_id, time);
             }
         }
+
+        reorder_all_intersections(&mut schedule);
 
         schedule
     }

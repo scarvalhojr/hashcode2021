@@ -1,6 +1,6 @@
 use super::*;
 use crate::improve::Improver;
-use crate::intersect::reorder_intersection;
+use crate::intersect::{reorder_intersection, reorder_intersections};
 use crate::sched::{Schedule, ScheduleStats};
 use log::{debug, info};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -77,52 +77,52 @@ impl Improver for PhasedImprover {
             return result1;
         }
 
-        // Collect all streets with non-zero wait times whose traffic lights
-        // are not always green
-        let mut streets: Vec<(StreetId, Time)> = stats
-            .total_wait_time
-            .iter()
-            .filter(|&(&street_id, _)| {
-                !schedule.is_street_always_green(street_id)
-            })
-            .map(|(&street_id, &time)| (street_id, time))
-            .collect();
+        // // Collect all streets with non-zero wait times whose traffic lights
+        // // are not always green
+        // let mut streets: Vec<(StreetId, Time)> = stats
+        //     .total_wait_time
+        //     .iter()
+        //     .filter(|&(&street_id, _)| {
+        //         !schedule.is_street_always_green(street_id)
+        //     })
+        //     .map(|(&street_id, &time)| (street_id, time))
+        //     .collect();
 
-        // Sort streets by wait time
-        streets.sort_unstable_by(|a, b| b.1.cmp(&a.1));
+        // // Sort streets by wait time
+        // streets.sort_unstable_by(|a, b| b.1.cmp(&a.1));
 
-        // Phase 2
-        let result2 = self.phase2(
-            abort_flag.clone(),
-            schedule.clone(),
-            stats.score,
-            &streets,
-        );
-        if result2.is_some() || abort_flag.load(Ordering::SeqCst) {
-            return result2;
-        }
+        // // Phase 2
+        // let result2 = self.phase2(
+        //     abort_flag.clone(),
+        //     schedule.clone(),
+        //     stats.score,
+        //     &streets,
+        // );
+        // if result2.is_some() || abort_flag.load(Ordering::SeqCst) {
+        //     return result2;
+        // }
 
-        // Phase 3
-        let result3 = self.phase3(
-            abort_flag.clone(),
-            schedule.clone(),
-            stats.score,
-            &streets,
-        );
-        if result3.is_some() || abort_flag.load(Ordering::SeqCst) {
-            return result3;
-        }
+        // // Phase 3
+        // let result3 = self.phase3(
+        //     abort_flag.clone(),
+        //     schedule.clone(),
+        //     stats.score,
+        //     &streets,
+        // );
+        // if result3.is_some() || abort_flag.load(Ordering::SeqCst) {
+        //     return result3;
+        // }
 
-        // Phase 4
-        let result4 = self.phase4(
-            abort_flag.clone(),
-            schedule.clone(),
-            &stats,
-            &intersections,
-        );
-        if result4.is_some() || abort_flag.load(Ordering::SeqCst) {
-            return result4;
-        }
+        // // Phase 4
+        // let result4 = self.phase4(
+        //     abort_flag.clone(),
+        //     schedule.clone(),
+        //     &stats,
+        //     &intersections,
+        // );
+        // if result4.is_some() || abort_flag.load(Ordering::SeqCst) {
+        //     return result4;
+        // }
 
         // No improvement found
         None
@@ -138,44 +138,38 @@ impl PhasedImprover {
         intersections: &[(IntersectionId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
         info!(
-            "Phased improver, phase 1: reordering intersections with non-zero \
-            wait times, {} intersections selected",
-            intersections.len()
+            "Phased improver, phase 1: reordering {} intersections",
+            intersections.len(),
         );
 
-        // Loop thought all intersections in decreasing order of total wait
-        // times, reordering them; return as soon as an improvement is found
-        for (&(inter_id, inter_wait), count) in intersections.iter().zip(1..) {
-            if abort_flag.load(Ordering::SeqCst) {
-                return None;
-            }
+        // Try to improve intersection by reordering all intersections
+        // without changing their times
+        for count in 1..=intersections.len() {
+            for window in intersections.windows(count) {
+                if abort_flag.load(Ordering::SeqCst) {
+                    break;
+                }
 
-            let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
-            debug!(
-                "Phase 1: intersection {} ({}/{}), {} total wait, {} streets",
-                inter_id,
-                count,
-                intersections.len(),
-                inter_wait,
-                turns.len(),
-            );
-
-            // Try to improve intersection by reordering streets
-            // without changing their times
-            let mut new_schedule = schedule.clone();
-            let new_score = reorder_intersection(&mut new_schedule, inter_id);
-            if new_score > curr_score {
-                info!(
-                    "New best score {} after reordering intersection {} (\
-                    previous total wait time {}, {} streets), {} \
-                    intersection(s) examined",
-                    new_score,
-                    inter_id,
-                    inter_wait,
-                    turns.len(),
-                    count,
+                debug!(
+                    "Reordering {} intersections starting with intersection {}",
+                    count, window[0].0,
                 );
-                return Some((new_schedule, new_score));
+
+                let mut new_schedule = schedule.clone();
+                let new_score = reorder_intersections(
+                    &mut new_schedule,
+                    window.iter().map(|(inter_id, _)| *inter_id),
+                );
+                let new_stats = new_schedule.stats().unwrap();
+                assert_eq!(new_score, new_stats.score);
+                if new_score > curr_score {
+                    info!(
+                        "New best score {} after reordering {} intersections",
+                        new_score, count,
+                    );
+                    return Some((new_schedule, new_score));
+                }
+                debug!("Score after reordering intersections: {}", new_score);
             }
         }
 
