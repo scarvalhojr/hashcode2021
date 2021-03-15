@@ -277,7 +277,13 @@ impl<'a> Schedule<'a> {
                         .cross_intersection(self.simulation);
                 }
 
-                let intersection = self.intersections.get(&inter_id).unwrap();
+                let intersection;
+                if let Some(inter) = self.intersections.get(&inter_id) {
+                    intersection = inter;
+                } else {
+                    assert_eq!(is_green, false);
+                    continue;
+                }
 
                 let inter_col;
                 if let Some(&col) = inter_start_col.get(&inter_id) {
