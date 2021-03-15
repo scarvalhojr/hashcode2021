@@ -9,8 +9,27 @@ pub fn reorder_intersection(
     schedule: &mut Schedule,
     inter_id: IntersectionId,
 ) -> Score {
-    let mut intersection = OpenIntersection::from(schedule, inter_id);
+    reorder_intersections(schedule, once(inter_id))
+}
+
+pub fn reorder_all_intersections(schedule: &mut Schedule) -> Score {
+    let inter_ids: Vec<IntersectionId> =
+        schedule.intersections.keys().copied().collect();
+    reorder_intersections(schedule, inter_ids.into_iter())
+}
+
+pub fn reorder_intersections<I>(schedule: &mut Schedule, inter_ids: I) -> Score
+where
+    I: Iterator<Item = IntersectionId>,
+{
     let mut score = 0;
+    let mut open_intersections: HashMap<IntersectionId, OpenIntersection> =
+        inter_ids
+            .map(|inter_id| {
+                let inter = schedule.intersections.get(&inter_id).unwrap();
+                (inter_id, OpenIntersection::from(&inter.turns))
+            })
+            .collect();
 
     // All cars that haven't reached their end yet
     let mut moving_cars: HashMap<CarId, Car> = schedule
@@ -55,13 +74,15 @@ pub fn reorder_intersection(
 
         // Let cars at the top of the queue cross intersections
         for (street_id, _) in queue_order.into_iter() {
-            let street_inter_id =
-                schedule.simulation.streets[street_id].end_intersection;
-            let is_green = if street_inter_id == inter_id {
-                intersection.is_or_set_green(street_id, time)
+            let inter_id = schedule.get_intersection_id(street_id).unwrap();
+
+            let is_green;
+            if let Some(open_inter) = open_intersections.get_mut(&inter_id) {
+                is_green = open_inter.is_or_set_green(street_id, time);
             } else {
-                schedule.is_green(street_inter_id, street_id, time)
-            };
+                is_green = schedule.is_green(inter_id, street_id, time);
+            }
+
             if is_green {
                 let car_id =
                     queues.get_mut(&street_id).unwrap().pop_front().unwrap();
@@ -88,8 +109,11 @@ pub fn reorder_intersection(
         moving_cars.retain(|_, car| car.state != CarState::Arrived);
     }
 
-    intersection.assign_remaining_streets();
-    intersection.update_schedule(schedule, inter_id);
+    for (&inter_id, intersection) in open_intersections.iter_mut() {
+        intersection.assign_remaining_streets();
+        intersection.update_schedule(schedule, inter_id);
+    }
+
     score
 }
 
@@ -100,9 +124,7 @@ struct OpenIntersection {
 }
 
 impl OpenIntersection {
-    fn from(schedule: &Schedule, intersection_id: IntersectionId) -> Self {
-        let turns =
-            &schedule.intersections.get(&intersection_id).unwrap().turns;
+    fn from(turns: &[(StreetId, Time)]) -> Self {
 
         let mut streets = HashMap::new();
         let mut slots = Vec::with_capacity(turns.len());
