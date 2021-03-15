@@ -9,6 +9,7 @@ use hashcode2021::sched::{Schedule, Scheduler};
 use hashcode2021::shuffle::ShuffleImprover;
 use hashcode2021::traffic::TrafficScheduler;
 use hashcode2021::{Simulation, Time};
+use image::ImageFormat;
 use log::info;
 use std::fs::{read_to_string, write};
 use std::process::exit;
@@ -115,6 +116,13 @@ fn main() {
                 .help("Maximum number of shuffles per street on incremental rounds")
                 .short("x")
                 .long("max-shuffles-per-street")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("png-image")
+                .help("Save PNG image with schedule representation")
+                .short("i")
+                .long("png-image")
                 .takes_value(true),
         )
         .get_matches();
@@ -252,7 +260,7 @@ fn main() {
     })
     .expect("Error setting Ctrl-C handler");
 
-    let final_schedule = match args.value_of("improver") {
+    let (final_schedule, final_stats) = match args.value_of("improver") {
         Some(algorithm_name) => {
             let mut improver = IncrementalImprover::new(abort_flag);
             if let Some(rounds) = incremental_rounds {
@@ -317,13 +325,21 @@ fn main() {
                 {}",
                 improved_stats,
             );
-            improved_schedule
+            (improved_schedule, improved_stats)
         }
-        _ => schedule,
+        _ => (schedule, sched_stats),
     };
 
     if let Some(filename) = args.value_of("output") {
         write_output(&filename, &final_schedule);
+    }
+
+    if let Some(filename) = args.value_of("png-image") {
+        info!("Writing schedule image representation to '{}'", filename);
+        final_stats
+            .image
+            .save_with_format(filename, ImageFormat::Png)
+            .expect("Unable to write image file");
     }
 
     exit(0);

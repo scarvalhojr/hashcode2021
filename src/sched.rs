@@ -1,8 +1,15 @@
 use super::*;
+use image::{ImageBuffer, Rgb, RgbImage};
 use rand::{seq::SliceRandom, thread_rng};
 use std::collections::{HashSet, VecDeque};
 use std::convert::TryFrom;
 use std::fmt::{Display, Formatter};
+
+const GREEN: Rgb<u8> = Rgb([0, 128, 0]);
+const LIGHT_GRAY: Rgb<u8> = Rgb([211, 211, 211]);
+const LIGHT_GREEN: Rgb<u8> = Rgb([144, 238, 144]);
+const RED: Rgb<u8> = Rgb([255, 0, 0]);
+const WHITE: Rgb<u8> = Rgb([255, 255, 255]);
 
 pub trait Scheduler {
     fn schedule<'a>(&self, simulation: &'a Simulation) -> Schedule<'a>;
@@ -28,6 +35,7 @@ pub struct ScheduleStats {
     pub latest_arrival: Time,
     pub crossed_streets: HashSet<StreetId>,
     pub total_wait_time: HashMap<StreetId, Time>,
+    pub image: RgbImage,
     pub score: Score,
 }
 
@@ -39,6 +47,14 @@ impl ScheduleStats {
             .values()
             .map(|intersection| intersection.turns.len())
             .sum();
+        let image_width = u32::try_from(schedule.intersections.len()).unwrap()
+            - 1
+            + schedule
+                .intersections
+                .values()
+                .map(|inter| inter.cycle)
+                .sum::<u32>();
+        let image_height = 1 + schedule.simulation.duration;
 
         Self {
             num_intersections,
@@ -48,6 +64,7 @@ impl ScheduleStats {
             latest_arrival: 0,
             crossed_streets: HashSet::new(),
             total_wait_time: HashMap::new(),
+            image: ImageBuffer::new(image_width, image_height),
             score: 0,
         }
     }
@@ -112,6 +129,13 @@ impl Intersection {
             }
         }
         unreachable!();
+    }
+
+    pub fn get_street_time(&self, street_id: StreetId) -> Option<Time> {
+        self.turns
+            .iter()
+            .find(|&(id, _)| *id == street_id)
+            .map(|&(_, time)| time)
     }
 }
 
@@ -197,6 +221,9 @@ impl<'a> Schedule<'a> {
     pub fn stats(&self) -> Result<ScheduleStats, String> {
         let mut stats = ScheduleStats::new(self);
 
+        let mut inter_start_col: HashMap<IntersectionId, u32> = HashMap::new();
+        let mut next_start_col = 0;
+
         // All cars that haven't reached their end yet
         let mut moving_cars: HashMap<CarId, Car> = self
             .simulation
@@ -219,6 +246,10 @@ impl<'a> Schedule<'a> {
         }
 
         for time in 0..=self.simulation.duration {
+            for col in 0..stats.image.width() {
+                stats.image.put_pixel(col, time, WHITE);
+            }
+
             // Let cars move if possible
             for (&car_id, car) in moving_cars.iter_mut() {
                 if car.state == CarState::Ready {
@@ -235,15 +266,52 @@ impl<'a> Schedule<'a> {
 
             // Let cars at the top of the queue cross intersections
             for (&street_id, cars) in queues.iter_mut() {
-                let inter_id =
-                    self.simulation.streets[street_id].end_intersection;
-                if self.is_green(inter_id, street_id, time) {
+                let inter_id = self.get_intersection_id(street_id).unwrap();
+                let is_green = self.is_green(inter_id, street_id, time);
+                if is_green {
                     stats.crossed_streets.insert(street_id);
                     let car_id = cars.pop_front().unwrap();
                     moving_cars
                         .get_mut(&car_id)
                         .unwrap()
                         .cross_intersection(self.simulation);
+                }
+
+                let intersection = self.intersections.get(&inter_id).unwrap();
+
+                let inter_col;
+                if let Some(&col) = inter_start_col.get(&inter_id) {
+                    inter_col = col;
+                } else {
+                    inter_col = next_start_col;
+                    inter_start_col.insert(inter_id, inter_col);
+                    next_start_col += 1 + intersection.cycle;
+                }
+
+                let street_time =
+                    intersection.get_street_time(street_id).unwrap_or(0);
+                if street_time == 0 {
+                    continue;
+                }
+
+                let street_col = inter_col
+                    + intersection
+                        .turns
+                        .iter()
+                        .take_while(|(id, _)| *id != street_id)
+                        .map(|(_, t)| t)
+                        .sum::<u32>();
+
+                let color = if is_green { LIGHT_GREEN } else { RED };
+                for col in street_col..(street_col + street_time) {
+                    assert_eq!(stats.image.get_pixel(col, time), &WHITE);
+                    stats.image.put_pixel(col, time, color);
+                }
+
+                if is_green {
+                    let col = inter_col + (time % intersection.cycle);
+                    assert_eq!(stats.image.get_pixel(col, time), &LIGHT_GREEN);
+                    stats.image.put_pixel(col, time, GREEN);
                 }
             }
 
@@ -278,6 +346,13 @@ impl<'a> Schedule<'a> {
 
             // Remove cars that reached their end
             moving_cars.retain(|_, car| car.state != CarState::Arrived);
+        }
+
+        for &col in inter_start_col.values().filter(|&col| *col > 0) {
+            for row in 0..stats.image.height() {
+                assert_eq!(stats.image.get_pixel(col - 1, row), &WHITE);
+                stats.image.put_pixel(col - 1, row, LIGHT_GRAY);
+            }
         }
 
         Ok(stats)
