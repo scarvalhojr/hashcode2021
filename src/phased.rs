@@ -70,11 +70,22 @@ impl Improver for PhasedImprover {
         let result1 = self.phase1(
             abort_flag.clone(),
             schedule.clone(),
-            stats.score,
+            &stats,
             &intersections,
         );
         if result1.is_some() || abort_flag.load(Ordering::SeqCst) {
             return result1;
+        }
+
+        // Phase 3
+        let result3 = self.phase3(
+            abort_flag.clone(),
+            schedule.clone(),
+            stats.score,
+            &intersections,
+        );
+        if result3.is_some() || abort_flag.load(Ordering::SeqCst) {
+            return result3;
         }
 
         // Collect all streets with non-zero wait times whose traffic lights
@@ -87,41 +98,40 @@ impl Improver for PhasedImprover {
             })
             .map(|(&street_id, &time)| (street_id, time))
             .collect();
-
         // Sort streets by wait time
         streets.sort_unstable_by(|a, b| b.1.cmp(&a.1));
-
-        // Phase 2
-        let result2 = self.phase2(
-            abort_flag.clone(),
-            schedule.clone(),
-            stats.score,
-            &streets,
-        );
-        if result2.is_some() || abort_flag.load(Ordering::SeqCst) {
-            return result2;
-        }
-
-        // Phase 3
-        let result3 = self.phase3(
-            abort_flag.clone(),
-            schedule.clone(),
-            stats.score,
-            &streets,
-        );
-        if result3.is_some() || abort_flag.load(Ordering::SeqCst) {
-            return result3;
-        }
 
         // Phase 4
         let result4 = self.phase4(
             abort_flag.clone(),
             schedule.clone(),
-            &stats,
-            &intersections,
+            stats.score,
+            &streets,
         );
         if result4.is_some() || abort_flag.load(Ordering::SeqCst) {
             return result4;
+        }
+
+        // Phase 5
+        let result5 = self.phase5(
+            abort_flag.clone(),
+            schedule.clone(),
+            stats.score,
+            &streets,
+        );
+        if result5.is_some() || abort_flag.load(Ordering::SeqCst) {
+            return result5;
+        }
+
+        // Phase 6
+        let result6 = self.phase6(
+            abort_flag.clone(),
+            schedule.clone(),
+            &stats,
+            &intersections,
+        );
+        if result6.is_some() || abort_flag.load(Ordering::SeqCst) {
+            return result6;
         }
 
         // No improvement found
@@ -134,11 +144,99 @@ impl PhasedImprover {
         &self,
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
+        curr_stats: &ScheduleStats,
+        intersections: &[(IntersectionId, Time)],
+    ) -> Option<(Schedule<'a>, Score)> {
+        info!(
+            "Phased improver, phase 1: removing streets that are are never \
+            crossed, examining {} intersections with wait times",
+            intersections.len(),
+        );
+
+        let mut best_score = curr_stats.score;
+        let mut best_sched = None;
+
+        // Loop thought all intersections in decreasing order of total wait
+        // times, remove any street has has not been crossed; return as soon as
+        // an improvement is found
+        for (&(inter_id, inter_wait), count) in intersections.iter().zip(1..) {
+            if abort_flag.load(Ordering::SeqCst) {
+                return None;
+            }
+
+            let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
+
+            // Loop through all streets in the intersection
+            for &(street_id, street_time) in turns.iter() {
+                if curr_stats.crossed_streets.contains(&street_id) {
+                    continue;
+                }
+
+                let street_wait =
+                    *curr_stats.total_wait_time.get(&street_id).unwrap_or(&0);
+
+                let mut new_sched = schedule.clone();
+                let inter = new_sched.intersections.get_mut(&inter_id).unwrap();
+
+                let removed_time = inter.remove_street(street_id);
+                assert_eq!(removed_time, Some(street_time));
+
+                let new_score = reorder_intersection(&mut new_sched, inter_id);
+                if new_score > best_score {
+                    best_score = new_score;
+                    best_sched = Some(new_sched);
+                    info!(
+                        "New best score {} after removing street {} (time {}, \
+                        wait {}) from intersection {}, since it was never \
+                        crossed by any car",
+                        best_score,
+                        street_id,
+                        street_time,
+                        street_wait,
+                        inter_id,
+                    );
+                } else {
+                    debug!(
+                        "Removing street {} (time {}, wait {}) from \
+                        intersection {} (since it was never crossed by any \
+                        car) produced worse or same score: {}",
+                        street_id,
+                        street_time,
+                        street_wait,
+                        inter_id,
+                        new_score,
+                    );
+                }
+            }
+
+            if let Some(best_schedule) = best_sched {
+                info!(
+                    "New best score {} after updating intersection {} (\
+                    previous total wait time {}, {} streets), {} \
+                    intersection(s) examined",
+                    best_score,
+                    inter_id,
+                    inter_wait,
+                    turns.len(),
+                    count,
+                );
+                return Some((best_schedule, best_score));
+            }
+        }
+
+        // No improvement found
+        None
+    }
+
+    fn phase3<'a>(
+        &self,
+        abort_flag: Arc<AtomicBool>,
+        schedule: Schedule<'a>,
         curr_score: Score,
         intersections: &[(IntersectionId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
         info!(
-            "Phased improver, phase 1: reordering intersections with non-zero \
+            "Phased improver, phase 3: reordering intersections with non-zero \
             wait times, {} intersections selected",
             intersections.len()
         );
@@ -152,7 +250,7 @@ impl PhasedImprover {
 
             let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
             debug!(
-                "Phase 1: intersection {} ({}/{}), {} total wait, {} streets",
+                "Phase 3: intersection {} ({}/{}), {} total wait, {} streets",
                 inter_id,
                 count,
                 intersections.len(),
@@ -183,7 +281,7 @@ impl PhasedImprover {
         None
     }
 
-    fn phase2<'a>(
+    fn phase4<'a>(
         &self,
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
@@ -191,12 +289,12 @@ impl PhasedImprover {
         streets: &[(StreetId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
         if self.max_add_time == 0 {
-            info!("Phased improver, phase 2: skipping since max_add_time is 0");
+            info!("Phased improver, phase 4: skipping since max_add_time is 0");
             return None;
         }
 
         info!(
-            "Phased improver, phase 2: adding 1 sec to traffic lights of \
+            "Phased improver, phase 4: adding 1 sec to traffic lights of \
             streets with non-zero wait times, {} streets selected, {} max \
             streets per intersection",
             streets.len(),
@@ -215,7 +313,7 @@ impl PhasedImprover {
             let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
             if turns.len() > self.max_streets_per_inter {
                 debug!(
-                    "Phase 2: skipping street {} ({}/{}), {} sec wait, \
+                    "Phase 4: skipping street {} ({}/{}), {} sec wait, \
                     intersection {}, {} streets in the intersection",
                     street_id,
                     count,
@@ -228,7 +326,7 @@ impl PhasedImprover {
             }
 
             debug!(
-                "Phase 2: street {} ({}/{}), {} sec wait, intersection {}, \
+                "Phase 4: street {} ({}/{}), {} sec wait, intersection {}, \
                 {} streets in the intersection",
                 street_id,
                 count,
@@ -261,7 +359,7 @@ impl PhasedImprover {
         None
     }
 
-    fn phase3<'a>(
+    fn phase5<'a>(
         &self,
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
@@ -270,13 +368,13 @@ impl PhasedImprover {
     ) -> Option<(Schedule<'a>, Score)> {
         if !self.add_new_streets {
             info!(
-                "Phased improver, phase 3: skipping (add_new_streets is false)"
+                "Phased improver, phase 5: skipping (add_new_streets is false)"
             );
             return None;
         }
 
         info!(
-            "Phased improver, phase 3: adding streets with non-zero wait times \
+            "Phased improver, phase 5: adding streets with non-zero wait times \
             that are not in the schedule"
         );
 
@@ -295,7 +393,7 @@ impl PhasedImprover {
             }
 
             debug!(
-                "Phase 3: adding new street {}, {} sec wait, to intersection \
+                "Phase 5: adding new street {}, {} sec wait, to intersection \
                 {}, {} streets in the intersection",
                 street_id,
                 street_wait,
@@ -324,7 +422,7 @@ impl PhasedImprover {
         None
     }
 
-    fn phase4<'a>(
+    fn phase6<'a>(
         &self,
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
@@ -341,7 +439,7 @@ impl PhasedImprover {
             if add_time == 0 && sub_time == 0 {
                 break;
             }
-            let result = self.phase4_loop(
+            let result = self.phase6_loop(
                 abort_flag.clone(),
                 schedule.clone(),
                 curr_stats,
@@ -349,7 +447,7 @@ impl PhasedImprover {
                 add_time,
                 sub_time,
             );
-            if result.is_some() {
+            if result.is_some() || abort_flag.load(Ordering::SeqCst) {
                 return result;
             }
         }
@@ -358,7 +456,7 @@ impl PhasedImprover {
         None
     }
 
-    fn phase4_loop<'a>(
+    fn phase6_loop<'a>(
         &self,
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
@@ -373,7 +471,7 @@ impl PhasedImprover {
 
         if add_time > 0 && sub_time > 0 {
             info!(
-                "Phased improver, phase 4: subtracting {} sec from, or adding \
+                "Phased improver, phase 6: subtracting {} sec from, or adding \
                 {} sec to streets of intersections with non-zero wait times, \
                 {} intersections selected",
                 sub_time,
@@ -382,7 +480,7 @@ impl PhasedImprover {
             );
         } else if add_time > 0 {
             info!(
-                "Phased improver, phase 4: adding {} sec to streets of \
+                "Phased improver, phase 6: adding {} sec to streets of \
                 intersections with non-zero wait times, {} intersections \
                 selected",
                 add_time,
@@ -390,7 +488,7 @@ impl PhasedImprover {
             );
         } else {
             info!(
-                "Phased improver, phase 4: subtracting {} sec from streets of \
+                "Phased improver, phase 6: subtracting {} sec from streets of \
                 intersections with non-zero wait times, {} intersections \
                 selected",
                 sub_time,
@@ -403,10 +501,13 @@ impl PhasedImprover {
 
         // Loop thought all intersections in decreasing order of total wait
         for (&(inter_id, inter_wait), count) in intersections.iter().zip(1..) {
-            let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
+            if abort_flag.load(Ordering::SeqCst) {
+                return None;
+            }
 
+            let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
             debug!(
-                "Phase 4: intersection {} ({}/{}), {} total wait, {} streets",
+                "Phase 6: intersection {} ({}/{}), {} total wait, {} streets",
                 inter_id,
                 count,
                 intersections.len(),
@@ -416,10 +517,6 @@ impl PhasedImprover {
 
             // Loop through all streets in the intersection
             for &(street_id, street_time) in turns.iter() {
-                if abort_flag.load(Ordering::SeqCst) {
-                    return None;
-                }
-
                 let wait_time =
                     *curr_stats.total_wait_time.get(&street_id).unwrap_or(&0);
 

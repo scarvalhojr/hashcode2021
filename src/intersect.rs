@@ -125,7 +125,6 @@ struct OpenIntersection {
 
 impl OpenIntersection {
     fn from(turns: &[(StreetId, Time)]) -> Self {
-
         let mut streets = HashMap::new();
         let mut slots = Vec::with_capacity(turns.len());
         let mut cycle = 0;

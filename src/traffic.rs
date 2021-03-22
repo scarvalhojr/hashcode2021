@@ -1,6 +1,6 @@
 use super::*;
-use crate::sched::{Schedule, Scheduler};
 use crate::intersect::reorder_all_intersections;
+use crate::sched::{Schedule, Scheduler};
 use log::{debug, info};
 use std::collections::HashMap;
 use std::f32::consts::E;

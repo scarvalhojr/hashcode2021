@@ -82,6 +82,24 @@ impl Intersection {
         self.cycle += time;
     }
 
+    pub fn remove_street(&mut self, street_id: StreetId) -> Option<Time> {
+        let mut remove_idx = None;
+        let mut removed_time = None;
+        for (idx, (id, time)) in self.turns.iter().enumerate() {
+            if *id == street_id {
+                self.cycle -= *time;
+                removed_time = Some(*time);
+                remove_idx = Some(idx);
+                break;
+            }
+        }
+
+        if let Some(idx) = remove_idx {
+            self.turns.remove(idx);
+        }
+        removed_time
+    }
+
     pub fn add_street_time(&mut self, street_id: StreetId, add_time: Time) {
         for (id, time) in self.turns.iter_mut() {
             if *id == street_id {
