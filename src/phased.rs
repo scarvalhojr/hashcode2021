@@ -77,17 +77,6 @@ impl Improver for PhasedImprover {
             return result1;
         }
 
-        // Phase 3
-        let result3 = self.phase3(
-            abort_flag.clone(),
-            schedule.clone(),
-            stats.score,
-            &intersections,
-        );
-        if result3.is_some() || abort_flag.load(Ordering::SeqCst) {
-            return result3;
-        }
-
         // Collect all streets with non-zero wait times whose traffic lights
         // are not always green
         let mut streets: Vec<(StreetId, Time)> = stats
@@ -98,8 +87,27 @@ impl Improver for PhasedImprover {
             })
             .map(|(&street_id, &time)| (street_id, time))
             .collect();
+
         // Sort streets by wait time
         streets.sort_unstable_by(|a, b| b.1.cmp(&a.1));
+
+        // Phase 2
+        let result2 =
+            self.phase2(abort_flag.clone(), schedule.clone(), &stats, &streets);
+        if result2.is_some() || abort_flag.load(Ordering::SeqCst) {
+            return result2;
+        }
+
+        // Phase 3
+        let result3 = self.phase3(
+            abort_flag.clone(),
+            schedule.clone(),
+            stats.score,
+            &intersections,
+        );
+        if result3.is_some() || abort_flag.load(Ordering::SeqCst) {
+            return result3;
+        }
 
         // Phase 4
         let result4 = self.phase4(
@@ -222,6 +230,60 @@ impl PhasedImprover {
                 );
                 return Some((best_schedule, best_score));
             }
+        }
+
+        // No improvement found
+        None
+    }
+
+    fn phase2<'a>(
+        &self,
+        abort_flag: Arc<AtomicBool>,
+        schedule: Schedule<'a>,
+        curr_stats: &ScheduleStats,
+        streets: &[(StreetId, Time)],
+    ) -> Option<(Schedule<'a>, Score)> {
+        info!(
+            "Phased improver, phase 2: adding streets with non-zero wait times
+            that are not in the schedule, examining {} streets",
+            streets.len(),
+        );
+
+        // Loop through all streets in decreasing order of wait times, add it
+        // with time 1 if it's not yet in the schedule, and reorder the
+        // intersection; return as soon as an improvement is found
+        for (&(street_id, street_wait), count) in streets.iter().zip(1..) {
+            if abort_flag.load(Ordering::SeqCst) {
+                break;
+            }
+
+            if curr_stats.crossed_streets.contains(&street_id) {
+                continue;
+            }
+
+            if schedule.get_street_time(street_id).is_some() {
+                continue;
+            }
+
+            let inter_id = schedule.get_intersection_id(street_id).unwrap();
+            let mut new_schedule = schedule.clone();
+            new_schedule.add_street(inter_id, street_id, 1);
+
+            let new_score = reorder_intersection(&mut new_schedule, inter_id);
+            if new_score > curr_stats.score {
+                info!(
+                    "New best score {} after adding new street {} (previous \
+                    wait time {}) to intersection {}, {} street(s) examined",
+                    new_score, street_id, street_wait, inter_id, count,
+                );
+                return Some((new_schedule, new_score));
+            }
+
+            debug!(
+                "Adding new street {} (previous wait time {}) to \
+                intersection {} resulted in same or worse score: {}",
+                street_id, street_wait, inter_id, new_score,
+            );
         }
 
         // No improvement found

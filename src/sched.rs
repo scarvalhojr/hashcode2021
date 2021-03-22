@@ -192,6 +192,14 @@ impl<'a> Schedule<'a> {
             .and_modify(|inter| inter.sub_street_time(street_id, sub_time));
     }
 
+    pub fn get_street_time(&self, street_id: StreetId) -> Option<Time> {
+        let inter_id = self.simulation.streets[street_id].end_intersection;
+        self.intersections
+            .get(&inter_id)
+            .unwrap()
+            .get_street_time(street_id)
+    }
+
     pub fn shuffle_intersection(&mut self, street_id: StreetId) {
         let inter_id = self.simulation.streets[street_id].end_intersection;
         self.intersections
