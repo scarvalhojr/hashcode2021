@@ -244,8 +244,8 @@ impl PhasedImprover {
         streets: &[(StreetId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
         info!(
-            "Phased improver, phase 2: adding streets with non-zero wait times
-            that are not in the schedule, examining {} streets",
+            "Phased improver, phase 2: adding streets with non-zero wait times \
+            that are not in the schedule, examining {} streets with wait times",
             streets.len(),
         );
 
