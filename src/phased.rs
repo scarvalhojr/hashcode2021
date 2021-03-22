@@ -1,8 +1,9 @@
 use super::*;
 use crate::improve::Improver;
-use crate::intersect::reorder_intersection;
+use crate::intersect::{reorder_intersection, reorder_intersections};
 use crate::sched::{Schedule, ScheduleStats};
 use log::{debug, info};
+use std::collections::HashSet;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 
@@ -156,80 +157,85 @@ impl PhasedImprover {
         intersections: &[(IntersectionId, Time)],
     ) -> Option<(Schedule<'a>, Score)> {
         info!(
-            "Phased improver, phase 1: removing streets that are are never \
+            "Phased improver, phase 1: removing all streets that were never \
             crossed, examining {} intersections with wait times",
             intersections.len(),
         );
 
-        let mut best_score = curr_stats.score;
-        let mut best_sched = None;
+        let mut new_sched = schedule.clone();
+        let mut modified_inter = HashSet::new();
+        let mut removed = Vec::new();
 
         // Loop thought all intersections in decreasing order of total wait
-        // times, remove any street has has not been crossed; return as soon as
-        // an improvement is found
-        for (&(inter_id, inter_wait), count) in intersections.iter().zip(1..) {
+        // times, remove any street has has not been crossed by a car
+        for &(inter_id, _) in intersections.iter() {
+            // Loop through all streets in the intersection
+            let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
+            for &(street_id, street_time) in turns.iter() {
+                if curr_stats.crossed_streets.contains(&street_id) {
+                    // Street was crossed by a car
+                    continue;
+                }
+                let inter = new_sched.intersections.get_mut(&inter_id).unwrap();
+                let removed_time = inter.remove_street(street_id);
+                assert_eq!(removed_time, Some(street_time));
+                removed.push((inter_id, street_id));
+                modified_inter.insert(inter_id);
+            }
+        }
+
+        if removed.is_empty() {
+            return None;
+        }
+
+        let new_score =
+            reorder_intersections(&mut new_sched, modified_inter.into_iter());
+        if new_score > curr_stats.score {
+            info!(
+                "New best score {} after removing {} streets that were never \
+                crossed by any car",
+                new_score,
+                removed.len(),
+            );
+            return Some((new_sched, new_score));
+        }
+
+        debug!(
+            "Removing {} streets that were never crossed by any car \
+            produced worse or same score: {}",
+            removed.len(),
+            new_score,
+        );
+
+        // Try to remove streets individually, return as soon as an improvement
+        // is found
+        for (inter_id, street_id) in removed.into_iter() {
             if abort_flag.load(Ordering::SeqCst) {
                 return None;
             }
 
-            let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
-
-            // Loop through all streets in the intersection
-            for &(street_id, street_time) in turns.iter() {
-                if curr_stats.crossed_streets.contains(&street_id) {
-                    continue;
-                }
-
-                let street_wait =
-                    *curr_stats.total_wait_time.get(&street_id).unwrap_or(&0);
-
-                let mut new_sched = schedule.clone();
-                let inter = new_sched.intersections.get_mut(&inter_id).unwrap();
-
-                let removed_time = inter.remove_street(street_id);
-                assert_eq!(removed_time, Some(street_time));
-
-                let new_score = reorder_intersection(&mut new_sched, inter_id);
-                if new_score > best_score {
-                    best_score = new_score;
-                    best_sched = Some(new_sched);
-                    info!(
-                        "New best score {} after removing street {} (time {}, \
-                        wait {}) from intersection {}, since it was never \
-                        crossed by any car",
-                        best_score,
-                        street_id,
-                        street_time,
-                        street_wait,
-                        inter_id,
-                    );
-                } else {
-                    debug!(
-                        "Removing street {} (time {}, wait {}) from \
-                        intersection {} (since it was never crossed by any \
-                        car) produced worse or same score: {}",
-                        street_id,
-                        street_time,
-                        street_wait,
-                        inter_id,
-                        new_score,
-                    );
-                }
-            }
-
-            if let Some(best_schedule) = best_sched {
+            let street_wait =
+                *curr_stats.total_wait_time.get(&street_id).unwrap_or(&0);
+            let mut new_sched = schedule.clone();
+            let inter = new_sched.intersections.get_mut(&inter_id).unwrap();
+            let street_time = inter.remove_street(street_id).unwrap();
+            let new_score = reorder_intersection(&mut new_sched, inter_id);
+            if new_score > curr_stats.score {
                 info!(
-                    "New best score {} after updating intersection {} (\
-                    previous total wait time {}, {} streets), {} \
-                    intersection(s) examined",
-                    best_score,
-                    inter_id,
-                    inter_wait,
-                    turns.len(),
-                    count,
+                    "New best score {} after removing street {} (time {}, \
+                    wait {}) from intersection {}, since it was never crossed \
+                    by any car",
+                    new_score, street_id, street_time, street_wait, inter_id,
                 );
-                return Some((best_schedule, best_score));
+                return Some((new_sched, new_score));
             }
+
+            debug!(
+                "Removing street {} (time {}, wait {}) from intersection {} \
+                (since it was never crossed by any car) produced worse or \
+                same score: {}",
+                street_id, street_time, street_wait, inter_id, new_score,
+            );
         }
 
         // No improvement found
