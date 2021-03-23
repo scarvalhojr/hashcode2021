@@ -244,7 +244,7 @@ fn main() {
             let mut best_sched = None;
             for num in 1..=best_of {
                 let sched = scheduler.schedule(&simulation);
-                let score = sched.stats().map(|stats| stats.score).unwrap_or(0);
+                let score = sched.score().unwrap_or(0);
                 info!("Schedule {}/{}: score {}", num, best_of, score);
                 if score >= best_score {
                     best_score = score;
@@ -255,7 +255,8 @@ fn main() {
         }
     };
 
-    let sched_stats = match schedule.stats() {
+    let build_image = args.value_of("png-image").is_some();
+    let sched_stats = match schedule.stats(build_image) {
         Ok(score) => score,
         Err(err) => {
             println!("\nError: {}", err);
@@ -329,7 +330,7 @@ fn main() {
                 _ => unreachable!(),
             };
 
-            let improved_stats = match improved_schedule.stats() {
+            let improved_stats = match improved_schedule.stats(build_image) {
                 Ok(score) => score,
                 Err(err) => {
                     println!("\nError: {}", err);

@@ -45,7 +45,7 @@ impl Improver for PhasedImprover {
         abort_flag: Arc<AtomicBool>,
         schedule: Schedule<'a>,
     ) -> Option<(Schedule<'a>, Score)> {
-        let stats = schedule.stats().unwrap();
+        let stats = schedule.stats(false).unwrap();
 
         // Sum up total wait time by intersection
         let mut inter_wait: HashMap<IntersectionId, Time> = HashMap::new();

@@ -44,7 +44,7 @@ impl Improver for GreedyImprover {
         schedule: Schedule<'a>,
     ) -> Option<(Schedule<'a>, Score)> {
         // Sort streets by total wait time
-        let stats = schedule.stats().unwrap();
+        let stats = schedule.stats(false).unwrap();
         let mut wait_times: Vec<(StreetId, Time)> = stats
             .total_wait_time
             .into_iter()

@@ -244,7 +244,11 @@ impl<'a> Schedule<'a> {
         self.intersections.remove(&inter_id);
     }
 
-    pub fn stats(&self) -> Result<ScheduleStats, String> {
+    pub fn score(&self) -> Result<Score, String> {
+        self.stats(false).map(|stats| stats.score)
+    }
+
+    pub fn stats(&self, build_image: bool) -> Result<ScheduleStats, String> {
         let mut stats = ScheduleStats::new(self);
 
         let mut inter_start_col: HashMap<IntersectionId, u32> = HashMap::new();
@@ -301,6 +305,10 @@ impl<'a> Schedule<'a> {
                         .get_mut(&car_id)
                         .unwrap()
                         .cross_intersection(self.simulation);
+                }
+
+                if !build_image {
+                    continue;
                 }
 
                 let intersection;
@@ -380,10 +388,12 @@ impl<'a> Schedule<'a> {
             moving_cars.retain(|_, car| car.state != CarState::Arrived);
         }
 
-        for &col in inter_start_col.values().filter(|&col| *col > 0) {
-            for row in 0..stats.image.height() {
-                assert_eq!(stats.image.get_pixel(col - 1, row), &WHITE);
-                stats.image.put_pixel(col - 1, row, LIGHT_GRAY);
+        if build_image {
+            for &col in inter_start_col.values().filter(|&col| *col > 0) {
+                for row in 0..stats.image.height() {
+                    assert_eq!(stats.image.get_pixel(col - 1, row), &WHITE);
+                    stats.image.put_pixel(col - 1, row, LIGHT_GRAY);
+                }
             }
         }
 

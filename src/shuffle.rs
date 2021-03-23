@@ -48,7 +48,7 @@ impl Improver for ShuffleImprover {
         );
 
         // Sort streets by total wait time
-        let stats = schedule.stats().unwrap();
+        let stats = schedule.stats(false).unwrap();
         let mut wait_times: Vec<(StreetId, Time)> = stats
             .total_wait_time
             .into_iter()
@@ -87,17 +87,17 @@ impl Improver for ShuffleImprover {
                         break 'outer;
                     }
 
-                    let new_stats = new_schedule.stats().unwrap();
-                    if new_stats.score <= best_score {
+                    let new_score = new_schedule.score().unwrap();
+                    if new_score <= best_score {
                         continue;
                     }
                     info!(
                         "=> New best score by adding {} to street \
                         {}: {}",
-                        add_time, street_id, new_stats.score
+                        add_time, street_id, new_score,
                     );
                     best_count += 1;
-                    best_score = new_stats.score;
+                    best_score = new_score;
                     best_sched = Some(new_schedule.clone());
                     new_schedule.shuffle_intersection(street_id);
                 }
