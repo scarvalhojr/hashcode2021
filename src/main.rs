@@ -57,10 +57,15 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
-            Arg::with_name("traffic-log-base")
-                .help("The logarithm base used in the traffic scheduler")
-                .short("t")
-                .long("traffic-log-base")
+            Arg::with_name("traffic-min-log-base")
+                .help("The minimum logarithm base used by the traffic scheduler")
+                .long("traffic-min-log-base")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("traffic-max-log-base")
+                .help("The maximum logarithm base used by the traffic scheduler")
+                .long("traffic-max-log-base")
                 .takes_value(true),
         )
         .arg(
@@ -135,8 +140,16 @@ fn main() {
         1
     };
 
-    let traffic_log_base = if args.is_present("traffic-log-base") {
-        let value = value_t!(args.value_of("traffic-log-base"), f32)
+    let traffic_min_log_base = if args.is_present("traffic-min-log-base") {
+        let value = value_t!(args.value_of("traffic-min-log-base"), f32)
+            .unwrap_or_else(|e| e.exit());
+        Some(value)
+    } else {
+        None
+    };
+
+    let traffic_max_log_base = if args.is_present("traffic-max-log-base") {
+        let value = value_t!(args.value_of("traffic-max-log-base"), f32)
             .unwrap_or_else(|e| e.exit());
         Some(value)
     } else {
@@ -214,9 +227,15 @@ fn main() {
             let scheduler: Box<dyn Scheduler> = match algorithm {
                 "adaptive" => Box::new(AdaptiveScheduler::default()),
                 "naive" => Box::new(NaiveScheduler::default()),
-                "traffic" => match traffic_log_base {
-                    Some(value) => Box::new(TrafficScheduler::new(value)),
-                    None => Box::new(TrafficScheduler::default()),
+                "traffic" => {
+                    let mut scheduler = TrafficScheduler::default();
+                    if let Some(base) = traffic_min_log_base {
+                        scheduler.set_min_base(base);
+                    }
+                    if let Some(base) = traffic_max_log_base {
+                        scheduler.set_max_base(base);
+                    }
+                    Box::new(scheduler)
                 },
                 _ => unreachable!(),
             };

@@ -2,22 +2,30 @@ use super::*;
 use crate::intersect::reorder_all_intersections;
 use crate::sched::{Schedule, Scheduler};
 use log::info;
+use rand::{thread_rng, Rng};
 use std::collections::HashMap;
-use std::f32::consts::E;
 
 pub struct TrafficScheduler {
-    log_base: f32,
+    min_base: f32,
+    max_base: f32,
 }
 
 impl Default for TrafficScheduler {
     fn default() -> Self {
-        Self { log_base: E }
+        Self {
+            min_base: 1.5_f32,
+            max_base: 3.5_f32,
+        }
     }
 }
 
 impl TrafficScheduler {
-    pub fn new(log_base: f32) -> Self {
-        Self { log_base }
+    pub fn set_min_base(&mut self, min_base: f32) {
+        self.min_base = min_base;
+    }
+
+    pub fn set_max_base(&mut self, max_base: f32) {
+        self.max_base = max_base;
     }
 }
 
@@ -46,7 +54,8 @@ impl Scheduler for TrafficScheduler {
             }
         }
 
-        info!("Traffic scheduler: log {}", self.log_base);
+        let log_base = thread_rng().gen_range(self.min_base..=self.max_base);
+        info!("Traffic scheduler: log base {}", log_base);
 
         for (&inter_id, counters) in traffic.iter() {
             let min_traffic = *counters.values().min().unwrap() as f32;
@@ -54,7 +63,7 @@ impl Scheduler for TrafficScheduler {
                 // Normalize the time each street gets based on the total
                 // number of cars that need to cross it
                 let time = ((counter as f32) / min_traffic)
-                    .log(self.log_base)
+                    .log(log_base)
                     .round()
                     .max(1_f32) as Time;
                 assert!(time > 0);

@@ -48,6 +48,9 @@ impl Scheduler for AdaptiveScheduler {
                 .or_insert_with(|| vec![None; streets.len()]);
         }
 
+        // TODO: replace the rest of this function with a call to
+        // intersect::reorder_all_intersections
+
         // All cars that haven't reached their end yet
         let mut moving_cars: HashMap<CarId, Car> = simulation
             .car_paths
