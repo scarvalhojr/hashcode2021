@@ -1,6 +1,6 @@
 use super::*;
 use image::{ImageBuffer, Rgb, RgbImage};
-use rand::{seq::SliceRandom, thread_rng};
+use rand::{seq::SliceRandom, Rng};
 use std::collections::{HashSet, VecDeque};
 use std::convert::TryFrom;
 use std::fmt::{Display, Formatter};
@@ -129,11 +129,6 @@ impl Intersection {
         self.turns.remove(remove_idx.unwrap());
     }
 
-    pub fn shuffle(&mut self) {
-        let mut rng = thread_rng();
-        self.turns.shuffle(&mut rng);
-    }
-
     pub fn is_green(&self, street_id: StreetId, at_time: Time) -> bool {
         if self.cycle == 0 {
             return false;
@@ -200,15 +195,22 @@ impl<'a> Schedule<'a> {
             .get_street_time(street_id)
     }
 
-    pub fn shuffle_intersection(&mut self, street_id: StreetId) {
-        let inter_id = self.simulation.streets[street_id].end_intersection;
+    pub fn shuffle_intersection<R: ?Sized>(
+        &mut self,
+        inter_id: IntersectionId,
+        rng: &mut R,
+    ) where
+        R: Rng,
+    {
         self.intersections
             .entry(inter_id)
-            .and_modify(|inter| inter.shuffle());
+            .and_modify(|inter| inter.turns.shuffle(rng));
     }
 
-    pub fn num_streets_in_intersection(&self, street_id: StreetId) -> usize {
-        let inter_id = self.simulation.streets[street_id].end_intersection;
+    pub fn num_streets_in_intersection(
+        &self,
+        inter_id: IntersectionId,
+    ) -> usize {
         self.intersections.get(&inter_id).unwrap().turns.len()
     }
 

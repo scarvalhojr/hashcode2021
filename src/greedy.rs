@@ -115,12 +115,11 @@ impl Improver for GreedyImprover {
                 if abort_flag.load(Ordering::SeqCst) {
                     break 'outer;
                 }
-                let intersection_id =
-                    schedule.get_intersection_id(street_id).unwrap();
+                let inter_id = schedule.get_intersection_id(street_id).unwrap();
                 let mut new_schedule = schedule.clone();
                 new_schedule.add_street_time(street_id, add_time);
                 let new_score =
-                    reorder_intersection(&mut new_schedule, intersection_id);
+                    reorder_intersection(&mut new_schedule, inter_id);
                 if new_score <= best_score {
                     continue;
                 }
@@ -130,8 +129,8 @@ impl Improver for GreedyImprover {
                     time: {}",
                     add_time,
                     street_id,
-                    intersection_id,
-                    schedule.num_streets_in_intersection(street_id),
+                    inter_id,
+                    schedule.num_streets_in_intersection(inter_id),
                     wait_time,
                     new_score,
                 );

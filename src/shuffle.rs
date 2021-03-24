@@ -2,6 +2,7 @@ use super::*;
 use crate::improve::Improver;
 use crate::sched::Schedule;
 use log::info;
+use rand::thread_rng;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 
@@ -47,6 +48,8 @@ impl Improver for ShuffleImprover {
             self.min_wait_time, self.max_streets, self.max_shuffles,
         );
 
+        let mut rng = thread_rng();
+
         // Sort streets by total wait time
         let stats = schedule.stats(false).unwrap();
         let mut wait_times: Vec<(StreetId, Time)> = stats
@@ -67,17 +70,13 @@ impl Improver for ShuffleImprover {
                 continue;
             }
 
-            let shuffles = bounded_factorial(
-                schedule.num_streets_in_intersection(street_id),
-                self.max_shuffles,
-            );
+            let inter_id = schedule.get_intersection_id(street_id).unwrap();
+            let num_streets = schedule.num_streets_in_intersection(inter_id);
+            let shuffles = bounded_factorial(num_streets, self.max_shuffles);
             info!(
                 "Street {}: {} total wait time, \
                 {} streets in the intersection, {} shuffles",
-                street_id,
-                wait_time,
-                schedule.num_streets_in_intersection(street_id),
-                shuffles,
+                street_id, wait_time, num_streets, shuffles,
             );
             for add_time in 0..=2 {
                 let mut new_schedule = schedule.clone();
@@ -99,7 +98,7 @@ impl Improver for ShuffleImprover {
                     best_count += 1;
                     best_score = new_score;
                     best_sched = Some(new_schedule.clone());
-                    new_schedule.shuffle_intersection(street_id);
+                    new_schedule.shuffle_intersection(inter_id, &mut rng);
                 }
             }
 
@@ -112,7 +111,7 @@ impl Improver for ShuffleImprover {
     }
 }
 
-fn bounded_factorial(num: usize, max: usize) -> usize {
+pub fn bounded_factorial(num: usize, max: usize) -> usize {
     let mut fact = 1;
     for n in (2..=num).rev() {
         fact *= n;

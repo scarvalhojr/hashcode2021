@@ -2,7 +2,9 @@ use super::*;
 use crate::improve::Improver;
 use crate::intersect::{reorder_intersection, reorder_intersections};
 use crate::sched::{Schedule, ScheduleStats};
+use crate::shuffle::bounded_factorial;
 use log::{debug, info};
+use rand::thread_rng;
 use std::collections::HashSet;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
@@ -11,14 +13,16 @@ pub struct PhasedImprover {
     max_add_time: Time,
     max_sub_time: Time,
     max_streets_per_inter: usize,
+    max_shuffles: usize,
 }
 
 impl Default for PhasedImprover {
     fn default() -> Self {
         Self {
-            max_add_time: 6,
-            max_sub_time: 3,
+            max_add_time: 10,
+            max_sub_time: 5,
             max_streets_per_inter: 30,
+            max_shuffles: 1000,
         }
     }
 }
@@ -30,6 +34,10 @@ impl PhasedImprover {
 
     pub fn set_max_sub_time(&mut self, max_sub_time: Time) {
         self.max_sub_time = max_sub_time;
+    }
+
+    pub fn set_max_shuffles(&mut self, max_shuffles: usize) {
+        self.max_shuffles = max_shuffles;
     }
 }
 
@@ -124,6 +132,28 @@ impl Improver for PhasedImprover {
         );
         if result5.is_some() || abort_flag.load(Ordering::SeqCst) {
             return result5;
+        }
+
+        // Phase 6
+        let result6 = self.phase6(
+            abort_flag.clone(),
+            schedule.clone(),
+            stats.score,
+            &intersections,
+        );
+        if result6.is_some() || abort_flag.load(Ordering::SeqCst) {
+            return result6;
+        }
+
+        // Phase 7
+        let result7 = self.phase7(
+            abort_flag.clone(),
+            schedule.clone(),
+            &stats,
+            &intersections,
+        );
+        if result7.is_some() || abort_flag.load(Ordering::SeqCst) {
+            return result7;
         }
 
         // No improvement found
@@ -418,7 +448,81 @@ impl PhasedImprover {
     ) -> Option<(Schedule<'a>, Score)> {
         self.add_or_sub_time(
             5,
-            1..,
+            1..=2,
+            abort_flag,
+            schedule,
+            curr_stats,
+            intersections,
+        )
+    }
+
+    fn phase6<'a>(
+        &self,
+        abort_flag: Arc<AtomicBool>,
+        schedule: Schedule<'a>,
+        curr_score: Score,
+        intersections: &[(IntersectionId, Time)],
+    ) -> Option<(Schedule<'a>, Score)> {
+        info!(
+            "Phased improver, phase 6: shuffling intersections with non-zero \
+            wait times, {} intersections selected",
+            intersections.len(),
+        );
+
+        let mut rng = thread_rng();
+
+        // Loop thought all intersections in decreasing order of total wait
+        // times, shuffling them; return as soon as an improvement is found
+        for (&(inter_id, inter_wait), count) in intersections.iter().zip(1..) {
+            let num_streets = schedule.num_streets_in_intersection(inter_id);
+            let shuffles = bounded_factorial(num_streets, self.max_shuffles);
+            debug!(
+                "Phase 6: intersection {} ({}/{}), {} total wait, {} streets, \
+                {} shuffles",
+                inter_id,
+                count,
+                intersections.len(),
+                inter_wait,
+                num_streets,
+                shuffles,
+            );
+
+            // Try to improve intersection by randomly shuffling streets
+            // without changing their times
+            let mut new_schedule = schedule.clone();
+            for _ in 1..=shuffles {
+                if abort_flag.load(Ordering::SeqCst) {
+                    return None;
+                }
+
+                new_schedule.shuffle_intersection(inter_id, &mut rng);
+                let new_score = new_schedule.score().unwrap();
+                if new_score > curr_score {
+                    info!(
+                        "New best score {} after shuffling intersection {} (\
+                        previous total wait time {}, {} streets), {} \
+                        intersection(s) examined",
+                        new_score, inter_id, inter_wait, num_streets, count,
+                    );
+                    return Some((new_schedule, new_score));
+                }
+            }
+        }
+
+        // No improvement found
+        None
+    }
+
+    fn phase7<'a>(
+        &self,
+        abort_flag: Arc<AtomicBool>,
+        schedule: Schedule<'a>,
+        curr_stats: &ScheduleStats,
+        intersections: &[(IntersectionId, Time)],
+    ) -> Option<(Schedule<'a>, Score)> {
+        self.add_or_sub_time(
+            7,
+            3..,
             abort_flag,
             schedule,
             curr_stats,

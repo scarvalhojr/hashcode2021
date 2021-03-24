@@ -111,10 +111,10 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
-            Arg::with_name("max-shuffles-per-street")
-                .help("Maximum number of shuffles per street on incremental rounds")
+            Arg::with_name("max-shuffles")
+                .help("Maximum number of shuffles on incremental rounds")
                 .short("x")
-                .long("max-shuffles-per-street")
+                .long("max-shuffles")
                 .takes_value(true),
         )
         .arg(
@@ -190,9 +190,8 @@ fn main() {
         None
     };
 
-    let max_shuffles_per_street = if args.is_present("max-shuffles-per-street")
-    {
-        let value = value_t!(args.value_of("max-shuffles-per-street"), usize)
+    let max_shuffles = if args.is_present("max-shuffles") {
+        let value = value_t!(args.value_of("max-shuffles"), usize)
             .unwrap_or_else(|e| e.exit());
         Some(value)
     } else {
@@ -303,6 +302,9 @@ fn main() {
                     if let Some(value) = max_sub_time {
                         phased.set_max_sub_time(value);
                     }
+                    if let Some(value) = max_shuffles {
+                        phased.set_max_shuffles(value);
+                    }
                     improver.improve(&schedule, &phased)
                 }
                 "shuffle" => {
@@ -313,7 +315,7 @@ fn main() {
                     if let Some(value) = max_streets_per_round {
                         shuffle.set_max_streets(value);
                     }
-                    if let Some(value) = max_shuffles_per_street {
+                    if let Some(value) = max_shuffles {
                         shuffle.set_max_shuffles(value);
                     }
                     improver.improve(&schedule, &shuffle)
