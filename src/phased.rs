@@ -39,6 +39,10 @@ impl PhasedImprover {
     pub fn set_max_shuffles(&mut self, max_shuffles: usize) {
         self.max_shuffles = max_shuffles;
     }
+
+    pub fn set_max_streets_per_inter(&mut self, max_streets_per_inter: usize) {
+        self.max_streets_per_inter = max_streets_per_inter;
+    }
 }
 
 impl Improver for PhasedImprover {

@@ -8,6 +8,7 @@ use std::collections::HashMap;
 pub struct TrafficScheduler {
     min_base: f32,
     max_base: f32,
+    max_streets_per_inter: usize,
 }
 
 impl Default for TrafficScheduler {
@@ -15,6 +16,7 @@ impl Default for TrafficScheduler {
         Self {
             min_base: 1.5_f32,
             max_base: 3.5_f32,
+            max_streets_per_inter: 20,
         }
     }
 }
@@ -58,6 +60,13 @@ impl Scheduler for TrafficScheduler {
         info!("Traffic scheduler: log base {}", log_base);
 
         for (&inter_id, counters) in traffic.iter() {
+            if counters.len() > self.max_streets_per_inter {
+                // Too many streets: give each street 1 sec
+                for (&street_id, _) in counters.iter() {
+                    schedule.add_street(inter_id, street_id, 1);
+                }
+                continue;
+            }
             let min_traffic = *counters.values().min().unwrap() as f32;
             for (&street_id, &counter) in counters.iter() {
                 // Normalize the time each street gets based on the total

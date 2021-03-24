@@ -104,9 +104,15 @@ fn main() {
                 .takes_value(true),
         )
         .arg(
+            Arg::with_name("max-streets-per-inter")
+                .help("Maximum number of streets per intersection on incremental rounds")
+                .short("s")
+                .long("max-streets-per-inter")
+                .takes_value(true),
+        )
+        .arg(
             Arg::with_name("max-streets-per-round")
                 .help("Maximum number of streets per round on incremental rounds")
-                .short("s")
                 .long("max-streets-per-round")
                 .takes_value(true),
         )
@@ -176,6 +182,14 @@ fn main() {
 
     let max_sub_time = if args.is_present("max-sub-time") {
         let value = value_t!(args.value_of("max-sub-time"), Time)
+            .unwrap_or_else(|e| e.exit());
+        Some(value)
+    } else {
+        None
+    };
+
+    let max_streets_per_inter = if args.is_present("max-streets-per-inter") {
+        let value = value_t!(args.value_of("max-streets-per-inter"), usize)
             .unwrap_or_else(|e| e.exit());
         Some(value)
     } else {
@@ -304,6 +318,9 @@ fn main() {
                     }
                     if let Some(value) = max_shuffles {
                         phased.set_max_shuffles(value);
+                    }
+                    if let Some(value) = max_streets_per_inter {
+                        phased.set_max_streets_per_inter(value);
                     }
                     improver.improve(&schedule, &phased)
                 }
