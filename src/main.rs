@@ -230,7 +230,7 @@ fn main() {
                         scheduler.set_max_base(base);
                     }
                     Box::new(scheduler)
-                },
+                }
                 _ => unreachable!(),
             };
 

@@ -422,7 +422,8 @@ impl PhasedImprover {
             abort_flag,
             schedule,
             curr_stats,
-            intersections)
+            intersections,
+        )
     }
 
     fn add_or_sub_time<'a, I>(
