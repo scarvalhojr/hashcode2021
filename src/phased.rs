@@ -5,6 +5,7 @@ use crate::sched::{Schedule, ScheduleStats};
 use crate::shuffle::bounded_factorial;
 use log::{debug, info};
 use rand::thread_rng;
+use rayon::prelude::*;
 use std::collections::HashSet;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
@@ -183,8 +184,8 @@ impl PhasedImprover {
         let mut modified_inter = HashSet::new();
         let mut removed = Vec::new();
 
-        // Loop thought all intersections in decreasing order of total wait
-        // times, remove any street has has not been crossed by a car
+        // Loop thought all intersections and remove any street has has not
+        // been crossed by a car
         for &(inter_id, _) in intersections.iter() {
             // Loop through all streets in the intersection
             let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
@@ -328,42 +329,49 @@ impl PhasedImprover {
 
         // Loop thought all intersections in decreasing order of total wait
         // times, reordering them; return as soon as an improvement is found
-        for (&(inter_id, inter_wait), count) in intersections.iter().zip(1..) {
-            if abort_flag.load(Ordering::SeqCst) {
-                return None;
-            }
-
-            let turns = &schedule.intersections.get(&inter_id).unwrap().turns;
-            debug!(
-                "Phase 3: intersection {} ({}/{}), {} total wait, {} streets",
-                inter_id,
-                count,
-                intersections.len(),
-                inter_wait,
-                turns.len(),
-            );
-
-            // Try to improve intersection by reordering streets
-            // without changing their times
-            let mut new_schedule = schedule.clone();
-            let new_score = reorder_intersection(&mut new_schedule, inter_id);
-            if new_score > curr_score {
-                info!(
-                    "New best score {} after reordering intersection {} (\
-                    previous total wait time {}, {} streets), {} \
-                    intersection(s) examined",
-                    new_score,
+        intersections
+            .par_iter()
+            .find_map_any(|&(inter_id, inter_wait)| {
+                if abort_flag.load(Ordering::SeqCst) {
+                    return None;
+                }
+                self.reorder_intersection(
+                    schedule.clone(),
+                    curr_score,
                     inter_id,
                     inter_wait,
-                    turns.len(),
-                    count,
-                );
-                return Some((new_schedule, new_score));
-            }
-        }
+                )
+            })
+    }
 
-        // No improvement found
-        None
+    fn reorder_intersection<'a>(
+        &self,
+        mut schedule: Schedule<'a>,
+        curr_score: Score,
+        inter_id: IntersectionId,
+        inter_wait: Time,
+    ) -> Option<(Schedule<'a>, Score)> {
+        debug!(
+            "Phase 3: reordering intersection {}, {} total wait, {} streets",
+            inter_id,
+            inter_wait,
+            schedule.num_streets_in_intersection(inter_id),
+        );
+
+        let new_score = reorder_intersection(&mut schedule, inter_id);
+        if new_score > curr_score {
+            info!(
+                "New best score {} after reordering intersection {} (\
+                previous total wait time {}, {} streets)",
+                new_score,
+                inter_id,
+                inter_wait,
+                schedule.num_streets_in_intersection(inter_id),
+            );
+            Some((schedule, new_score))
+        } else {
+            None
+        }
     }
 
     fn phase4<'a>(
