@@ -7,6 +7,7 @@ use log::{debug, info};
 use rand::thread_rng;
 use rayon::prelude::*;
 use std::collections::HashSet;
+use std::iter::{once, repeat};
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 
@@ -14,7 +15,8 @@ pub struct PhasedImprover {
     max_add_time: Time,
     max_sub_time: Time,
     max_streets_per_inter: usize,
-    max_shuffles: usize,
+    max_shuffles_per_inter: usize,
+    max_shuffles_per_thread: usize,
 }
 
 impl Default for PhasedImprover {
@@ -23,7 +25,11 @@ impl Default for PhasedImprover {
             max_add_time: 10,
             max_sub_time: 5,
             max_streets_per_inter: 30,
-            max_shuffles: 1000,
+            // Ideally max_shuffles_per_inter should not be a multiple of
+            // max_shuffles_per_thread to avoid spanwing a thread to do zero
+            // shuffles
+            max_shuffles_per_inter: 260,
+            max_shuffles_per_thread: 35,
         }
     }
 }
@@ -37,8 +43,8 @@ impl PhasedImprover {
         self.max_sub_time = max_sub_time;
     }
 
-    pub fn set_max_shuffles(&mut self, max_shuffles: usize) {
-        self.max_shuffles = max_shuffles;
+    pub fn set_max_shuffles(&mut self, max_shuffles_per_inter: usize) {
+        self.max_shuffles_per_inter = max_shuffles_per_inter;
     }
 
     pub fn set_max_streets_per_inter(&mut self, max_streets_per_inter: usize) {
@@ -490,47 +496,56 @@ impl PhasedImprover {
         // times, shuffling them; return as soon as an improvement is found
         intersections
             .par_iter()
-            .find_map_any(|&(inter_id, inter_wait)| {
+            .flat_map_iter(|&(inter_id, inter_wait)| {
+                let num_streets =
+                    schedule.num_streets_in_intersection(inter_id);
+                let shuffles =
+                    bounded_factorial(num_streets, self.max_shuffles_per_inter);
+                debug!(
+                    "Phase 6: intersection {}, {} total wait, {} streets, {} \
+                    shuffles",
+                    inter_id, inter_wait, num_streets, shuffles,
+                );
+
+                let full = shuffles / self.max_shuffles_per_thread;
+                let remain = shuffles - full * self.max_shuffles_per_thread;
+
+                repeat((inter_id, inter_wait, self.max_shuffles_per_thread))
+                    .take(full)
+                    .chain(once((inter_id, inter_wait, remain)))
+            })
+            .find_map_any(|(inter_id, inter_wait, shuffles)| {
                 if abort_flag.load(Ordering::SeqCst) {
                     return None;
                 }
                 self.shuffle_intersection(
-                    abort_flag.clone(),
                     schedule.clone(),
                     curr_score,
                     inter_id,
                     inter_wait,
+                    shuffles,
                 )
             })
     }
 
     fn shuffle_intersection<'a>(
         &self,
-        abort_flag: Arc<AtomicBool>,
         mut schedule: Schedule<'a>,
         curr_score: Score,
         inter_id: IntersectionId,
         inter_wait: Time,
+        shuffles: usize,
     ) -> Option<(Schedule<'a>, Score)> {
-        let num_streets = schedule.num_streets_in_intersection(inter_id);
-        let shuffles = bounded_factorial(num_streets, self.max_shuffles);
-
-        debug!(
-            "Phase 6: intersection {}, {} total wait, {} streets, {} shuffles",
-            inter_id, inter_wait, num_streets, shuffles,
-        );
-
         let mut rng = thread_rng();
 
         // Try to improve intersection by randomly shuffling streets without
         // changing their times, return as soon as improvement is found
         for _ in 1..=shuffles {
-            if abort_flag.load(Ordering::SeqCst) {
-                return None;
-            }
             schedule.shuffle_intersection(inter_id, &mut rng);
             let new_score = schedule.score().unwrap();
             if new_score > curr_score {
+                let num_streets =
+                    schedule.num_streets_in_intersection(inter_id);
                 info!(
                     "New best score {} after shuffling intersection {} (\
                     previous total wait time {}, {} streets)",
