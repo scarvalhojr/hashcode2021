@@ -28,8 +28,8 @@ impl Default for PhasedImprover {
             // Ideally max_shuffles_per_inter should not be a multiple of
             // max_shuffles_per_thread to avoid spanwing a thread to do zero
             // shuffles
-            max_shuffles_per_inter: 260,
-            max_shuffles_per_thread: 35,
+            max_shuffles_per_inter: 259,
+            max_shuffles_per_thread: 26,
         }
     }
 }
