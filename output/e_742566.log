@@ -1,0 +1,462 @@
+Hash Code 2021
+[2021-03-27T17:09:21Z INFO  hashcode2021] Loading simulation from 'input/e.txt'
+
+Simulation
+----------
+Duration     : 676
+Intersections: 500
+Streets      : 998
+Cars         : 1000
+Max score    : 921203
+Bonus points : 500
+[2021-03-27T17:09:21Z INFO  hashcode2021] Loading schedule from 'output/e_742553.txt'
+
+Schedule
+--------
+Intersections   : 500
+Street lights   : 956
+Arrived cars    : 875
+Earliest arrival: 3
+Latest arrival  : 675
+Crossed streets : 955
+Total wait time : 88153
+Schedule score  : 742553
+[2021-03-27T17:09:21Z INFO  hashcode2021::improve] Incremental improver: continuous rounds
+[2021-03-27T17:09:21Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 211 intersections with wait times
+[2021-03-27T17:09:21Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 560 streets with wait times
+[2021-03-27T17:09:21Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:21Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 560 streets selected, 30 max streets per intersection
+[2021-03-27T17:09:21Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:22Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:22Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:27Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:27Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:27Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:27Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:28Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:28Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:28Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:28Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:29Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:29Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:29Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:29Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:29Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:30Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:30Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:30Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:30Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 211 intersections selected
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] New best score 742554 after adding 24 sec to street 400 (4 time, 2 wait time), intersection 201
+[2021-03-27T17:09:31Z INFO  hashcode2021::improve] Round 1, new score 742554
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 210 intersections with wait times
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 560 streets with wait times
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:31Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 560 streets selected, 30 max streets per intersection
+[2021-03-27T17:09:32Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:32Z INFO  hashcode2021::phased] New best score 742555 after adding 2 sec to street 404 (1 time, 1 wait time), intersection 203
+[2021-03-27T17:09:32Z INFO  hashcode2021::improve] Round 2, new score 742555
+[2021-03-27T17:09:32Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 210 intersections with wait times
+[2021-03-27T17:09:32Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 559 streets with wait times
+[2021-03-27T17:09:32Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:32Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 559 streets selected, 30 max streets per intersection
+[2021-03-27T17:09:32Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:33Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:33Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:38Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:38Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:38Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:38Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:42Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:42Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:42Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:42Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:43Z INFO  hashcode2021::phased] New best score 742556 after adding 25 sec to street 492 (5 time, 2 wait time), intersection 247
+[2021-03-27T17:09:43Z INFO  hashcode2021::improve] Round 3, new score 742556
+[2021-03-27T17:09:43Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 210 intersections with wait times
+[2021-03-27T17:09:43Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 559 streets with wait times
+[2021-03-27T17:09:43Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:43Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 559 streets selected, 30 max streets per intersection
+[2021-03-27T17:09:43Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:43Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:43Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:48Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:49Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:49Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:49Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:49Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:49Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:50Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:50Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:50Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:50Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:51Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:51Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:51Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:51Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:51Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:52Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:52Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:52Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:52Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 26 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 27 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:54Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 28 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:54Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 29 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:54Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 30 sec to streets of intersections with non-zero wait times, 210 intersections selected
+[2021-03-27T17:09:54Z INFO  hashcode2021::phased] New best score 742557 after adding 30 sec to street 868 (5 time, 2 wait time), intersection 435
+[2021-03-27T17:09:54Z INFO  hashcode2021::improve] Round 4, new score 742557
+[2021-03-27T17:09:54Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 209 intersections with wait times
+[2021-03-27T17:09:54Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 558 streets with wait times
+[2021-03-27T17:09:54Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:09:54Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 558 streets selected, 30 max streets per intersection
+[2021-03-27T17:09:55Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:09:55Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:09:55Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:00Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:00Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:01Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:01Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:01Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:01Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:02Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:02Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:02Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:02Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:02Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:03Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:03Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:03Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:03Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:04Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:04Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:04Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:04Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:04Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:05Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:05Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:05Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 26 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:05Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 27 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 28 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 29 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 30 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 31 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 32 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 33 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 34 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 35 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 36 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:07Z INFO  hashcode2021::phased] New best score 742558 after adding 36 sec to street 396 (4 time, 2 wait time), intersection 199
+[2021-03-27T17:10:07Z INFO  hashcode2021::improve] Round 5, new score 742558
+[2021-03-27T17:10:08Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 208 intersections with wait times
+[2021-03-27T17:10:08Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 557 streets with wait times
+[2021-03-27T17:10:08Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:08Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 557 streets selected, 30 max streets per intersection
+[2021-03-27T17:10:08Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:08Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:08Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:13Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:14Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:14Z INFO  hashcode2021::phased] New best score 742559 after adding 5 sec to street 404 (3 time, 1 wait time), intersection 203
+[2021-03-27T17:10:14Z INFO  hashcode2021::improve] Round 6, new score 742559
+[2021-03-27T17:10:14Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 208 intersections with wait times
+[2021-03-27T17:10:14Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 556 streets with wait times
+[2021-03-27T17:10:14Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:14Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 556 streets selected, 30 max streets per intersection
+[2021-03-27T17:10:14Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:14Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:15Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:19Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:20Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:20Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:20Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:20Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:24Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:24Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:24Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:24Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:24Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 26 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:25Z INFO  hashcode2021::phased] New best score 742560 after adding 26 sec to street 844 (2 time, 1 wait time), intersection 423
+[2021-03-27T17:10:25Z INFO  hashcode2021::improve] Round 7, new score 742560
+[2021-03-27T17:10:25Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 208 intersections with wait times
+[2021-03-27T17:10:25Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 556 streets with wait times
+[2021-03-27T17:10:25Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:25Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 556 streets selected, 30 max streets per intersection
+[2021-03-27T17:10:25Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:25Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:26Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:30Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:31Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:31Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:32Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:32Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:32Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:32Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:32Z INFO  hashcode2021::phased] New best score 742561 after adding 12 sec to street 847 (1 time, 5 wait time), intersection 423
+[2021-03-27T17:10:32Z INFO  hashcode2021::improve] Round 8, new score 742561
+[2021-03-27T17:10:32Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 208 intersections with wait times
+[2021-03-27T17:10:32Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 556 streets with wait times
+[2021-03-27T17:10:32Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:33Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 556 streets selected, 30 max streets per intersection
+[2021-03-27T17:10:33Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:33Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:33Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:38Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:38Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:39Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:41Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:42Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:42Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:42Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:42Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:43Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:43Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:43Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 26 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:43Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 27 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:43Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 28 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:44Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 29 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:44Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 30 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:44Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 31 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:44Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 32 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:45Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 33 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:45Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 34 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:45Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 35 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:45Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 36 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:45Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 37 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:46Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 38 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:46Z INFO  hashcode2021::phased] New best score 742563 after adding 38 sec to street 784 (13 time, 5 wait time), intersection 393
+[2021-03-27T17:10:46Z INFO  hashcode2021::improve] Round 9, new score 742563
+[2021-03-27T17:10:46Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 208 intersections with wait times
+[2021-03-27T17:10:46Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 556 streets with wait times
+[2021-03-27T17:10:46Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:46Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 556 streets selected, 30 max streets per intersection
+[2021-03-27T17:10:46Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:46Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:47Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:51Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:52Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:52Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:52Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:52Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:53Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:54Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:54Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:54Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:54Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:54Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:55Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:55Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:55Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:55Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:55Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:56Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:56Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:56Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:56Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 26 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:57Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 27 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:57Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 28 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:57Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 29 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:57Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 30 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:57Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 31 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:58Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 32 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:58Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 33 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:58Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 34 sec to streets of intersections with non-zero wait times, 208 intersections selected
+[2021-03-27T17:10:58Z INFO  hashcode2021::phased] New best score 742564 after adding 34 sec to street 484 (2 time, 2 wait time), intersection 243
+[2021-03-27T17:10:58Z INFO  hashcode2021::improve] Round 10, new score 742564
+[2021-03-27T17:10:58Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 209 intersections with wait times
+[2021-03-27T17:10:58Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 557 streets with wait times
+[2021-03-27T17:10:58Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:58Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 557 streets selected, 30 max streets per intersection
+[2021-03-27T17:10:59Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:59Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:10:59Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:04Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:04Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:05Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:05Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:05Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:05Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:06Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:07Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:08Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:08Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:08Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:08Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 26 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] New best score 742565 after adding 26 sec to street 948 (11 time, 4 wait time), intersection 475
+[2021-03-27T17:11:09Z INFO  hashcode2021::improve] Round 11, new score 742565
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 209 intersections with wait times
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 557 streets with wait times
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:09Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 557 streets selected, 30 max streets per intersection
+[2021-03-27T17:11:10Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:10Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:10Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:15Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:15Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:16Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:16Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:16Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:16Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:17Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:17Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:17Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:17Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:18Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:18Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:18Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:18Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:18Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:19Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:19Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:19Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:19Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:20Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:20Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:20Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:20Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 26 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 27 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 28 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 29 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 30 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:21Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 31 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 32 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 33 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 34 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:22Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 35 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 36 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 37 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 38 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 39 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:23Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 40 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:24Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 41 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:24Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 42 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:24Z INFO  hashcode2021::phased] New best score 742566 after adding 42 sec to street 336 (5 time, 2 wait time), intersection 169
+[2021-03-27T17:11:24Z INFO  hashcode2021::improve] Round 12, new score 742566
+[2021-03-27T17:11:24Z INFO  hashcode2021::phased] Phased improver, phase 1: removing all streets that were never crossed, examining 209 intersections with wait times
+[2021-03-27T17:11:24Z INFO  hashcode2021::phased] Phased improver, phase 2: adding streets with non-zero wait times that are not in the schedule, examining 556 streets with wait times
+[2021-03-27T17:11:24Z INFO  hashcode2021::phased] Phased improver, phase 3: reordering intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:24Z INFO  hashcode2021::phased] Phased improver, phase 4: adding 1 sec to streets with non-zero wait times, 556 streets selected, 30 max streets per intersection
+[2021-03-27T17:11:25Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 1 sec from, or adding 2 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:25Z INFO  hashcode2021::phased] Phased improver, phase 5: subtracting 2 sec from, or adding 3 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:25Z INFO  hashcode2021::phased] Phased improver, phase 6: shuffling intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:30Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 3 sec from, or adding 4 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:30Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 4 sec from, or adding 5 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:31Z INFO  hashcode2021::phased] Phased improver, phase 7: subtracting 5 sec from, or adding 6 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 7 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 8 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 9 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:31Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 10 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:32Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 11 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:32Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 12 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:32Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 13 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:32Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 14 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:33Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 15 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:33Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 16 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:33Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 17 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:33Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 18 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:34Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 19 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:34Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 20 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:34Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 21 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:34Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 22 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:34Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 23 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:35Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 24 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:35Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 25 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:35Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 26 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:35Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 27 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:36Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 28 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:36Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 29 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:36Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 30 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:36Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 31 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:36Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 32 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:37Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 33 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:37Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 34 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:37Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 35 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:37Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 36 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:38Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 37 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:38Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 38 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:38Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 39 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:38Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 40 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:38Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 41 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 42 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 43 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 44 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:39Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 45 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 46 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 47 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 48 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 49 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:40Z INFO  hashcode2021::phased] Phased improver, phase 7: adding 50 sec to streets of intersections with non-zero wait times, 209 intersections selected
+[2021-03-27T17:11:41Z INFO  hashcode2021::improve] Round 13, no improvement
+
+Improved schedule
+-----------------
+Intersections   : 500
+Street lights   : 956
+Arrived cars    : 875
+Earliest arrival: 3
+Latest arrival  : 675
+Crossed streets : 955
+Total wait time : 88153
+Schedule score  : 742566
+[2021-03-27T17:11:41Z INFO  hashcode2021] Writing schedule to 'output/e.txt'

@@ -1,0 +1,423 @@
+Hash Code 2021
+[2021-03-27T16:14:38Z INFO  hashcode2021] Loading simulation from 'input/b.txt'
+
+Simulation
+----------
+Duration     : 5070
+Intersections: 7073
+Streets      : 9102
+Cars         : 1000
+Max score    : 4576202
+Bonus points : 1000
+[2021-03-27T16:14:38Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.0581715
+[2021-03-27T16:14:38Z INFO  hashcode2021] Schedule 1/200: score 4568664
+[2021-03-27T16:14:38Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.3323503
+[2021-03-27T16:14:38Z INFO  hashcode2021] Schedule 2/200: score 4568645
+[2021-03-27T16:14:38Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7714558
+[2021-03-27T16:14:39Z INFO  hashcode2021] Schedule 3/200: score 4568528
+[2021-03-27T16:14:39Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6223865
+[2021-03-27T16:14:39Z INFO  hashcode2021] Schedule 4/200: score 4568190
+[2021-03-27T16:14:39Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.049225
+[2021-03-27T16:14:40Z INFO  hashcode2021] Schedule 5/200: score 4568741
+[2021-03-27T16:14:40Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.602191
+[2021-03-27T16:14:40Z INFO  hashcode2021] Schedule 6/200: score 4568221
+[2021-03-27T16:14:40Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.805686
+[2021-03-27T16:14:40Z INFO  hashcode2021] Schedule 7/200: score 4568539
+[2021-03-27T16:14:40Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.766361
+[2021-03-27T16:14:41Z INFO  hashcode2021] Schedule 8/200: score 4568600
+[2021-03-27T16:14:41Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3168416
+[2021-03-27T16:14:41Z INFO  hashcode2021] Schedule 9/200: score 4568693
+[2021-03-27T16:14:41Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2161074
+[2021-03-27T16:14:42Z INFO  hashcode2021] Schedule 10/200: score 4568695
+[2021-03-27T16:14:42Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5365922
+[2021-03-27T16:14:42Z INFO  hashcode2021] Schedule 11/200: score 4567669
+[2021-03-27T16:14:42Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.802083
+[2021-03-27T16:14:42Z INFO  hashcode2021] Schedule 12/200: score 4568542
+[2021-03-27T16:14:42Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.3764427
+[2021-03-27T16:14:43Z INFO  hashcode2021] Schedule 13/200: score 4568569
+[2021-03-27T16:14:43Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.0056133
+[2021-03-27T16:14:43Z INFO  hashcode2021] Schedule 14/200: score 4568607
+[2021-03-27T16:14:43Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7454352
+[2021-03-27T16:14:44Z INFO  hashcode2021] Schedule 15/200: score 4568562
+[2021-03-27T16:14:44Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.329545
+[2021-03-27T16:14:44Z INFO  hashcode2021] Schedule 16/200: score 4568682
+[2021-03-27T16:14:44Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2065165
+[2021-03-27T16:14:44Z INFO  hashcode2021] Schedule 17/200: score 4568742
+[2021-03-27T16:14:44Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5138772
+[2021-03-27T16:14:45Z INFO  hashcode2021] Schedule 18/200: score 4567685
+[2021-03-27T16:14:45Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.7637677
+[2021-03-27T16:14:45Z INFO  hashcode2021] Schedule 19/200: score 4568600
+[2021-03-27T16:14:45Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.04764
+[2021-03-27T16:14:46Z INFO  hashcode2021] Schedule 20/200: score 4568672
+[2021-03-27T16:14:46Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.220706
+[2021-03-27T16:14:46Z INFO  hashcode2021] Schedule 21/200: score 4568694
+[2021-03-27T16:14:46Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0379674
+[2021-03-27T16:14:46Z INFO  hashcode2021] Schedule 22/200: score 4568838
+[2021-03-27T16:14:46Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.9181747
+[2021-03-27T16:14:47Z INFO  hashcode2021] Schedule 23/200: score 4568653
+[2021-03-27T16:14:47Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0861738
+[2021-03-27T16:14:47Z INFO  hashcode2021] Schedule 24/200: score 4568638
+[2021-03-27T16:14:47Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6170895
+[2021-03-27T16:14:48Z INFO  hashcode2021] Schedule 25/200: score 4568268
+[2021-03-27T16:14:48Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.5971065
+[2021-03-27T16:14:48Z INFO  hashcode2021] Schedule 26/200: score 4568737
+[2021-03-27T16:14:48Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7179384
+[2021-03-27T16:14:48Z INFO  hashcode2021] Schedule 27/200: score 4568370
+[2021-03-27T16:14:48Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.883215
+[2021-03-27T16:14:49Z INFO  hashcode2021] Schedule 28/200: score 4568758
+[2021-03-27T16:14:49Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2964985
+[2021-03-27T16:14:49Z INFO  hashcode2021] Schedule 29/200: score 4568651
+[2021-03-27T16:14:49Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7384732
+[2021-03-27T16:14:50Z INFO  hashcode2021] Schedule 30/200: score 4568439
+[2021-03-27T16:14:50Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6359754
+[2021-03-27T16:14:50Z INFO  hashcode2021] Schedule 31/200: score 4568122
+[2021-03-27T16:14:50Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7387528
+[2021-03-27T16:14:50Z INFO  hashcode2021] Schedule 32/200: score 4568314
+[2021-03-27T16:14:50Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.324572
+[2021-03-27T16:14:51Z INFO  hashcode2021] Schedule 33/200: score 4568705
+[2021-03-27T16:14:51Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.4368196
+[2021-03-27T16:14:51Z INFO  hashcode2021] Schedule 34/200: score 4568688
+[2021-03-27T16:14:51Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6026592
+[2021-03-27T16:14:52Z INFO  hashcode2021] Schedule 35/200: score 4568664
+[2021-03-27T16:14:52Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6629996
+[2021-03-27T16:14:52Z INFO  hashcode2021] Schedule 36/200: score 4568199
+[2021-03-27T16:14:52Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3550692
+[2021-03-27T16:14:52Z INFO  hashcode2021] Schedule 37/200: score 4568718
+[2021-03-27T16:14:52Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.328668
+[2021-03-27T16:14:53Z INFO  hashcode2021] Schedule 38/200: score 4568656
+[2021-03-27T16:14:53Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5252588
+[2021-03-27T16:14:53Z INFO  hashcode2021] Schedule 39/200: score 4567807
+[2021-03-27T16:14:53Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6096969
+[2021-03-27T16:14:54Z INFO  hashcode2021] Schedule 40/200: score 4568314
+[2021-03-27T16:14:54Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6113923
+[2021-03-27T16:14:54Z INFO  hashcode2021] Schedule 41/200: score 4568310
+[2021-03-27T16:14:54Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6547384
+[2021-03-27T16:14:54Z INFO  hashcode2021] Schedule 42/200: score 4568746
+[2021-03-27T16:14:54Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.15604
+[2021-03-27T16:14:55Z INFO  hashcode2021] Schedule 43/200: score 4568716
+[2021-03-27T16:14:55Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2352803
+[2021-03-27T16:14:55Z INFO  hashcode2021] Schedule 44/200: score 4568710
+[2021-03-27T16:14:55Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.4936945
+[2021-03-27T16:14:56Z INFO  hashcode2021] Schedule 45/200: score 4568579
+[2021-03-27T16:14:56Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2214863
+[2021-03-27T16:14:56Z INFO  hashcode2021] Schedule 46/200: score 4568649
+[2021-03-27T16:14:56Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7176285
+[2021-03-27T16:14:56Z INFO  hashcode2021] Schedule 47/200: score 4568436
+[2021-03-27T16:14:56Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.4682326
+[2021-03-27T16:14:57Z INFO  hashcode2021] Schedule 48/200: score 4568720
+[2021-03-27T16:14:57Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.818593
+[2021-03-27T16:14:57Z INFO  hashcode2021] Schedule 49/200: score 4568622
+[2021-03-27T16:14:57Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.8397503
+[2021-03-27T16:14:58Z INFO  hashcode2021] Schedule 50/200: score 4568655
+[2021-03-27T16:14:58Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.9200954
+[2021-03-27T16:14:58Z INFO  hashcode2021] Schedule 51/200: score 4568703
+[2021-03-27T16:14:58Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2217357
+[2021-03-27T16:14:58Z INFO  hashcode2021] Schedule 52/200: score 4568707
+[2021-03-27T16:14:58Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.1462305
+[2021-03-27T16:14:59Z INFO  hashcode2021] Schedule 53/200: score 4568721
+[2021-03-27T16:14:59Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0134327
+[2021-03-27T16:14:59Z INFO  hashcode2021] Schedule 54/200: score 4568769
+[2021-03-27T16:14:59Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1736188
+[2021-03-27T16:15:00Z INFO  hashcode2021] Schedule 55/200: score 4568641
+[2021-03-27T16:15:00Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6306248
+[2021-03-27T16:15:00Z INFO  hashcode2021] Schedule 56/200: score 4568747
+[2021-03-27T16:15:00Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3139768
+[2021-03-27T16:15:00Z INFO  hashcode2021] Schedule 57/200: score 4568724
+[2021-03-27T16:15:00Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.8926387
+[2021-03-27T16:15:01Z INFO  hashcode2021] Schedule 58/200: score 4568598
+[2021-03-27T16:15:01Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.3717408
+[2021-03-27T16:15:01Z INFO  hashcode2021] Schedule 59/200: score 4568520
+[2021-03-27T16:15:01Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.9017677
+[2021-03-27T16:15:02Z INFO  hashcode2021] Schedule 60/200: score 4568656
+[2021-03-27T16:15:02Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6268127
+[2021-03-27T16:15:02Z INFO  hashcode2021] Schedule 61/200: score 4568219
+[2021-03-27T16:15:02Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.9723005
+[2021-03-27T16:15:03Z INFO  hashcode2021] Schedule 62/200: score 4568666
+[2021-03-27T16:15:03Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.1892333
+[2021-03-27T16:15:03Z INFO  hashcode2021] Schedule 63/200: score 4568792
+[2021-03-27T16:15:03Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.5986242
+[2021-03-27T16:15:03Z INFO  hashcode2021] Schedule 64/200: score 4568727
+[2021-03-27T16:15:03Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.4649193
+[2021-03-27T16:15:04Z INFO  hashcode2021] Schedule 65/200: score 4568669
+[2021-03-27T16:15:04Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.9819217
+[2021-03-27T16:15:04Z INFO  hashcode2021] Schedule 66/200: score 4568561
+[2021-03-27T16:15:04Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.336421
+[2021-03-27T16:15:05Z INFO  hashcode2021] Schedule 67/200: score 4568670
+[2021-03-27T16:15:05Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.9819713
+[2021-03-27T16:15:05Z INFO  hashcode2021] Schedule 68/200: score 4568646
+[2021-03-27T16:15:05Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0866888
+[2021-03-27T16:15:05Z INFO  hashcode2021] Schedule 69/200: score 4568722
+[2021-03-27T16:15:05Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3778691
+[2021-03-27T16:15:06Z INFO  hashcode2021] Schedule 70/200: score 4568666
+[2021-03-27T16:15:06Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.1616814
+[2021-03-27T16:15:06Z INFO  hashcode2021] Schedule 71/200: score 4568745
+[2021-03-27T16:15:06Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6045597
+[2021-03-27T16:15:07Z INFO  hashcode2021] Schedule 72/200: score 4568269
+[2021-03-27T16:15:07Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6926553
+[2021-03-27T16:15:07Z INFO  hashcode2021] Schedule 73/200: score 4568265
+[2021-03-27T16:15:07Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.9330063
+[2021-03-27T16:15:07Z INFO  hashcode2021] Schedule 74/200: score 4568709
+[2021-03-27T16:15:07Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.0660727
+[2021-03-27T16:15:08Z INFO  hashcode2021] Schedule 75/200: score 4568593
+[2021-03-27T16:15:08Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.8289437
+[2021-03-27T16:15:08Z INFO  hashcode2021] Schedule 76/200: score 4568440
+[2021-03-27T16:15:08Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.8829408
+[2021-03-27T16:15:09Z INFO  hashcode2021] Schedule 77/200: score 4568567
+[2021-03-27T16:15:09Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1602416
+[2021-03-27T16:15:09Z INFO  hashcode2021] Schedule 78/200: score 4568646
+[2021-03-27T16:15:09Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.556507
+[2021-03-27T16:15:09Z INFO  hashcode2021] Schedule 79/200: score 4568694
+[2021-03-27T16:15:09Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0924613
+[2021-03-27T16:15:10Z INFO  hashcode2021] Schedule 80/200: score 4568614
+[2021-03-27T16:15:10Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0261576
+[2021-03-27T16:15:10Z INFO  hashcode2021] Schedule 81/200: score 4568703
+[2021-03-27T16:15:10Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.993865
+[2021-03-27T16:15:11Z INFO  hashcode2021] Schedule 82/200: score 4568733
+[2021-03-27T16:15:11Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.800206
+[2021-03-27T16:15:11Z INFO  hashcode2021] Schedule 83/200: score 4568536
+[2021-03-27T16:15:11Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6131625
+[2021-03-27T16:15:11Z INFO  hashcode2021] Schedule 84/200: score 4568685
+[2021-03-27T16:15:11Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.231522
+[2021-03-27T16:15:12Z INFO  hashcode2021] Schedule 85/200: score 4568729
+[2021-03-27T16:15:12Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.4920382
+[2021-03-27T16:15:12Z INFO  hashcode2021] Schedule 86/200: score 4568693
+[2021-03-27T16:15:12Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.8684702
+[2021-03-27T16:15:13Z INFO  hashcode2021] Schedule 87/200: score 4568672
+[2021-03-27T16:15:13Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6547494
+[2021-03-27T16:15:13Z INFO  hashcode2021] Schedule 88/200: score 4568700
+[2021-03-27T16:15:13Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5665622
+[2021-03-27T16:15:13Z INFO  hashcode2021] Schedule 89/200: score 4568012
+[2021-03-27T16:15:13Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5269773
+[2021-03-27T16:15:14Z INFO  hashcode2021] Schedule 90/200: score 4567742
+[2021-03-27T16:15:14Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.181021
+[2021-03-27T16:15:14Z INFO  hashcode2021] Schedule 91/200: score 4568746
+[2021-03-27T16:15:14Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.193514
+[2021-03-27T16:15:15Z INFO  hashcode2021] Schedule 92/200: score 4568739
+[2021-03-27T16:15:15Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.7973776
+[2021-03-27T16:15:15Z INFO  hashcode2021] Schedule 93/200: score 4568677
+[2021-03-27T16:15:15Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.2221653
+[2021-03-27T16:15:15Z INFO  hashcode2021] Schedule 94/200: score 4568689
+[2021-03-27T16:15:15Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.834643
+[2021-03-27T16:15:16Z INFO  hashcode2021] Schedule 95/200: score 4568698
+[2021-03-27T16:15:16Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2335973
+[2021-03-27T16:15:16Z INFO  hashcode2021] Schedule 96/200: score 4568688
+[2021-03-27T16:15:16Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.515757
+[2021-03-27T16:15:16Z INFO  hashcode2021] Schedule 97/200: score 4568761
+[2021-03-27T16:15:16Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.7510018
+[2021-03-27T16:15:17Z INFO  hashcode2021] Schedule 98/200: score 4568611
+[2021-03-27T16:15:17Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7692142
+[2021-03-27T16:15:17Z INFO  hashcode2021] Schedule 99/200: score 4568471
+[2021-03-27T16:15:17Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.5123315
+[2021-03-27T16:15:18Z INFO  hashcode2021] Schedule 100/200: score 4568685
+[2021-03-27T16:15:18Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.96026
+[2021-03-27T16:15:18Z INFO  hashcode2021] Schedule 101/200: score 4568633
+[2021-03-27T16:15:18Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3432622
+[2021-03-27T16:15:18Z INFO  hashcode2021] Schedule 102/200: score 4568715
+[2021-03-27T16:15:18Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6121945
+[2021-03-27T16:15:19Z INFO  hashcode2021] Schedule 103/200: score 4568614
+[2021-03-27T16:15:19Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.7325377
+[2021-03-27T16:15:19Z INFO  hashcode2021] Schedule 104/200: score 4568583
+[2021-03-27T16:15:19Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.645773
+[2021-03-27T16:15:20Z INFO  hashcode2021] Schedule 105/200: score 4568647
+[2021-03-27T16:15:20Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5296533
+[2021-03-27T16:15:20Z INFO  hashcode2021] Schedule 106/200: score 4567751
+[2021-03-27T16:15:20Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.0795255
+[2021-03-27T16:15:20Z INFO  hashcode2021] Schedule 107/200: score 4568771
+[2021-03-27T16:15:20Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.085024
+[2021-03-27T16:15:21Z INFO  hashcode2021] Schedule 108/200: score 4568707
+[2021-03-27T16:15:21Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.8305781
+[2021-03-27T16:15:21Z INFO  hashcode2021] Schedule 109/200: score 4568506
+[2021-03-27T16:15:21Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1020105
+[2021-03-27T16:15:22Z INFO  hashcode2021] Schedule 110/200: score 4568775
+[2021-03-27T16:15:22Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.299212
+[2021-03-27T16:15:22Z INFO  hashcode2021] Schedule 111/200: score 4568741
+[2021-03-27T16:15:22Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.8196874
+[2021-03-27T16:15:22Z INFO  hashcode2021] Schedule 112/200: score 4568530
+[2021-03-27T16:15:22Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.5691028
+[2021-03-27T16:15:23Z INFO  hashcode2021] Schedule 113/200: score 4568710
+[2021-03-27T16:15:23Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.697246
+[2021-03-27T16:15:23Z INFO  hashcode2021] Schedule 114/200: score 4568700
+[2021-03-27T16:15:23Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.4214296
+[2021-03-27T16:15:23Z INFO  hashcode2021] Schedule 115/200: score 4568720
+[2021-03-27T16:15:23Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.8629923
+[2021-03-27T16:15:24Z INFO  hashcode2021] Schedule 116/200: score 4568608
+[2021-03-27T16:15:24Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0497994
+[2021-03-27T16:15:24Z INFO  hashcode2021] Schedule 117/200: score 4568769
+[2021-03-27T16:15:24Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.355678
+[2021-03-27T16:15:25Z INFO  hashcode2021] Schedule 118/200: score 4568723
+[2021-03-27T16:15:25Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5086977
+[2021-03-27T16:15:25Z INFO  hashcode2021] Schedule 119/200: score 4567540
+[2021-03-27T16:15:25Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.3748581
+[2021-03-27T16:15:26Z INFO  hashcode2021] Schedule 120/200: score 4568585
+[2021-03-27T16:15:26Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.3564782
+[2021-03-27T16:15:26Z INFO  hashcode2021] Schedule 121/200: score 4568592
+[2021-03-27T16:15:26Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.1040788
+[2021-03-27T16:15:26Z INFO  hashcode2021] Schedule 122/200: score 4568838
+[2021-03-27T16:15:26Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.149248
+[2021-03-27T16:15:27Z INFO  hashcode2021] Schedule 123/200: score 4568568
+[2021-03-27T16:15:27Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3791742
+[2021-03-27T16:15:27Z INFO  hashcode2021] Schedule 124/200: score 4568694
+[2021-03-27T16:15:27Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.0157068
+[2021-03-27T16:15:27Z INFO  hashcode2021] Schedule 125/200: score 4568596
+[2021-03-27T16:15:27Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.640985
+[2021-03-27T16:15:28Z INFO  hashcode2021] Schedule 126/200: score 4568387
+[2021-03-27T16:15:28Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7769883
+[2021-03-27T16:15:28Z INFO  hashcode2021] Schedule 127/200: score 4568476
+[2021-03-27T16:15:28Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3733244
+[2021-03-27T16:15:29Z INFO  hashcode2021] Schedule 128/200: score 4568727
+[2021-03-27T16:15:29Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0192788
+[2021-03-27T16:15:29Z INFO  hashcode2021] Schedule 129/200: score 4568796
+[2021-03-27T16:15:29Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3820457
+[2021-03-27T16:15:29Z INFO  hashcode2021] Schedule 130/200: score 4568706
+[2021-03-27T16:15:29Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7089908
+[2021-03-27T16:15:30Z INFO  hashcode2021] Schedule 131/200: score 4568329
+[2021-03-27T16:15:30Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.854527
+[2021-03-27T16:15:30Z INFO  hashcode2021] Schedule 132/200: score 4568626
+[2021-03-27T16:15:30Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.4655359
+[2021-03-27T16:15:31Z INFO  hashcode2021] Schedule 133/200: score 4568594
+[2021-03-27T16:15:31Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.2383373
+[2021-03-27T16:15:31Z INFO  hashcode2021] Schedule 134/200: score 4568678
+[2021-03-27T16:15:31Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.7784386
+[2021-03-27T16:15:31Z INFO  hashcode2021] Schedule 135/200: score 4568671
+[2021-03-27T16:15:31Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.1664946
+[2021-03-27T16:15:32Z INFO  hashcode2021] Schedule 136/200: score 4568681
+[2021-03-27T16:15:32Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.692905
+[2021-03-27T16:15:32Z INFO  hashcode2021] Schedule 137/200: score 4568610
+[2021-03-27T16:15:32Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.2416356
+[2021-03-27T16:15:33Z INFO  hashcode2021] Schedule 138/200: score 4568724
+[2021-03-27T16:15:33Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5799885
+[2021-03-27T16:15:33Z INFO  hashcode2021] Schedule 139/200: score 4568077
+[2021-03-27T16:15:33Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.64389
+[2021-03-27T16:15:33Z INFO  hashcode2021] Schedule 140/200: score 4568703
+[2021-03-27T16:15:33Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0881357
+[2021-03-27T16:15:34Z INFO  hashcode2021] Schedule 141/200: score 4568704
+[2021-03-27T16:15:34Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.4433289
+[2021-03-27T16:15:34Z INFO  hashcode2021] Schedule 142/200: score 4568715
+[2021-03-27T16:15:34Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.894702
+[2021-03-27T16:15:35Z INFO  hashcode2021] Schedule 143/200: score 4568667
+[2021-03-27T16:15:35Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.9710317
+[2021-03-27T16:15:35Z INFO  hashcode2021] Schedule 144/200: score 4568729
+[2021-03-27T16:15:35Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.9315743
+[2021-03-27T16:15:35Z INFO  hashcode2021] Schedule 145/200: score 4568661
+[2021-03-27T16:15:35Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.734182
+[2021-03-27T16:15:36Z INFO  hashcode2021] Schedule 146/200: score 4568667
+[2021-03-27T16:15:36Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.4242055
+[2021-03-27T16:15:36Z INFO  hashcode2021] Schedule 147/200: score 4568577
+[2021-03-27T16:15:36Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.2338762
+[2021-03-27T16:15:36Z INFO  hashcode2021] Schedule 148/200: score 4568674
+[2021-03-27T16:15:36Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.9780374
+[2021-03-27T16:15:37Z INFO  hashcode2021] Schedule 149/200: score 4568706
+[2021-03-27T16:15:37Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.247571
+[2021-03-27T16:15:37Z INFO  hashcode2021] Schedule 150/200: score 4568702
+[2021-03-27T16:15:37Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6225834
+[2021-03-27T16:15:38Z INFO  hashcode2021] Schedule 151/200: score 4568665
+[2021-03-27T16:15:38Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.9030666
+[2021-03-27T16:15:38Z INFO  hashcode2021] Schedule 152/200: score 4568589
+[2021-03-27T16:15:38Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.9077516
+[2021-03-27T16:15:38Z INFO  hashcode2021] Schedule 153/200: score 4568617
+[2021-03-27T16:15:38Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.510324
+[2021-03-27T16:15:39Z INFO  hashcode2021] Schedule 154/200: score 4568726
+[2021-03-27T16:15:39Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6832848
+[2021-03-27T16:15:39Z INFO  hashcode2021] Schedule 155/200: score 4568642
+[2021-03-27T16:15:39Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.1306548
+[2021-03-27T16:15:39Z INFO  hashcode2021] Schedule 156/200: score 4568783
+[2021-03-27T16:15:40Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.4771419
+[2021-03-27T16:15:40Z INFO  hashcode2021] Schedule 157/200: score 4568788
+[2021-03-27T16:15:40Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.123513
+[2021-03-27T16:15:40Z INFO  hashcode2021] Schedule 158/200: score 4568836
+[2021-03-27T16:15:40Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.8658333
+[2021-03-27T16:15:41Z INFO  hashcode2021] Schedule 159/200: score 4568667
+[2021-03-27T16:15:41Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1977289
+[2021-03-27T16:15:41Z INFO  hashcode2021] Schedule 160/200: score 4568595
+[2021-03-27T16:15:41Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.5421686
+[2021-03-27T16:15:41Z INFO  hashcode2021] Schedule 161/200: score 4568653
+[2021-03-27T16:15:41Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2292268
+[2021-03-27T16:15:42Z INFO  hashcode2021] Schedule 162/200: score 4568762
+[2021-03-27T16:15:42Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.6357992
+[2021-03-27T16:15:42Z INFO  hashcode2021] Schedule 163/200: score 4568232
+[2021-03-27T16:15:42Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2384176
+[2021-03-27T16:15:43Z INFO  hashcode2021] Schedule 164/200: score 4568701
+[2021-03-27T16:15:43Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1240559
+[2021-03-27T16:15:43Z INFO  hashcode2021] Schedule 165/200: score 4568708
+[2021-03-27T16:15:43Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.270606
+[2021-03-27T16:15:43Z INFO  hashcode2021] Schedule 166/200: score 4568742
+[2021-03-27T16:15:43Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.3647704
+[2021-03-27T16:15:44Z INFO  hashcode2021] Schedule 167/200: score 4568747
+[2021-03-27T16:15:44Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1145768
+[2021-03-27T16:15:44Z INFO  hashcode2021] Schedule 168/200: score 4568630
+[2021-03-27T16:15:44Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.3138406
+[2021-03-27T16:15:45Z INFO  hashcode2021] Schedule 169/200: score 4568707
+[2021-03-27T16:15:45Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5298533
+[2021-03-27T16:15:45Z INFO  hashcode2021] Schedule 170/200: score 4567577
+[2021-03-27T16:15:45Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7588665
+[2021-03-27T16:15:45Z INFO  hashcode2021] Schedule 171/200: score 4568449
+[2021-03-27T16:15:45Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0103157
+[2021-03-27T16:15:46Z INFO  hashcode2021] Schedule 172/200: score 4568682
+[2021-03-27T16:15:46Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.695178
+[2021-03-27T16:15:46Z INFO  hashcode2021] Schedule 173/200: score 4568632
+[2021-03-27T16:15:46Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.8624158
+[2021-03-27T16:15:47Z INFO  hashcode2021] Schedule 174/200: score 4568707
+[2021-03-27T16:15:47Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1037078
+[2021-03-27T16:15:47Z INFO  hashcode2021] Schedule 175/200: score 4568727
+[2021-03-27T16:15:47Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.3009112
+[2021-03-27T16:15:47Z INFO  hashcode2021] Schedule 176/200: score 4568741
+[2021-03-27T16:15:47Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.964952
+[2021-03-27T16:15:48Z INFO  hashcode2021] Schedule 177/200: score 4568646
+[2021-03-27T16:15:48Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.0562189
+[2021-03-27T16:15:48Z INFO  hashcode2021] Schedule 178/200: score 4568700
+[2021-03-27T16:15:48Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2065406
+[2021-03-27T16:15:49Z INFO  hashcode2021] Schedule 179/200: score 4568636
+[2021-03-27T16:15:49Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1013236
+[2021-03-27T16:15:49Z INFO  hashcode2021] Schedule 180/200: score 4568723
+[2021-03-27T16:15:49Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1055894
+[2021-03-27T16:15:49Z INFO  hashcode2021] Schedule 181/200: score 4568668
+[2021-03-27T16:15:49Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.0892358
+[2021-03-27T16:15:50Z INFO  hashcode2021] Schedule 182/200: score 4568790
+[2021-03-27T16:15:50Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.7518406
+[2021-03-27T16:15:50Z INFO  hashcode2021] Schedule 183/200: score 4568614
+[2021-03-27T16:15:50Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.8611412
+[2021-03-27T16:15:50Z INFO  hashcode2021] Schedule 184/200: score 4568682
+[2021-03-27T16:15:50Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.7998514
+[2021-03-27T16:15:51Z INFO  hashcode2021] Schedule 185/200: score 4568640
+[2021-03-27T16:15:51Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.7169895
+[2021-03-27T16:15:51Z INFO  hashcode2021] Schedule 186/200: score 4568750
+[2021-03-27T16:15:51Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.4706874
+[2021-03-27T16:15:52Z INFO  hashcode2021] Schedule 187/200: score 4568666
+[2021-03-27T16:15:52Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.047538
+[2021-03-27T16:15:52Z INFO  hashcode2021] Schedule 188/200: score 4568666
+[2021-03-27T16:15:52Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.555894
+[2021-03-27T16:15:52Z INFO  hashcode2021] Schedule 189/200: score 4568748
+[2021-03-27T16:15:52Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.45536
+[2021-03-27T16:15:53Z INFO  hashcode2021] Schedule 190/200: score 4568657
+[2021-03-27T16:15:53Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.2342153
+[2021-03-27T16:15:53Z INFO  hashcode2021] Schedule 191/200: score 4568640
+[2021-03-27T16:15:53Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.4447336
+[2021-03-27T16:15:53Z INFO  hashcode2021] Schedule 192/200: score 4568589
+[2021-03-27T16:15:53Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.0236502
+[2021-03-27T16:15:54Z INFO  hashcode2021] Schedule 193/200: score 4568577
+[2021-03-27T16:15:54Z INFO  hashcode2021::traffic] Traffic scheduler: log base 3.1002216
+[2021-03-27T16:15:54Z INFO  hashcode2021] Schedule 194/200: score 4568716
+[2021-03-27T16:15:54Z INFO  hashcode2021::traffic] Traffic scheduler: log base 1.5882063
+[2021-03-27T16:15:55Z INFO  hashcode2021] Schedule 195/200: score 4568355
+[2021-03-27T16:15:55Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.2244396
+[2021-03-27T16:15:55Z INFO  hashcode2021] Schedule 196/200: score 4568726
+[2021-03-27T16:15:55Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.2719383
+[2021-03-27T16:15:55Z INFO  hashcode2021] Schedule 197/200: score 4568822
+[2021-03-27T16:15:55Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.6995654
+[2021-03-27T16:15:56Z INFO  hashcode2021] Schedule 198/200: score 4568722
+[2021-03-27T16:15:56Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.7248325
+[2021-03-27T16:15:56Z INFO  hashcode2021] Schedule 199/200: score 4568658
+[2021-03-27T16:15:56Z INFO  hashcode2021::traffic] Traffic scheduler: log base 2.273633
+[2021-03-27T16:15:57Z INFO  hashcode2021] Schedule 200/200: score 4568717
+
+Schedule
+--------
+Intersections   : 6296
+Street lights   : 7964
+Arrived cars    : 1000
+Earliest arrival: 35
+Latest arrival  : 5039
+Crossed streets : 7964
+Total wait time : 6025
+Schedule score  : 4568838
+[2021-03-27T16:15:57Z INFO  hashcode2021] Writing schedule to 'output/b.txt'
